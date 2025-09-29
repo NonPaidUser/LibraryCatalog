@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <container xmlns="http://symfony.com/schema/dic/services" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://symfony.com/schema/dic/services https://symfony.com/schema/dic/services/services-1.0.xsd">
   <parameters>
-    <parameter key="kernel.project_dir">C:\Jovan Components\JOVAN PROJECTS\Symfony_Projects\Library_Catalog_Borrowing_System</parameter>
+    <parameter key="kernel.project_dir">/var/www/html</parameter>
     <parameter key="kernel.environment">dev</parameter>
     <parameter key="kernel.runtime_environment">%env(default:kernel.environment:APP_RUNTIME_ENV)%</parameter>
     <parameter key="kernel.runtime_mode">%env(query_string:default:container.runtime_mode:APP_RUNTIME_MODE)%</parameter>
@@ -9,9 +9,9 @@
     <parameter key="kernel.runtime_mode.cli">%env(not:default:kernel.runtime_mode.web:)%</parameter>
     <parameter key="kernel.runtime_mode.worker">%env(bool:default::key:worker:default:kernel.runtime_mode:)%</parameter>
     <parameter key="kernel.debug">true</parameter>
-    <parameter key="kernel.build_dir">C:\Jovan Components\JOVAN PROJECTS\Symfony_Projects\Library_Catalog_Borrowing_System\var\cache\dev</parameter>
-    <parameter key="kernel.cache_dir">C:\Jovan Components\JOVAN PROJECTS\Symfony_Projects\Library_Catalog_Borrowing_System\var\cache\dev</parameter>
-    <parameter key="kernel.logs_dir">C:\Jovan Components\JOVAN PROJECTS\Symfony_Projects\Library_Catalog_Borrowing_System/var/log</parameter>
+    <parameter key="kernel.build_dir">/var/www/html/var/cache/dev</parameter>
+    <parameter key="kernel.cache_dir">/var/www/html/var/cache/dev</parameter>
+    <parameter key="kernel.logs_dir">/var/www/html/var/log</parameter>
     <parameter key="kernel.bundles" type="collection">
       <parameter key="FrameworkBundle">Symfony\Bundle\FrameworkBundle\FrameworkBundle</parameter>
       <parameter key="TwigBundle">Symfony\Bundle\TwigBundle\TwigBundle</parameter>
@@ -23,31 +23,31 @@
     </parameter>
     <parameter key="kernel.bundles_metadata" type="collection">
       <parameter key="FrameworkBundle" type="collection">
-        <parameter key="path">C:\Jovan Components\JOVAN PROJECTS\Symfony_Projects\Library_Catalog_Borrowing_System\vendor\symfony\framework-bundle</parameter>
+        <parameter key="path">/var/www/html/vendor/symfony/framework-bundle</parameter>
         <parameter key="namespace">Symfony\Bundle\FrameworkBundle</parameter>
       </parameter>
       <parameter key="TwigBundle" type="collection">
-        <parameter key="path">C:\Jovan Components\JOVAN PROJECTS\Symfony_Projects\Library_Catalog_Borrowing_System\vendor\symfony\twig-bundle</parameter>
+        <parameter key="path">/var/www/html/vendor/symfony/twig-bundle</parameter>
         <parameter key="namespace">Symfony\Bundle\TwigBundle</parameter>
       </parameter>
       <parameter key="TwigExtraBundle" type="collection">
-        <parameter key="path">C:\Jovan Components\JOVAN PROJECTS\Symfony_Projects\Library_Catalog_Borrowing_System\vendor\twig\extra-bundle</parameter>
+        <parameter key="path">/var/www/html/vendor/twig/extra-bundle</parameter>
         <parameter key="namespace">Twig\Extra\TwigExtraBundle</parameter>
       </parameter>
       <parameter key="MakerBundle" type="collection">
-        <parameter key="path">C:\Jovan Components\JOVAN PROJECTS\Symfony_Projects\Library_Catalog_Borrowing_System\vendor\symfony\maker-bundle</parameter>
+        <parameter key="path">/var/www/html/vendor/symfony/maker-bundle</parameter>
         <parameter key="namespace">Symfony\Bundle\MakerBundle</parameter>
       </parameter>
       <parameter key="SecurityBundle" type="collection">
-        <parameter key="path">C:\Jovan Components\JOVAN PROJECTS\Symfony_Projects\Library_Catalog_Borrowing_System\vendor\symfony\security-bundle</parameter>
+        <parameter key="path">/var/www/html/vendor/symfony/security-bundle</parameter>
         <parameter key="namespace">Symfony\Bundle\SecurityBundle</parameter>
       </parameter>
       <parameter key="DoctrineBundle" type="collection">
-        <parameter key="path">C:\Jovan Components\JOVAN PROJECTS\Symfony_Projects\Library_Catalog_Borrowing_System\vendor\doctrine\doctrine-bundle</parameter>
+        <parameter key="path">/var/www/html/vendor/doctrine/doctrine-bundle</parameter>
         <parameter key="namespace">Doctrine\Bundle\DoctrineBundle</parameter>
       </parameter>
       <parameter key="DoctrineMigrationsBundle" type="collection">
-        <parameter key="path">C:\Jovan Components\JOVAN PROJECTS\Symfony_Projects\Library_Catalog_Borrowing_System\vendor\doctrine\doctrine-migrations-bundle</parameter>
+        <parameter key="path">/var/www/html/vendor/doctrine/doctrine-migrations-bundle</parameter>
         <parameter key="namespace">Doctrine\Bundle\MigrationsBundle</parameter>
       </parameter>
     </parameter>
@@ -86,15 +86,15 @@
     <parameter key="asset.request_context.base_path">null</parameter>
     <parameter key="asset.request_context.secure">null</parameter>
     <parameter key="debug.error_handler.throw_at">-1</parameter>
-    <parameter key="debug.container.dump">C:\Jovan Components\JOVAN PROJECTS\Symfony_Projects\Library_Catalog_Borrowing_System\var\cache\dev/App_KernelDevDebugContainer.xml</parameter>
+    <parameter key="debug.container.dump">/var/www/html/var/cache/dev/App_KernelDevDebugContainer.xml</parameter>
     <parameter key="router.request_context.host">localhost</parameter>
     <parameter key="router.request_context.scheme">http</parameter>
     <parameter key="router.request_context.base_url"></parameter>
     <parameter key="router.resource">kernel::loadRoutes</parameter>
-    <parameter key="router.cache_dir">C:\Jovan Components\JOVAN PROJECTS\Symfony_Projects\Library_Catalog_Borrowing_System\var\cache\dev</parameter>
+    <parameter key="router.cache_dir">/var/www/html/var/cache/dev</parameter>
     <parameter key="request_listener.http_port">80</parameter>
     <parameter key="request_listener.https_port">443</parameter>
-    <parameter key="cache.prefix.seed">_C:\Jovan Components\JOVAN PROJECTS\Symfony_Projects\Library_Catalog_Borrowing_System.App_KernelDevDebugContainer</parameter>
+    <parameter key="cache.prefix.seed">_/var/www/html.App_KernelDevDebugContainer</parameter>
     <parameter key="session.metadata.storage_key">_sf2_meta</parameter>
     <parameter key="session.storage.options" type="collection">
       <parameter key="cache_limiter" type="string">0</parameter>
@@ -108,7 +108,7 @@
     <parameter key="twig.form.resources" type="collection">
       <parameter>form_div_layout.html.twig</parameter>
     </parameter>
-    <parameter key="twig.default_path">C:\Jovan Components\JOVAN PROJECTS\Symfony_Projects\Library_Catalog_Borrowing_System/templates</parameter>
+    <parameter key="twig.default_path">/var/www/html/templates</parameter>
     <parameter key="security.role_hierarchy.roles" type="collection"/>
     <parameter key="security.access.denied_url">null</parameter>
     <parameter key="security.authentication.manager.erase_credentials">true</parameter>
@@ -190,7 +190,7 @@
     <parameter key="doctrine.orm.auto_generate_proxy_classes">true</parameter>
     <parameter key="doctrine.orm.enable_lazy_ghost_objects">true</parameter>
     <parameter key="doctrine.orm.enable_native_lazy_objects">false</parameter>
-    <parameter key="doctrine.orm.proxy_dir">C:\Jovan Components\JOVAN PROJECTS\Symfony_Projects\Library_Catalog_Borrowing_System\var\cache\dev/doctrine/orm/Proxies</parameter>
+    <parameter key="doctrine.orm.proxy_dir">/var/www/html/var/cache/dev/doctrine/orm/Proxies</parameter>
     <parameter key="doctrine.orm.proxy_namespace">Proxies</parameter>
     <parameter key="doctrine.migrations.preferred_em">null</parameter>
     <parameter key="doctrine.migrations.preferred_connection">null</parameter>
@@ -244,9 +244,17 @@
         <argument type="service" id=".service_locator.ZyP9f7K.App\Controller\SecurityController"/>
       </call>
     </service>
+    <service id="App\Entity\Book" class="App\Entity\Book" autowire="true" autoconfigure="true">
+      <tag name="container.excluded" source="because it's a Doctrine entity"/>
+      <tag name="container.excluded" source="with #[Doctrine\ORM\Mapping\Entity] attribute"/>
+    </service>
     <service id="App\Entity\NonPaidUser" class="App\Entity\NonPaidUser" autowire="true" autoconfigure="true">
       <tag name="container.excluded" source="because it's a Doctrine entity"/>
       <tag name="container.excluded" source="with #[Doctrine\ORM\Mapping\Entity] attribute"/>
+    </service>
+    <service id="App\Repository\BookRepository" class="App\Repository\BookRepository" autowire="true" autoconfigure="true">
+      <tag name="doctrine.repository_service"/>
+      <argument type="service" id="doctrine"/>
     </service>
     <service id="App\Repository\NonPaidUserRepository" class="App\Repository\NonPaidUserRepository" autowire="true" autoconfigure="true">
       <tag name="doctrine.repository_service"/>
@@ -362,7 +370,7 @@
       </argument>
     </service>
     <service id="http_cache.store" class="Symfony\Component\HttpKernel\HttpCache\Store">
-      <argument>C:\Jovan Components\JOVAN PROJECTS\Symfony_Projects\Library_Catalog_Borrowing_System\var\cache\dev/http_cache</argument>
+      <argument>/var/www/html/var/cache/dev/http_cache</argument>
     </service>
     <service id="url_helper" class="Symfony\Component\HttpFoundation\UrlHelper">
       <argument type="service" id="request_stack"/>
@@ -372,7 +380,7 @@
       <tag name="container.no_preload"/>
       <argument type="tagged_iterator" tag="kernel.cache_warmer"/>
       <argument>true</argument>
-      <argument>C:\Jovan Components\JOVAN PROJECTS\Symfony_Projects\Library_Catalog_Borrowing_System\var\cache\dev/App_KernelDevDebugContainerDeprecations.log</argument>
+      <argument>/var/www/html/var/cache/dev/App_KernelDevDebugContainerDeprecations.log</argument>
     </service>
     <service id="cache_clearer" class="Symfony\Component\HttpKernel\CacheClearer\ChainCacheClearer">
       <argument type="tagged_iterator" tag="kernel.cache_clearer"/>
@@ -580,7 +588,7 @@
       </argument>
       <argument>UTF-8</argument>
       <argument type="service" id="debug.file_link_formatter" on-invalid="null"/>
-      <argument>C:\Jovan Components\JOVAN PROJECTS\Symfony_Projects\Library_Catalog_Borrowing_System</argument>
+      <argument>/var/www/html</argument>
       <argument type="service">
         <service>
           <argument type="service" id="request_stack"/>
@@ -616,7 +624,7 @@
       <tag name="console.command"/>
       <tag name="container.no_preload"/>
       <argument type="service" id="filesystem"/>
-      <argument>C:\Jovan Components\JOVAN PROJECTS\Symfony_Projects\Library_Catalog_Borrowing_System</argument>
+      <argument>/var/www/html</argument>
       <call method="setName">
         <argument>assets:install</argument>
       </call>
@@ -796,7 +804,7 @@
       <tag name="console.command"/>
       <tag name="container.no_preload"/>
       <argument>dev</argument>
-      <argument>C:\Jovan Components\JOVAN PROJECTS\Symfony_Projects\Library_Catalog_Borrowing_System</argument>
+      <argument>/var/www/html</argument>
       <call method="setName">
         <argument>debug:dotenv</argument>
       </call>
@@ -959,9 +967,9 @@
     <service id="cache.app" class="Symfony\Component\Cache\Adapter\FilesystemAdapter" public="true">
       <tag name="cache.pool"/>
       <tag name="kernel.reset" method="reset"/>
-      <argument>v8hXRkFjDm</argument>
+      <argument>yU+7Ob58gJ</argument>
       <argument>0</argument>
-      <argument>C:\Jovan Components\JOVAN PROJECTS\Symfony_Projects\Library_Catalog_Borrowing_System\var\cache\dev/pools/app</argument>
+      <argument>/var/www/html/var/cache/dev/pools/app</argument>
       <argument type="service" id="cache.default_marshaller" on-invalid="ignore"/>
       <call method="setLogger">
         <argument type="service" id="logger" on-invalid="ignore"/>
@@ -974,40 +982,40 @@
     <service id="cache.system" class="Symfony\Component\Cache\Adapter\AdapterInterface" public="true">
       <tag name="cache.pool"/>
       <tag name="kernel.reset" method="reset"/>
-      <argument>8XDJvGdlbq</argument>
+      <argument>XUZWh3oCfH</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>C:\Jovan Components\JOVAN PROJECTS\Symfony_Projects\Library_Catalog_Borrowing_System\var\cache\dev/pools/system</argument>
+      <argument>/var/www/html/var/cache/dev/pools/system</argument>
       <argument type="service" id="logger" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
     <service id="cache.validator" class="Symfony\Component\Cache\Adapter\AdapterInterface">
       <tag name="cache.pool"/>
       <tag name="kernel.reset" method="reset"/>
-      <argument>Ikk4XnwruS</argument>
+      <argument>-ZPlc8xhwu</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>C:\Jovan Components\JOVAN PROJECTS\Symfony_Projects\Library_Catalog_Borrowing_System\var\cache\dev/pools/system</argument>
+      <argument>/var/www/html/var/cache/dev/pools/system</argument>
       <argument type="service" id="logger" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
     <service id="cache.serializer" class="Symfony\Component\Cache\Adapter\AdapterInterface">
       <tag name="cache.pool"/>
       <tag name="kernel.reset" method="reset"/>
-      <argument>mxY3vRS2s1</argument>
+      <argument>8vUMbijCz2</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>C:\Jovan Components\JOVAN PROJECTS\Symfony_Projects\Library_Catalog_Borrowing_System\var\cache\dev/pools/system</argument>
+      <argument>/var/www/html/var/cache/dev/pools/system</argument>
       <argument type="service" id="logger" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
     <service id="cache.property_info" class="Symfony\Component\Cache\Adapter\AdapterInterface">
       <tag name="cache.pool"/>
       <tag name="kernel.reset" method="reset"/>
-      <argument>NSxOBiFVfW</argument>
+      <argument>vHyQ8yH4Hf</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>C:\Jovan Components\JOVAN PROJECTS\Symfony_Projects\Library_Catalog_Borrowing_System\var\cache\dev/pools/system</argument>
+      <argument>/var/www/html/var/cache/dev/pools/system</argument>
       <argument type="service" id="logger" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -1017,7 +1025,7 @@
       <argument></argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>C:\Jovan Components\JOVAN PROJECTS\Symfony_Projects\Library_Catalog_Borrowing_System\var\cache\dev/pools/system</argument>
+      <argument>/var/www/html/var/cache/dev/pools/system</argument>
       <argument type="service" id="logger" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -1036,7 +1044,7 @@
       <tag name="monolog.logger" channel="cache"/>
       <argument></argument>
       <argument>0</argument>
-      <argument>C:\Jovan Components\JOVAN PROJECTS\Symfony_Projects\Library_Catalog_Borrowing_System\var\cache\dev/pools/app</argument>
+      <argument>/var/www/html/var/cache/dev/pools/app</argument>
       <argument type="service" id="cache.default_marshaller" on-invalid="ignore"/>
       <call method="setLogger">
         <argument type="service" id="logger" on-invalid="ignore"/>
@@ -1675,7 +1683,7 @@
       <argument type="service" id=".service_locator.RTjHFcp.router.default"/>
       <argument>kernel::loadRoutes</argument>
       <argument type="collection">
-        <argument key="cache_dir">C:\Jovan Components\JOVAN PROJECTS\Symfony_Projects\Library_Catalog_Borrowing_System\var\cache\dev</argument>
+        <argument key="cache_dir">/var/www/html/var/cache/dev</argument>
         <argument key="debug">true</argument>
         <argument key="generator_class">Symfony\Component\Routing\Generator\CompiledUrlGenerator</argument>
         <argument key="generator_dumper_class">Symfony\Component\Routing\Generator\Dumper\CompiledUrlGeneratorDumper</argument>
@@ -1713,7 +1721,7 @@
       <argument type="service" id="request_stack"/>
       <argument type="service" id="router.request_context" on-invalid="ignore"/>
       <argument type="service" id="logger" on-invalid="ignore"/>
-      <argument>C:\Jovan Components\JOVAN PROJECTS\Symfony_Projects\Library_Catalog_Borrowing_System</argument>
+      <argument>/var/www/html</argument>
       <argument>true</argument>
     </service>
     <service id="Symfony\Bundle\FrameworkBundle\Controller\RedirectController" class="Symfony\Bundle\FrameworkBundle\Controller\RedirectController" public="true">
@@ -1740,7 +1748,7 @@
       <argument type="service" id="property_info.reflection_extractor" on-invalid="null"/>
     </service>
     <service id="secrets.vault" class="Symfony\Bundle\FrameworkBundle\Secrets\SodiumVault">
-      <argument>C:\Jovan Components\JOVAN PROJECTS\Symfony_Projects\Library_Catalog_Borrowing_System/config/secrets/%env(default:kernel.environment:APP_RUNTIME_ENV)%</argument>
+      <argument>/var/www/html/config/secrets/%env(default:kernel.environment:APP_RUNTIME_ENV)%</argument>
       <argument type="service" id="secrets.decryption_key" on-invalid="ignore"/>
       <argument>APP_SECRET</argument>
     </service>
@@ -1753,7 +1761,7 @@
       <argument>base64:default::SYMFONY_DECRYPTION_SECRET</argument>
     </service>
     <service id="secrets.local_vault" class="Symfony\Bundle\FrameworkBundle\Secrets\DotenvVault">
-      <argument>C:\Jovan Components\JOVAN PROJECTS\Symfony_Projects\Library_Catalog_Borrowing_System/.env.dev.local</argument>
+      <argument>/var/www/html/.env.dev.local</argument>
     </service>
     <service id="type_info.type_context_factory" class="Symfony\Component\TypeInfo\TypeContext\TypeContextFactory">
       <argument>null</argument>
@@ -1860,7 +1868,7 @@
       <argument>true</argument>
     </service>
     <service id="session.storage.factory.mock_file" class="Symfony\Component\HttpFoundation\Session\Storage\MockFileSessionStorageFactory">
-      <argument>C:\Jovan Components\JOVAN PROJECTS\Symfony_Projects\Library_Catalog_Borrowing_System\var\cache\dev/sessions</argument>
+      <argument>/var/www/html/var/cache/dev/sessions</argument>
       <argument>MOCKSESSID</argument>
       <argument type="service">
         <service class="Symfony\Component\HttpFoundation\Session\Storage\MetadataBag">
@@ -1925,7 +1933,7 @@
       <tag name="kernel.reset" method="resetGlobals"/>
       <argument type="service" id="twig.loader.native_filesystem"/>
       <argument type="collection">
-        <argument key="cache">C:\Jovan Components\JOVAN PROJECTS\Symfony_Projects\Library_Catalog_Borrowing_System\var\cache\dev/twig</argument>
+        <argument key="cache">/var/www/html/var/cache/dev/twig</argument>
         <argument key="charset">UTF-8</argument>
         <argument key="debug">true</argument>
         <argument key="strict_variables">true</argument>
@@ -2017,7 +2025,7 @@
     <service id="twig.template_iterator" class="Symfony\Bundle\TwigBundle\TemplateIterator">
       <argument type="service" id="kernel"/>
       <argument type="collection"/>
-      <argument>C:\Jovan Components\JOVAN PROJECTS\Symfony_Projects\Library_Catalog_Borrowing_System/templates</argument>
+      <argument>/var/www/html/templates</argument>
       <argument type="collection">
         <argument>*.twig</argument>
       </argument>
@@ -2032,41 +2040,41 @@
     <service id="twig.loader.native_filesystem" class="Twig\Loader\FilesystemLoader">
       <tag name="twig.loader"/>
       <argument type="collection"/>
-      <argument>C:\Jovan Components\JOVAN PROJECTS\Symfony_Projects\Library_Catalog_Borrowing_System</argument>
+      <argument>/var/www/html</argument>
       <call method="addPath">
-        <argument>C:\Jovan Components\JOVAN PROJECTS\Symfony_Projects\Library_Catalog_Borrowing_System\vendor\symfony\maker-bundle/templates</argument>
+        <argument>/var/www/html/vendor/symfony/maker-bundle/templates</argument>
         <argument>Maker</argument>
       </call>
       <call method="addPath">
-        <argument>C:\Jovan Components\JOVAN PROJECTS\Symfony_Projects\Library_Catalog_Borrowing_System\vendor\symfony\maker-bundle/templates</argument>
+        <argument>/var/www/html/vendor/symfony/maker-bundle/templates</argument>
         <argument>!Maker</argument>
       </call>
       <call method="addPath">
-        <argument>C:\Jovan Components\JOVAN PROJECTS\Symfony_Projects\Library_Catalog_Borrowing_System\vendor\symfony\security-bundle/Resources/views</argument>
+        <argument>/var/www/html/vendor/symfony/security-bundle/Resources/views</argument>
         <argument>Security</argument>
       </call>
       <call method="addPath">
-        <argument>C:\Jovan Components\JOVAN PROJECTS\Symfony_Projects\Library_Catalog_Borrowing_System\vendor\symfony\security-bundle/Resources/views</argument>
+        <argument>/var/www/html/vendor/symfony/security-bundle/Resources/views</argument>
         <argument>!Security</argument>
       </call>
       <call method="addPath">
-        <argument>C:\Jovan Components\JOVAN PROJECTS\Symfony_Projects\Library_Catalog_Borrowing_System\vendor\doctrine\doctrine-bundle/templates</argument>
+        <argument>/var/www/html/vendor/doctrine/doctrine-bundle/templates</argument>
         <argument>Doctrine</argument>
       </call>
       <call method="addPath">
-        <argument>C:\Jovan Components\JOVAN PROJECTS\Symfony_Projects\Library_Catalog_Borrowing_System\vendor\doctrine\doctrine-bundle/templates</argument>
+        <argument>/var/www/html/vendor/doctrine/doctrine-bundle/templates</argument>
         <argument>!Doctrine</argument>
       </call>
       <call method="addPath">
-        <argument>C:\Jovan Components\JOVAN PROJECTS\Symfony_Projects\Library_Catalog_Borrowing_System\vendor\doctrine\doctrine-migrations-bundle/templates</argument>
+        <argument>/var/www/html/vendor/doctrine/doctrine-migrations-bundle/templates</argument>
         <argument>DoctrineMigrations</argument>
       </call>
       <call method="addPath">
-        <argument>C:\Jovan Components\JOVAN PROJECTS\Symfony_Projects\Library_Catalog_Borrowing_System\vendor\doctrine\doctrine-migrations-bundle/templates</argument>
+        <argument>/var/www/html/vendor/doctrine/doctrine-migrations-bundle/templates</argument>
         <argument>!DoctrineMigrations</argument>
       </call>
       <call method="addPath">
-        <argument>C:\Jovan Components\JOVAN PROJECTS\Symfony_Projects\Library_Catalog_Borrowing_System/templates</argument>
+        <argument>/var/www/html/templates</argument>
       </call>
     </service>
     <service id="twig.loader.chain" class="Twig\Loader\ChainLoader"/>
@@ -2156,9 +2164,9 @@
       <tag name="console.command"/>
       <tag name="container.no_preload"/>
       <argument type="service" id="twig"/>
-      <argument>C:\Jovan Components\JOVAN PROJECTS\Symfony_Projects\Library_Catalog_Borrowing_System</argument>
+      <argument>/var/www/html</argument>
       <argument>%kernel.bundles_metadata%</argument>
-      <argument>C:\Jovan Components\JOVAN PROJECTS\Symfony_Projects\Library_Catalog_Borrowing_System/templates</argument>
+      <argument>/var/www/html/templates</argument>
       <argument type="service" id="debug.file_link_formatter" on-invalid="null"/>
       <call method="setName">
         <argument>debug:twig</argument>
@@ -2186,8 +2194,8 @@
       <argument type="service" id="filesystem"/>
       <argument type="service" id="maker.autoloader_util"/>
       <argument type="service" id="maker.file_link_formatter"/>
-      <argument>C:\Jovan Components\JOVAN PROJECTS\Symfony_Projects\Library_Catalog_Borrowing_System</argument>
-      <argument>C:\Jovan Components\JOVAN PROJECTS\Symfony_Projects\Library_Catalog_Borrowing_System/templates</argument>
+      <argument>/var/www/html</argument>
+      <argument>/var/www/html/templates</argument>
     </service>
     <service id="maker.autoloader_finder" class="Symfony\Bundle\MakerBundle\Util\ComposerAutoloaderFinder">
       <argument>App</argument>
@@ -2364,7 +2372,7 @@
     </service>
     <service id="maker.maker.make_migration" class="Symfony\Bundle\MakerBundle\Maker\MakeMigration">
       <tag name="maker.command"/>
-      <argument>C:\Jovan Components\JOVAN PROJECTS\Symfony_Projects\Library_Catalog_Borrowing_System</argument>
+      <argument>/var/www/html</argument>
       <argument type="service" id="maker.file_link_formatter"/>
     </service>
     <service id="maker.maker.make_stimulus_controller" class="Symfony\Bundle\MakerBundle\Maker\MakeStimulusController">
@@ -2531,10 +2539,10 @@
     <service id="cache.security_expression_language" class="Symfony\Component\Cache\Adapter\AdapterInterface">
       <tag name="cache.pool"/>
       <tag name="kernel.reset" method="reset"/>
-      <argument>Ejis4xs3EQ</argument>
+      <argument>1syEEx1PF-</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>C:\Jovan Components\JOVAN PROJECTS\Symfony_Projects\Library_Catalog_Borrowing_System\var\cache\dev/pools/system</argument>
+      <argument>/var/www/html/var/cache/dev/pools/system</argument>
       <argument type="service" id="logger" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -2547,20 +2555,20 @@
     <service id="cache.security_is_granted_attribute_expression_language" class="Symfony\Component\Cache\Adapter\AdapterInterface" public="true">
       <tag name="cache.pool"/>
       <tag name="kernel.reset" method="reset"/>
-      <argument>r+7TZsTpPt</argument>
+      <argument>V28qWVnEQj</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>C:\Jovan Components\JOVAN PROJECTS\Symfony_Projects\Library_Catalog_Borrowing_System\var\cache\dev/pools/system</argument>
+      <argument>/var/www/html/var/cache/dev/pools/system</argument>
       <argument type="service" id="logger" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
     <service id="cache.security_is_csrf_token_valid_attribute_expression_language" class="Symfony\Component\Cache\Adapter\AdapterInterface" public="true">
       <tag name="cache.pool"/>
       <tag name="kernel.reset" method="reset"/>
-      <argument>zukh0C+Mc+</argument>
+      <argument>kM+DLXn9AK</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>C:\Jovan Components\JOVAN PROJECTS\Symfony_Projects\Library_Catalog_Borrowing_System\var\cache\dev/pools/system</argument>
+      <argument>/var/www/html/var/cache/dev/pools/system</argument>
       <argument type="service" id="logger" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -3121,10 +3129,10 @@
     <service id="cache.security_token_verifier" class="Symfony\Component\Cache\Adapter\AdapterInterface">
       <tag name="cache.pool"/>
       <tag name="kernel.reset" method="reset"/>
-      <argument>XD8Rc0C8qT</argument>
+      <argument>Pfn6piQiUN</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>C:\Jovan Components\JOVAN PROJECTS\Symfony_Projects\Library_Catalog_Borrowing_System\var\cache\dev/pools/system</argument>
+      <argument>/var/www/html/var/cache/dev/pools/system</argument>
       <argument type="service" id="logger" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -3461,7 +3469,7 @@
     <service id="doctrine.orm.configuration" class="Doctrine\ORM\Configuration" abstract="true"/>
     <service id="doctrine.orm.entity_manager.abstract" class="Doctrine\ORM\EntityManager" lazy="true" abstract="true"/>
     <service id="doctrine.orm.container_repository_factory" class="Doctrine\Bundle\DoctrineBundle\Repository\ContainerRepositoryFactory">
-      <argument type="service" id=".service_locator.jGhNM1a"/>
+      <argument type="service" id=".service_locator.QKcwNd3"/>
     </service>
     <service id="doctrine.orm.manager_configurator.abstract" class="Doctrine\Bundle\DoctrineBundle\ManagerConfigurator" abstract="true">
       <argument type="collection"/>
@@ -3658,7 +3666,7 @@
         <argument type="service" id=".doctrine.orm.default_metadata_driver"/>
       </call>
       <call method="setProxyDir">
-        <argument>C:\Jovan Components\JOVAN PROJECTS\Symfony_Projects\Library_Catalog_Borrowing_System\var\cache\dev/doctrine/orm/Proxies</argument>
+        <argument>/var/www/html/var/cache/dev/doctrine/orm/Proxies</argument>
       </call>
       <call method="setProxyNamespace">
         <argument>Proxies</argument>
@@ -3701,7 +3709,7 @@
     </service>
     <service id="doctrine.orm.default_attribute_metadata_driver" class="Doctrine\ORM\Mapping\Driver\AttributeDriver">
       <argument type="collection">
-        <argument>C:\Jovan Components\JOVAN PROJECTS\Symfony_Projects\Library_Catalog_Borrowing_System\src\Entity</argument>
+        <argument>/var/www/html/src/Entity</argument>
       </argument>
       <argument>true</argument>
     </service>
@@ -3758,7 +3766,7 @@
     <service id="doctrine.migrations.configuration" class="Doctrine\Migrations\Configuration\Configuration">
       <call method="addMigrationsDirectory">
         <argument>DoctrineMigrations</argument>
-        <argument>C:\Jovan Components\JOVAN PROJECTS\Symfony_Projects\Library_Catalog_Borrowing_System/migrations</argument>
+        <argument>/var/www/html/migrations</argument>
       </call>
       <call method="setAllOrNothing">
         <argument>false</argument>
@@ -3958,8 +3966,12 @@
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\SecurityController" class="App\Controller\SecurityController" autowire="true" abstract="true"/>
     <service id=".instanceof.App\Controller\SecurityController.0.App\Controller\SecurityController" class="App\Controller\SecurityController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\SecurityController" class="App\Controller\SecurityController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.App\Entity\Book.0.App\Entity\Book" class="App\Entity\Book" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Entity\Book" class="App\Entity\Book" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.App\Entity\NonPaidUser.0.App\Entity\NonPaidUser" class="App\Entity\NonPaidUser" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Entity\NonPaidUser" class="App\Entity\NonPaidUser" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\BookRepository" class="App\Repository\BookRepository" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Repository\BookRepository" class="App\Repository\BookRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\NonPaidUserRepository" class="App\Repository\NonPaidUserRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\NonPaidUserRepository" class="App\Repository\NonPaidUserRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".service_locator.pRu6x_4" class="Symfony\Component\DependencyInjection\ServiceLocator">
@@ -4676,9 +4688,10 @@
         <argument key="doctrine.orm.default_listeners.attach_entity_listeners" type="service_closure" id="doctrine.orm.default_listeners.attach_entity_listeners"/>
       </argument>
     </service>
-    <service id=".service_locator.jGhNM1a" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.QKcwNd3" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
+        <argument key="App\Repository\BookRepository" type="service_closure" id="App\Repository\BookRepository"/>
         <argument key="App\Repository\NonPaidUserRepository" type="service_closure" id="App\Repository\NonPaidUserRepository"/>
       </argument>
     </service>
