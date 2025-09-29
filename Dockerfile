@@ -22,5 +22,8 @@ COPY . .
 # Install Composer
 COPY --from=composer:2.7 /usr/bin/composer /usr/bin/composer
 
+ENV COMPOSER_ALLOW_SUPERUSER=1
+
 # Run composer install (optional)
-RUN composer install --no-interaction --optimize-autoloader
+RUN composer install --no-interaction --optimize-autoloader --no-scripts
+
