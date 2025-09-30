@@ -17,7 +17,7 @@ class NonPaidUser implements UserInterface, PasswordAuthenticatedUserInterface
     private ?int $id = null;
 
     #[ORM\Column(length: 180)]
-    private ?string $email = null;
+   private string $email;
 
     /**
      * @var list<string> The user roles
@@ -40,6 +40,7 @@ class NonPaidUser implements UserInterface, PasswordAuthenticatedUserInterface
     {
         return $this->email;
     }
+
 
     public function setEmail(string $email): self
     {
