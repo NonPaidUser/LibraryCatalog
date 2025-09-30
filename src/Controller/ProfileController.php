@@ -19,7 +19,7 @@ class ProfileController extends AbstractController
         $user = $this->getUser();
 
         if ($request->isMethod('POST')) {
-            $user->setEmail($request->request->get('email'));
+            // $user->setEmail($request->request->get('email'));
 
             $em->persist($user);
             $em->flush();

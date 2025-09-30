@@ -41,12 +41,19 @@ class NonPaidUser implements UserInterface, PasswordAuthenticatedUserInterface
         return $this->email;
     }
 
-    public function setEmail(string $email): static
+    public function setEmail(string $email): self
     {
-        $this->email = $email;
-
-        return $this;
+    $this->email = $email;
+    return $this;
     }
+
+
+    // public function setEmail(string $email): static
+    // {
+    //     $this->email = $email;
+
+    //     return $this;
+    // }
 
     /**
      * A visual identifier that represents this user.
