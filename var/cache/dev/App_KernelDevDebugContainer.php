@@ -16,7 +16,7 @@ if (!\class_exists(App_KernelDevDebugContainer::class, false)) {
 
 return new \ContainerPUTDCfb\App_KernelDevDebugContainer([
     'container.build_hash' => 'PUTDCfb',
-    'container.build_id' => '94f853e8',
-    'container.build_time' => 1759214040,
+    'container.build_id' => 'd6d01691',
+    'container.build_time' => 1759216282,
     'container.runtime_mode' => \in_array(\PHP_SAPI, ['cli', 'phpdbg', 'embed'], true) ? 'web=0' : 'web=1',
 ], __DIR__.\DIRECTORY_SEPARATOR.'ContainerPUTDCfb');
