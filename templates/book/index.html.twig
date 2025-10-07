@@ -5,25 +5,39 @@
 {% block body %}
     <h1>{{ page_title }}</h1>
 
+    <a href="{{ path('app_add_book_new') }}">➕ Add New Book</a>
+    <a href="{{ path('app_add_book_index') }}">➕ Go show available books</a>
+
     <table>
         <tr>
             <th>Title</th>
             <th>Author</th>
-            <th>Year</th>
+            <th>Published</th>
+            <th>Description</th>
             <th>Action</th>
         </tr>
         {% for book in books %}
             <tr>
                 <td>{{ book.title }}</td>
                 <td>{{ book.author }}</td>
-                <td>{{ book.year }}</td>
+                <td>
+                    {% if book.publishedAt %}
+                        {{ book.publishedAt|date('Y') }}
+                    {% else %}
+                        -
+                    {% endif %}
+                </td>
+                <td>{{ book.description ?: '-' }}</td>
                 <td>
                     <a href="{{ path('app_borrow', { title: book.title }) }}">Borrow</a>
                     &nbsp;|&nbsp;
                     <a href="{{ path('app_return', { title: book.title }) }}">Return</a>
                 </td>
             </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">No books found.</td>
+            </tr>
         {% endfor %}
-
     </table>
 {% endblock %}

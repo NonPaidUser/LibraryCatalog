@@ -4,6 +4,11 @@
 
 return [
     '_preview_error' => [['code', '_format'], ['_controller' => 'error_controller::preview', '_format' => 'html'], ['code' => '\\d+'], [['variable', '.', '[^/]++', '_format', true], ['variable', '/', '\\d+', 'code', true], ['text', '/_error']], [], [], []],
+    'app_add_book_index' => [[], ['_controller' => 'App\\Controller\\AddBookController::index'], [], [['text', '/add/book']], [], [], []],
+    'app_add_book_new' => [[], ['_controller' => 'App\\Controller\\AddBookController::new'], [], [['text', '/add/book/new']], [], [], []],
+    'app_add_book_show' => [['id'], ['_controller' => 'App\\Controller\\AddBookController::show'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/add/book']], [], [], []],
+    'app_add_book_edit' => [['id'], ['_controller' => 'App\\Controller\\AddBookController::edit'], [], [['text', '/edit'], ['variable', '/', '[^/]++', 'id', true], ['text', '/add/book']], [], [], []],
+    'app_add_book_delete' => [['id'], ['_controller' => 'App\\Controller\\AddBookController::delete'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/add/book']], [], [], []],
     'app_books' => [[], ['_controller' => 'App\\Controller\\BookController::index'], [], [['text', '/books']], [], [], []],
     'app_borrow' => [['title'], ['_controller' => 'App\\Controller\\BorrowController::index'], [], [['variable', '/', '[^/]++', 'title', true], ['text', '/borrow']], [], [], []],
     'app_home' => [[], ['_controller' => 'App\\Controller\\HomeController::index'], [], [['text', '/']], [], [], []],
@@ -11,6 +16,11 @@ return [
     'app_return' => [['title'], ['_controller' => 'App\\Controller\\ReturnController::index'], [], [['variable', '/', '[^/]++', 'title', true], ['text', '/return']], [], [], []],
     'app_login' => [[], ['_controller' => 'App\\Controller\\SecurityController::login'], [], [['text', '/login']], [], [], []],
     'app_logout' => [[], ['_controller' => 'App\\Controller\\SecurityController::logout'], [], [['text', '/logout']], [], [], []],
+    'App\Controller\AddBookController::index' => [[], ['_controller' => 'App\\Controller\\AddBookController::index'], [], [['text', '/add/book']], [], [], []],
+    'App\Controller\AddBookController::new' => [[], ['_controller' => 'App\\Controller\\AddBookController::new'], [], [['text', '/add/book/new']], [], [], []],
+    'App\Controller\AddBookController::show' => [['id'], ['_controller' => 'App\\Controller\\AddBookController::show'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/add/book']], [], [], []],
+    'App\Controller\AddBookController::edit' => [['id'], ['_controller' => 'App\\Controller\\AddBookController::edit'], [], [['text', '/edit'], ['variable', '/', '[^/]++', 'id', true], ['text', '/add/book']], [], [], []],
+    'App\Controller\AddBookController::delete' => [['id'], ['_controller' => 'App\\Controller\\AddBookController::delete'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/add/book']], [], [], []],
     'App\Controller\BookController::index' => [[], ['_controller' => 'App\\Controller\\BookController::index'], [], [['text', '/books']], [], [], []],
     'App\Controller\BorrowController::index' => [['title'], ['_controller' => 'App\\Controller\\BorrowController::index'], [], [['variable', '/', '[^/]++', 'title', true], ['text', '/borrow']], [], [], []],
     'App\Controller\HomeController::index' => [[], ['_controller' => 'App\\Controller\\HomeController::index'], [], [['text', '/']], [], [], []],
