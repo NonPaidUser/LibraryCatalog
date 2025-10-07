@@ -86,6 +86,10 @@ class __TwigTemplate_63c39a0e9e2511c8dd5801bfa5ecc637 extends Template
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape((isset($context["page_title"]) || array_key_exists("page_title", $context) ? $context["page_title"] : (function () { throw new RuntimeError('Variable "page_title" does not exist.', 6, $this->source); })()), "html", null, true);
         yield "</h1>
     <p>This is the homepage of the Library Catalog & Borrowing System.</p>
+    <a href=\"";
+        // line 8
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_books");
+        yield "\">Go to Borrowing Page</a>
 ";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
@@ -114,7 +118,7 @@ class __TwigTemplate_63c39a0e9e2511c8dd5801bfa5ecc637 extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  85 => 6,  75 => 5,  58 => 3,  41 => 1,);
+        return array (  91 => 8,  85 => 6,  75 => 5,  58 => 3,  41 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -126,6 +130,7 @@ class __TwigTemplate_63c39a0e9e2511c8dd5801bfa5ecc637 extends Template
 {% block body %}
     <h1>{{ page_title }}</h1>
     <p>This is the homepage of the Library Catalog & Borrowing System.</p>
+    <a href=\"{{ path('app_books') }}\">Go to Borrowing Page</a>
 {% endblock %}
 ", "home/index.html.twig", "C:\\Jovan Components\\JOVAN PROJECTS\\Symfony_Projects\\Library_Catalog_Borrowing_System\\templates\\home\\index.html.twig");
     }
