@@ -3,43 +3,57 @@
 {% block title %}{{ page_title }}{% endblock %}
 
 {% block body %}
-    <a href="{{ path('app_home') }}">Go to Home Page</a>
+    <a href="{{ path('app_home') }}">🏠 Go to Home Page</a>
 
     <h1>{{ page_title }}</h1>
 
-    <a href="{{ path('app_add_book_new') }}">➕ Add New Book</a>
-    <a href="{{ path('app_add_book_index') }}">➕ Go show available books</a>
+    <div style="margin-bottom: 15px;">
+        <a href="{{ path('app_add_book_new') }}">➕ Add New Book</a>
+        <a href="{{ path('app_add_book_index') }}">📚 Manage Books</a>
+    </div>
 
-    <table>
-        <tr>
-            <th>Title</th>
-            <th>Author</th>
-            <th>Published</th>
-            <th>Description</th>
-            <th>Action</th>
-        </tr>
+    <form method="get" action="{{ path('app_books') }}" style="margin-bottom: 20px;">
+        <label for="category">Filter by Category:</label>
+        <select name="category" id="category" onchange="this.form.submit()">
+            <option value="">-- All --</option>
+            {% for genre in [
+                'Fiction', 'Non-Fiction', 'Science Fiction', 'Fantasy', 'Mystery',
+                'Romance', 'Horror', 'Biography', 'History', 'Poetry'
+            ] %}
+                <option value="{{ genre }}" {% if genre == selected_category %}selected{% endif %}>{{ genre }}</option>
+            {% endfor %}
+        </select>
+    </form>
+
+    <table border="1" cellspacing="0" cellpadding="8">
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Author</th>
+                <th>Published</th>
+                <th>Description</th>
+                <th>Category</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
         {% for book in books %}
             <tr>
                 <td>{{ book.title }}</td>
                 <td>{{ book.author }}</td>
-                <td>
-                    {% if book.publishedAt %}
-                        {{ book.publishedAt|date('Y') }}
-                    {% else %}
-                        -
-                    {% endif %}
-                </td>
+                <td>{{ book.publishedAt ? book.publishedAt|date('Y') : '-' }}</td>
                 <td>{{ book.description ?: '-' }}</td>
+                <td>{{ book.category ?: '-' }}</td>
                 <td>
-                    <a href="{{ path('app_borrow', { title: book.title }) }}">Borrow</a>
-                    &nbsp;|&nbsp;
+                    <a href="{{ path('app_borrow', { title: book.title }) }}">Borrow</a> |
                     <a href="{{ path('app_return', { title: book.title }) }}">Return</a>
                 </td>
             </tr>
         {% else %}
             <tr>
-                <td colspan="5">No books found.</td>
+                <td colspan="6">No books found.</td>
             </tr>
         {% endfor %}
+        </tbody>
     </table>
 {% endblock %}
