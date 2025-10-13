@@ -103,7 +103,7 @@ class __TwigTemplate_27bc7e2171231262032ab9c34bce9230 extends Template
         <a href=\"";
         // line 73
         yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_user_search");
-        yield "\">🔎 Find User</a>
+        yield "\">🔎 Find User (For Experiment)</a>
         <a href=\"";
         // line 74
         yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_user_index");
@@ -319,7 +319,7 @@ class __TwigTemplate_27bc7e2171231262032ab9c34bce9230 extends Template
     <div style=\"margin-bottom: 15px;\">
         <a href=\"{{ path('app_add_book_new') }}\">➕ Add New Book</a>
         <a href=\"{{ path('app_add_book_index') }}\">📚 Manage Books</a>
-        <a href=\"{{ path('app_user_search') }}\">🔎 Find User</a>
+        <a href=\"{{ path('app_user_search') }}\">🔎 Find User (For Experiment)</a>
         <a href=\"{{ path('app_user_index') }}\">➕ Create a User (For Experiment)</a>
     </div>
 

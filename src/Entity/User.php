@@ -48,16 +48,16 @@ class User
         return $this;
     }
 
-    public function getEmail(): ?string
-    {
-        return $this->email;
-    }
+    // public function getEmail(): ?string
+    // {
+    //     return $this->email;
+    // }
 
-    public function setEmail(?string $email): static
-    {
-        $this->email = $email;
-        return $this;
-    }
+    // public function setEmail(?string $email): static
+    // {
+    //     $this->email = $email;
+    //     return $this;
+    // }
 
     public function getBorrowedCount(): ?int
     {

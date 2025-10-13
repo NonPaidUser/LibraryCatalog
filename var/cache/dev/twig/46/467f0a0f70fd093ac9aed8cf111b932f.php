@@ -128,6 +128,13 @@ class __TwigTemplate_6e6dee11d84f5771f0f31ec505cdfd96 extends Template
         <input id=\"username\" name=\"username\" placeholder=\"Exact user name\" required>
         <button type=\"submit\">Find</button>
     </form>
+
+    <div style=\"margin-top: 15px;\">
+        <a href=\"";
+        // line 23
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_books");
+        yield "\">⬅ Back to catalog</a>
+    </div>
 ";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
@@ -156,7 +163,7 @@ class __TwigTemplate_6e6dee11d84f5771f0f31ec505cdfd96 extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  125 => 16,  122 => 15,  116 => 14,  105 => 12,  100 => 11,  96 => 10,  91 => 8,  85 => 6,  75 => 5,  58 => 3,  41 => 1,);
+        return array (  135 => 23,  125 => 16,  122 => 15,  116 => 14,  105 => 12,  100 => 11,  96 => 10,  91 => 8,  85 => 6,  75 => 5,  58 => 3,  41 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -181,6 +188,10 @@ class __TwigTemplate_6e6dee11d84f5771f0f31ec505cdfd96 extends Template
         <input id=\"username\" name=\"username\" placeholder=\"Exact user name\" required>
         <button type=\"submit\">Find</button>
     </form>
+
+    <div style=\"margin-top: 15px;\">
+        <a href=\"{{ path('app_books') }}\">⬅ Back to catalog</a>
+    </div>
 {% endblock %}
 ", "user/search.html.twig", "C:\\Jovan Components\\JOVAN PROJECTS\\Symfony_Projects\\Library_Catalog_Borrowing_System\\templates\\user\\search.html.twig");
     }

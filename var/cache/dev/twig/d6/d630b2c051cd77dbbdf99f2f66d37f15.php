@@ -91,7 +91,7 @@ class __TwigTemplate_6763a4e7ec064943456190e58e20596c extends Template
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 8, $this->source); })()), "name", [], "any", false, false, false, 8), "html", null, true);
         yield " — Borrowed Books</h1>
 
-    <p>Borrowed count: ";
+    <p style=\"color:white\">Borrowed count: ";
         // line 10
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 10, $this->source); })()), "borrowedCount", [], "any", false, false, false, 10), "html", null, true);
         yield "</p>
@@ -142,10 +142,17 @@ class __TwigTemplate_6763a4e7ec064943456190e58e20596c extends Template
         yield "        </tbody>
     </table>
 
-    <a href=\"";
-        // line 33
+    <div style=\"margin-top: 15px;\">
+        <a href=\"";
+        // line 34
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_books");
+        yield "\">⬅ Back to catalog</a>
+        <a href=\"";
+        // line 35
         yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_user_search");
         yield "\">Search another user</a>
+    </div>
+
 ";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
@@ -174,7 +181,7 @@ class __TwigTemplate_6763a4e7ec064943456190e58e20596c extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  147 => 33,  142 => 30,  135 => 28,  133 => 27,  126 => 25,  122 => 24,  118 => 23,  115 => 22,  110 => 21,  96 => 10,  91 => 8,  85 => 6,  75 => 5,  58 => 3,  41 => 1,);
+        return array (  152 => 35,  148 => 34,  142 => 30,  135 => 28,  133 => 27,  126 => 25,  122 => 24,  118 => 23,  115 => 22,  110 => 21,  96 => 10,  91 => 8,  85 => 6,  75 => 5,  58 => 3,  41 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -188,7 +195,7 @@ class __TwigTemplate_6763a4e7ec064943456190e58e20596c extends Template
 
     <h1>{{ user.name }} — Borrowed Books</h1>
 
-    <p>Borrowed count: {{ user.borrowedCount }}</p>
+    <p style=\"color:white\">Borrowed count: {{ user.borrowedCount }}</p>
 
     <table border=\"1\" cellpadding=\"8\" cellspacing=\"0\">
         <thead>
@@ -211,7 +218,11 @@ class __TwigTemplate_6763a4e7ec064943456190e58e20596c extends Template
         </tbody>
     </table>
 
-    <a href=\"{{ path('app_user_search') }}\">Search another user</a>
+    <div style=\"margin-top: 15px;\">
+        <a href=\"{{ path('app_books') }}\">⬅ Back to catalog</a>
+        <a href=\"{{ path('app_user_search') }}\">Search another user</a>
+    </div>
+
 {% endblock %}
 ", "user/borrowed.html.twig", "C:\\Jovan Components\\JOVAN PROJECTS\\Symfony_Projects\\Library_Catalog_Borrowing_System\\templates\\user\\borrowed.html.twig");
     }

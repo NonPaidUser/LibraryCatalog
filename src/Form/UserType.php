@@ -13,7 +13,7 @@ class UserType extends AbstractType
     {
         $builder
             ->add('name')
-            ->add('email')
+            // ->add('email')
             ->add('borrowedCount')
         ;
     }

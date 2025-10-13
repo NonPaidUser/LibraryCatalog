@@ -93,9 +93,10 @@ class __TwigTemplate_e243079ff8954990a56afe9c20433b2a extends Template
             <tr>
                 <th>Id</th>
                 <th>Name</th>
-                <th>Email</th>
-                <th>BorrowedCount</th>
-                <th>actions</th>
+                ";
+        // line 16
+        yield "                <th>BorrowedCount</th>
+                <th>Actions</th>
             </tr>
         </thead>
         <tbody>
@@ -115,12 +116,9 @@ class __TwigTemplate_e243079ff8954990a56afe9c20433b2a extends Template
             // line 24
             yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["user"], "name", [], "any", false, false, false, 24), "html", null, true);
             yield "</td>
-                <td>";
-            // line 25
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["user"], "email", [], "any", false, false, false, 25), "html", null, true);
-            yield "</td>
-                <td>";
+                ";
             // line 26
+            yield "                <td>";
             yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["user"], "borrowedCount", [], "any", false, false, false, 26), "html", null, true);
             yield "</td>
                 <td>
@@ -163,7 +161,6 @@ class __TwigTemplate_e243079ff8954990a56afe9c20433b2a extends Template
         yield "\">Create new</a>
     </div>
 
-
 ";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
@@ -192,7 +189,7 @@ class __TwigTemplate_e243079ff8954990a56afe9c20433b2a extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  162 => 42,  158 => 41,  152 => 37,  143 => 33,  141 => 32,  133 => 29,  129 => 28,  124 => 26,  120 => 25,  116 => 24,  112 => 23,  109 => 22,  104 => 21,  85 => 6,  75 => 5,  58 => 3,  41 => 1,);
+        return array (  160 => 42,  156 => 41,  150 => 37,  141 => 33,  139 => 32,  131 => 29,  127 => 28,  121 => 26,  117 => 24,  113 => 23,  110 => 22,  105 => 21,  98 => 16,  85 => 6,  75 => 5,  58 => 3,  41 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -211,9 +208,9 @@ class __TwigTemplate_e243079ff8954990a56afe9c20433b2a extends Template
             <tr>
                 <th>Id</th>
                 <th>Name</th>
-                <th>Email</th>
+                {# <th>Email</th> #}
                 <th>BorrowedCount</th>
-                <th>actions</th>
+                <th>Actions</th>
             </tr>
         </thead>
         <tbody>
@@ -221,7 +218,7 @@ class __TwigTemplate_e243079ff8954990a56afe9c20433b2a extends Template
             <tr>
                 <td>{{ user.id }}</td>
                 <td>{{ user.name }}</td>
-                <td>{{ user.email }}</td>
+                {# <td>{{ user.email }}</td> #}
                 <td>{{ user.borrowedCount }}</td>
                 <td>
                     <a href=\"{{ path('app_user_show', {'id': user.id}) }}\">show</a>
@@ -240,7 +237,6 @@ class __TwigTemplate_e243079ff8954990a56afe9c20433b2a extends Template
         <a href=\"{{ path('app_books') }}\">Go to Borrowing Page</a>
         <a href=\"{{ path('app_user_new') }}\">Create new</a>
     </div>
-
 
 {% endblock %}
 ", "user/index.html.twig", "C:\\Jovan Components\\JOVAN PROJECTS\\Symfony_Projects\\Library_Catalog_Borrowing_System\\templates\\user\\index.html.twig");

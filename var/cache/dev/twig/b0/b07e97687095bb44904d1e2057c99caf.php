@@ -100,14 +100,9 @@ class __TwigTemplate_88261d6a9a49e173137e00ba8f56e353 extends Template
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 16, $this->source); })()), "name", [], "any", false, false, false, 16), "html", null, true);
         yield "</td>
             </tr>
-            <tr>
-                <th>Email</th>
-                <td>";
-        // line 20
-        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 20, $this->source); })()), "email", [], "any", false, false, false, 20), "html", null, true);
-        yield "</td>
-            </tr>
-            <tr>
+            ";
+        // line 22
+        yield "            <tr>
                 <th>BorrowedCount</th>
                 <td>";
         // line 24
@@ -159,7 +154,7 @@ class __TwigTemplate_88261d6a9a49e173137e00ba8f56e353 extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  132 => 33,  127 => 31,  122 => 29,  114 => 24,  107 => 20,  100 => 16,  93 => 12,  85 => 6,  75 => 5,  58 => 3,  41 => 1,);
+        return array (  127 => 33,  122 => 31,  117 => 29,  109 => 24,  105 => 22,  100 => 16,  93 => 12,  85 => 6,  75 => 5,  58 => 3,  41 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -181,10 +176,10 @@ class __TwigTemplate_88261d6a9a49e173137e00ba8f56e353 extends Template
                 <th>Name</th>
                 <td>{{ user.name }}</td>
             </tr>
-            <tr>
+            {# <tr>
                 <th>Email</th>
                 <td>{{ user.email }}</td>
-            </tr>
+            </tr> #}
             <tr>
                 <th>BorrowedCount</th>
                 <td>{{ user.borrowedCount }}</td>

@@ -18,8 +18,8 @@ return [
         '/login' => [[['_route' => 'app_login', '_controller' => 'App\\Controller\\SecurityController::login'], null, null, null, false, false, null]],
         '/logout' => [[['_route' => 'app_logout', '_controller' => 'App\\Controller\\SecurityController::logout'], null, null, null, false, false, null]],
         '/user/search' => [[['_route' => 'app_user_search', '_controller' => 'App\\Controller\\UserController::search'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
-        '/user' => [[['_route' => 'app_user_index', '_controller' => 'App\\Controller\\UserController1::index'], null, ['GET' => 0], null, false, false, null]],
-        '/user/new' => [[['_route' => 'app_user_new', '_controller' => 'App\\Controller\\UserController1::new'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
+        '/user' => [[['_route' => 'app_user_index', '_controller' => 'App\\Controller\\UserShower::index'], null, ['GET' => 0], null, false, false, null]],
+        '/user/new' => [[['_route' => 'app_user_new', '_controller' => 'App\\Controller\\UserShower::new'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
     ],
     [ // $regexpList
         0 => '{^(?'
@@ -56,10 +56,10 @@ return [
         161 => [[['_route' => 'app_non_paid_user_delete', '_controller' => 'App\\Controller\\NonPaidUserController::delete'], ['id'], ['POST' => 0], null, false, true, null]],
         186 => [[['_route' => 'app_return', '_controller' => 'App\\Controller\\ReturnController::return'], ['id'], ['GET' => 0, 'POST' => 1], null, false, true, null]],
         223 => [[['_route' => 'app_user_borrowed', '_controller' => 'App\\Controller\\UserController::borrowed'], ['id'], ['GET' => 0], null, false, false, null]],
-        235 => [[['_route' => 'app_user_edit', '_controller' => 'App\\Controller\\UserController1::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
+        235 => [[['_route' => 'app_user_edit', '_controller' => 'App\\Controller\\UserShower::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
         244 => [
-            [['_route' => 'app_user_show', '_controller' => 'App\\Controller\\UserController1::show'], ['id'], ['GET' => 0], null, false, true, null],
-            [['_route' => 'app_user_delete', '_controller' => 'App\\Controller\\UserController1::delete'], ['id'], ['POST' => 0], null, false, true, null],
+            [['_route' => 'app_user_show', '_controller' => 'App\\Controller\\UserShower::show'], ['id'], ['GET' => 0], null, false, true, null],
+            [['_route' => 'app_user_delete', '_controller' => 'App\\Controller\\UserShower::delete'], ['id'], ['POST' => 0], null, false, true, null],
             [null, null, null, null, false, false, 0],
         ],
     ],

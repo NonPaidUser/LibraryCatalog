@@ -12,9 +12,9 @@
             <tr>
                 <th>Id</th>
                 <th>Name</th>
-                <th>Email</th>
+                {# <th>Email</th> #}
                 <th>BorrowedCount</th>
-                <th>actions</th>
+                <th>Actions</th>
             </tr>
         </thead>
         <tbody>
@@ -22,7 +22,7 @@
             <tr>
                 <td>{{ user.id }}</td>
                 <td>{{ user.name }}</td>
-                <td>{{ user.email }}</td>
+                {# <td>{{ user.email }}</td> #}
                 <td>{{ user.borrowedCount }}</td>
                 <td>
                     <a href="{{ path('app_user_show', {'id': user.id}) }}">show</a>
@@ -41,6 +41,5 @@
         <a href="{{ path('app_books') }}">Go to Borrowing Page</a>
         <a href="{{ path('app_user_new') }}">Create new</a>
     </div>
-
 
 {% endblock %}

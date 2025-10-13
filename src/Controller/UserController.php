@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\User;
 use App\Repository\UserRepository;
 use App\Repository\BookBorrowRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -14,6 +15,7 @@ class UserController extends AbstractController
     #[Route('/user/search', name: 'app_user_search', methods: ['GET','POST'])]
     public function search(Request $request, UserRepository $userRepository)
     {
+        $user = new User();
         if ($request->isMethod('POST')) {
             $username = trim((string)$request->request->get('username', ''));
             if ($username === '') {
@@ -31,6 +33,7 @@ class UserController extends AbstractController
         }
 
         return $this->render('user/search.html.twig', [
+            'user' => $user,
             'page_title' => 'Find User',
         ]);
     }

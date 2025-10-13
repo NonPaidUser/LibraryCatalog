@@ -133,11 +133,18 @@ class __TwigTemplate_32a11dc40efe23a1bb9e93fe18be73bc extends Template
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, (isset($context["book"]) || array_key_exists("book", $context) ? $context["book"] : (function () { throw new RuntimeError('Variable "book" does not exist.', 32, $this->source); })()), "description", [], "any", false, false, false, 32), "html", null, true);
         yield "</td>
             </tr>
+            <tr>
+                <th>Available</th>
+                <td>";
+        // line 36
+        yield (((($tmp =  !(null === CoreExtension::getAttribute($this->env, $this->source, (isset($context["book"]) || array_key_exists("book", $context) ? $context["book"] : (function () { throw new RuntimeError('Variable "book" does not exist.', 36, $this->source); })()), "availableCount", [], "any", false, false, false, 36))) && $tmp instanceof Markup ? (string) $tmp : $tmp)) ? ($this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, (isset($context["book"]) || array_key_exists("book", $context) ? $context["book"] : (function () { throw new RuntimeError('Variable "book" does not exist.', 36, $this->source); })()), "availableCount", [], "any", false, false, false, 36), "html", null, true)) : ("N/A"));
+        yield "</td>
+            </tr>
         </tbody>
     </table>
 
     ";
-        // line 37
+        // line 41
         yield Twig\Extension\CoreExtension::include($this->env, $context, "add_book/_delete_form.html.twig");
         yield "
 ";
@@ -168,7 +175,7 @@ class __TwigTemplate_32a11dc40efe23a1bb9e93fe18be73bc extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  141 => 37,  133 => 32,  126 => 28,  119 => 24,  112 => 20,  105 => 16,  94 => 8,  90 => 7,  85 => 6,  75 => 5,  58 => 3,  41 => 1,);
+        return array (  148 => 41,  140 => 36,  133 => 32,  126 => 28,  119 => 24,  112 => 20,  105 => 16,  94 => 8,  90 => 7,  85 => 6,  75 => 5,  58 => 3,  41 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -205,6 +212,10 @@ class __TwigTemplate_32a11dc40efe23a1bb9e93fe18be73bc extends Template
             <tr>
                 <th>Description</th>
                 <td>{{ book.description }}</td>
+            </tr>
+            <tr>
+                <th>Available</th>
+                <td>{{ book.availableCount is not null ? book.availableCount : 'N/A' }}</td>
             </tr>
         </tbody>
     </table>

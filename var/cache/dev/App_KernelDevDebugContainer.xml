@@ -277,11 +277,11 @@
         <argument type="service" id=".service_locator.ZyP9f7K.App\Controller\UserController"/>
       </call>
     </service>
-    <service id="App\Controller\UserController1" class="App\Controller\UserController1" public="true" autowire="true" autoconfigure="true">
+    <service id="App\Controller\UserShower" class="App\Controller\UserShower" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
       <tag name="container.service_subscriber"/>
       <call method="setContainer">
-        <argument type="service" id=".service_locator.ZyP9f7K.App\Controller\UserController1"/>
+        <argument type="service" id=".service_locator.ZyP9f7K.App\Controller\UserShower"/>
       </call>
     </service>
     <service id="App\Entity\Book" class="App\Entity\Book" autowire="true" autoconfigure="true">
@@ -351,7 +351,7 @@
     </service>
     <service id="argument_resolver.service" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">
       <tag priority="-50" name="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">controller.argument_value_resolver</tag>
-      <argument type="service" id=".service_locator.cu8r3mF"/>
+      <argument type="service" id=".service_locator.w9TjsnS"/>
     </service>
     <service id="argument_resolver.default" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver">
       <tag priority="-100" name="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver">controller.argument_value_resolver</tag>
@@ -1734,7 +1734,7 @@
     </service>
     <service id="argument_resolver.not_tagged_controller" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver">
       <tag name="controller.argument_value_resolver" priority="-200"/>
-      <argument type="service" id=".service_locator.cu8r3mF"/>
+      <argument type="service" id=".service_locator.w9TjsnS"/>
     </service>
     <service id="routing.resolver" class="Symfony\Component\Config\Loader\LoaderResolver">
       <call method="addLoader">
@@ -4636,10 +4636,10 @@
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\UserController" class="App\Controller\UserController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\UserController" class="App\Controller\UserController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\UserController" class="App\Controller\UserController" autowire="true" autoconfigure="true" abstract="true"/>
-    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\UserController1" class="App\Controller\UserController1" autowire="true" abstract="true"/>
-    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\UserController1" class="App\Controller\UserController1" autowire="true" abstract="true"/>
-    <service id=".instanceof.App\Controller\UserController1.0.App\Controller\UserController1" class="App\Controller\UserController1" autowire="true" abstract="true"/>
-    <service id=".abstract.instanceof.App\Controller\UserController1" class="App\Controller\UserController1" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\UserShower" class="App\Controller\UserShower" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\UserShower" class="App\Controller\UserShower" autowire="true" abstract="true"/>
+    <service id=".instanceof.App\Controller\UserShower.0.App\Controller\UserShower" class="App\Controller\UserShower" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\UserShower" class="App\Controller\UserShower" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.App\Entity\Book.0.App\Entity\Book" class="App\Entity\Book" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Entity\Book" class="App\Entity\Book" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.App\Entity\BookBorrow.0.App\Entity\BookBorrow" class="App\Entity\BookBorrow" autowire="true" abstract="true"/>
@@ -5424,15 +5424,15 @@
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.HnzgoC9" method="withContext"/>
     </service>
-    <service id=".service_locator.OzEre6h.App\Controller\UserController1::index()" class="Symfony\Component\DependencyInjection\ServiceLocator">
-      <tag name="container.service_locator_context" id="App\Controller\UserController1::index()"/>
-      <argument>App\Controller\UserController1::index()</argument>
+    <service id=".service_locator.OzEre6h.App\Controller\UserShower::index()" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\UserShower::index()"/>
+      <argument>App\Controller\UserShower::index()</argument>
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.OzEre6h" method="withContext"/>
     </service>
-    <service id=".service_locator.egipcEH.App\Controller\UserController1::new()" class="Symfony\Component\DependencyInjection\ServiceLocator">
-      <tag name="container.service_locator_context" id="App\Controller\UserController1::new()"/>
-      <argument>App\Controller\UserController1::new()</argument>
+    <service id=".service_locator.egipcEH.App\Controller\UserShower::new()" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\UserShower::new()"/>
+      <argument>App\Controller\UserShower::new()</argument>
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.egipcEH" method="withContext"/>
     </service>
@@ -5442,9 +5442,9 @@
         <argument key="user" type="service_closure" id=".errored..service_locator.EWAQaZu.App\Entity\User"/>
       </argument>
     </service>
-    <service id=".service_locator.EWAQaZu.App\Controller\UserController1::show()" class="Symfony\Component\DependencyInjection\ServiceLocator">
-      <tag name="container.service_locator_context" id="App\Controller\UserController1::show()"/>
-      <argument>App\Controller\UserController1::show()</argument>
+    <service id=".service_locator.EWAQaZu.App\Controller\UserShower::show()" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\UserShower::show()"/>
+      <argument>App\Controller\UserShower::show()</argument>
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.EWAQaZu" method="withContext"/>
     </service>
@@ -5455,19 +5455,19 @@
         <argument key="entityManager" type="service_closure" id="doctrine.orm.default_entity_manager"/>
       </argument>
     </service>
-    <service id=".service_locator.WkfvUVe.App\Controller\UserController1::edit()" class="Symfony\Component\DependencyInjection\ServiceLocator">
-      <tag name="container.service_locator_context" id="App\Controller\UserController1::edit()"/>
-      <argument>App\Controller\UserController1::edit()</argument>
+    <service id=".service_locator.WkfvUVe.App\Controller\UserShower::edit()" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\UserShower::edit()"/>
+      <argument>App\Controller\UserShower::edit()</argument>
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.WkfvUVe" method="withContext"/>
     </service>
-    <service id=".service_locator.WkfvUVe.App\Controller\UserController1::delete()" class="Symfony\Component\DependencyInjection\ServiceLocator">
-      <tag name="container.service_locator_context" id="App\Controller\UserController1::delete()"/>
-      <argument>App\Controller\UserController1::delete()</argument>
+    <service id=".service_locator.WkfvUVe.App\Controller\UserShower::delete()" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\UserShower::delete()"/>
+      <argument>App\Controller\UserShower::delete()</argument>
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.WkfvUVe" method="withContext"/>
     </service>
-    <service id=".service_locator.cu8r3mF" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.w9TjsnS" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="kernel::registerContainerConfiguration" type="service_closure" id=".service_locator.zHyJIs5.kernel::registerContainerConfiguration()"/>
@@ -5491,11 +5491,11 @@
         <argument key="App\Controller\SecurityController::login" type="service_closure" id=".service_locator.3QECKYg.App\Controller\SecurityController::login()"/>
         <argument key="App\Controller\UserController::search" type="service_closure" id=".service_locator.OzEre6h.App\Controller\UserController::search()"/>
         <argument key="App\Controller\UserController::borrowed" type="service_closure" id=".service_locator.HnzgoC9.App\Controller\UserController::borrowed()"/>
-        <argument key="App\Controller\UserController1::index" type="service_closure" id=".service_locator.OzEre6h.App\Controller\UserController1::index()"/>
-        <argument key="App\Controller\UserController1::new" type="service_closure" id=".service_locator.egipcEH.App\Controller\UserController1::new()"/>
-        <argument key="App\Controller\UserController1::show" type="service_closure" id=".service_locator.EWAQaZu.App\Controller\UserController1::show()"/>
-        <argument key="App\Controller\UserController1::edit" type="service_closure" id=".service_locator.WkfvUVe.App\Controller\UserController1::edit()"/>
-        <argument key="App\Controller\UserController1::delete" type="service_closure" id=".service_locator.WkfvUVe.App\Controller\UserController1::delete()"/>
+        <argument key="App\Controller\UserShower::index" type="service_closure" id=".service_locator.OzEre6h.App\Controller\UserShower::index()"/>
+        <argument key="App\Controller\UserShower::new" type="service_closure" id=".service_locator.egipcEH.App\Controller\UserShower::new()"/>
+        <argument key="App\Controller\UserShower::show" type="service_closure" id=".service_locator.EWAQaZu.App\Controller\UserShower::show()"/>
+        <argument key="App\Controller\UserShower::edit" type="service_closure" id=".service_locator.WkfvUVe.App\Controller\UserShower::edit()"/>
+        <argument key="App\Controller\UserShower::delete" type="service_closure" id=".service_locator.WkfvUVe.App\Controller\UserShower::delete()"/>
         <argument key="kernel:registerContainerConfiguration" type="service_closure" id=".service_locator.zHyJIs5.kernel::registerContainerConfiguration()"/>
         <argument key="kernel:loadRoutes" type="service_closure" id=".service_locator.zHyJIs5.kernel::loadRoutes()"/>
         <argument key="App\Controller\AddBookController:index" type="service_closure" id=".service_locator.ErcxNfJ.App\Controller\AddBookController::index()"/>
@@ -5515,11 +5515,11 @@
         <argument key="App\Controller\SecurityController:login" type="service_closure" id=".service_locator.3QECKYg.App\Controller\SecurityController::login()"/>
         <argument key="App\Controller\UserController:search" type="service_closure" id=".service_locator.OzEre6h.App\Controller\UserController::search()"/>
         <argument key="App\Controller\UserController:borrowed" type="service_closure" id=".service_locator.HnzgoC9.App\Controller\UserController::borrowed()"/>
-        <argument key="App\Controller\UserController1:index" type="service_closure" id=".service_locator.OzEre6h.App\Controller\UserController1::index()"/>
-        <argument key="App\Controller\UserController1:new" type="service_closure" id=".service_locator.egipcEH.App\Controller\UserController1::new()"/>
-        <argument key="App\Controller\UserController1:show" type="service_closure" id=".service_locator.EWAQaZu.App\Controller\UserController1::show()"/>
-        <argument key="App\Controller\UserController1:edit" type="service_closure" id=".service_locator.WkfvUVe.App\Controller\UserController1::edit()"/>
-        <argument key="App\Controller\UserController1:delete" type="service_closure" id=".service_locator.WkfvUVe.App\Controller\UserController1::delete()"/>
+        <argument key="App\Controller\UserShower:index" type="service_closure" id=".service_locator.OzEre6h.App\Controller\UserShower::index()"/>
+        <argument key="App\Controller\UserShower:new" type="service_closure" id=".service_locator.egipcEH.App\Controller\UserShower::new()"/>
+        <argument key="App\Controller\UserShower:show" type="service_closure" id=".service_locator.EWAQaZu.App\Controller\UserShower::show()"/>
+        <argument key="App\Controller\UserShower:edit" type="service_closure" id=".service_locator.WkfvUVe.App\Controller\UserShower::edit()"/>
+        <argument key="App\Controller\UserShower:delete" type="service_closure" id=".service_locator.WkfvUVe.App\Controller\UserShower::delete()"/>
       </argument>
     </service>
     <service id=".service_locator.a_CCYfN" class="Symfony\Component\DependencyInjection\ServiceLocator">
@@ -5769,9 +5769,9 @@
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.ZyP9f7K" method="withContext"/>
     </service>
-    <service id=".service_locator.ZyP9f7K.App\Controller\UserController1" class="Symfony\Component\DependencyInjection\ServiceLocator">
-      <tag name="container.service_locator_context" id="App\Controller\UserController1"/>
-      <argument>App\Controller\UserController1</argument>
+    <service id=".service_locator.ZyP9f7K.App\Controller\UserShower" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\UserShower"/>
+      <argument>App\Controller\UserShower</argument>
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.ZyP9f7K" method="withContext"/>
     </service>
@@ -5925,7 +5925,7 @@
           <argument>App\Controller\ReturnController</argument>
           <argument>App\Controller\SecurityController</argument>
           <argument>App\Controller\UserController</argument>
-          <argument>App\Controller\UserController1</argument>
+          <argument>App\Controller\UserShower</argument>
           <argument>Doctrine\Bundle\DoctrineBundle\Controller\ProfilerController</argument>
         </argument>
       </call>
@@ -6826,7 +6826,7 @@
     <service id="doctrine.migrations.metadata_storage" alias="doctrine.migrations.storage.table_storage"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.pRu6x_4" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.cu8r3mF"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.w9TjsnS"/>
     <service id="twig.loader" alias="twig.loader.native_filesystem"/>
     <service id="doctrine.id_generator_locator" alias=".service_locator.BxSdgVt"/>
     <service id="Psr\Log\LoggerInterface" alias="logger"/>
