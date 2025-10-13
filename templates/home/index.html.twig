@@ -3,7 +3,14 @@
 {% block title %}{{ page_title }}{% endblock %}
 
 {% block body %}
-    <h1>{{ page_title }}</h1>
-    <p>This is the homepage of the Library Catalog & Borrowing System.</p>
-    <a href="{{ path('app_books') }}">Go to Borrowing Page</a>
+    <div class="content-box">
+        <img src="{{ asset('images/Jovan_Eye_of_Ender_for_Books.png') }}" alt="Library Logo" class="logo">
+
+        <h1>{{ page_title }}</h1>
+        <p>This is the homepage of the Library Catalog & Borrowing System.</p>
+
+        <a href="{{ path('app_books') }}">Go to Borrowing Page (Admin Side)</a>
+        {# <a href="{{ path('app_login') }}">🏠 Login (BETA)</a>
+        <a href="{{ path('app_non_paid_user_index') }}">🏠 Try add a user (FIXING, CURRENTLY NOT WORKING)</a> #}
+    </div>
 {% endblock %}

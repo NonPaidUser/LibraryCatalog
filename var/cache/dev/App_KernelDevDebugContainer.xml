@@ -242,6 +242,13 @@
         <argument type="service" id=".service_locator.ZyP9f7K.App\Controller\HomeController"/>
       </call>
     </service>
+    <service id="App\Controller\NonPaidUserController" class="App\Controller\NonPaidUserController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.ZyP9f7K.App\Controller\NonPaidUserController"/>
+      </call>
+    </service>
     <service id="App\Controller\ProfileController" class="App\Controller\ProfileController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
       <tag name="container.service_subscriber"/>
@@ -263,7 +270,25 @@
         <argument type="service" id=".service_locator.ZyP9f7K.App\Controller\SecurityController"/>
       </call>
     </service>
+    <service id="App\Controller\UserController" class="App\Controller\UserController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.ZyP9f7K.App\Controller\UserController"/>
+      </call>
+    </service>
+    <service id="App\Controller\UserController1" class="App\Controller\UserController1" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.ZyP9f7K.App\Controller\UserController1"/>
+      </call>
+    </service>
     <service id="App\Entity\Book" class="App\Entity\Book" autowire="true" autoconfigure="true">
+      <tag name="container.excluded" source="because it's a Doctrine entity"/>
+      <tag name="container.excluded" source="with #[Doctrine\ORM\Mapping\Entity] attribute"/>
+    </service>
+    <service id="App\Entity\BookBorrow" class="App\Entity\BookBorrow" autowire="true" autoconfigure="true">
       <tag name="container.excluded" source="because it's a Doctrine entity"/>
       <tag name="container.excluded" source="with #[Doctrine\ORM\Mapping\Entity] attribute"/>
     </service>
@@ -271,14 +296,32 @@
       <tag name="container.excluded" source="because it's a Doctrine entity"/>
       <tag name="container.excluded" source="with #[Doctrine\ORM\Mapping\Entity] attribute"/>
     </service>
+    <service id="App\Entity\User" class="App\Entity\User" autowire="true" autoconfigure="true">
+      <tag name="container.excluded" source="because it's a Doctrine entity"/>
+      <tag name="container.excluded" source="with #[Doctrine\ORM\Mapping\Entity] attribute"/>
+    </service>
     <service id="App\Form\BookType" class="App\Form\BookType" autowire="true" autoconfigure="true">
       <tag name="form.type" csrf_token_id="%.form.type_extension.csrf.token_id%"/>
+    </service>
+    <service id="App\Form\NonPaidUserType" class="App\Form\NonPaidUserType" autowire="true" autoconfigure="true">
+      <tag name="form.type" csrf_token_id="%.form.type_extension.csrf.token_id%"/>
+    </service>
+    <service id="App\Form\UserType" class="App\Form\UserType" autowire="true" autoconfigure="true">
+      <tag name="form.type" csrf_token_id="%.form.type_extension.csrf.token_id%"/>
+    </service>
+    <service id="App\Repository\BookBorrowRepository" class="App\Repository\BookBorrowRepository" autowire="true" autoconfigure="true">
+      <tag name="doctrine.repository_service"/>
+      <argument type="service" id="doctrine"/>
     </service>
     <service id="App\Repository\BookRepository" class="App\Repository\BookRepository" autowire="true" autoconfigure="true">
       <tag name="doctrine.repository_service"/>
       <argument type="service" id="doctrine"/>
     </service>
     <service id="App\Repository\NonPaidUserRepository" class="App\Repository\NonPaidUserRepository" autowire="true" autoconfigure="true">
+      <tag name="doctrine.repository_service"/>
+      <argument type="service" id="doctrine"/>
+    </service>
+    <service id="App\Repository\UserRepository" class="App\Repository\UserRepository" autowire="true" autoconfigure="true">
       <tag name="doctrine.repository_service"/>
       <argument type="service" id="doctrine"/>
     </service>
@@ -308,7 +351,7 @@
     </service>
     <service id="argument_resolver.service" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">
       <tag priority="-50" name="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">controller.argument_value_resolver</tag>
-      <argument type="service" id=".service_locator.4msqW43"/>
+      <argument type="service" id=".service_locator.cu8r3mF"/>
     </service>
     <service id="argument_resolver.default" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver">
       <tag priority="-100" name="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver">controller.argument_value_resolver</tag>
@@ -920,6 +963,8 @@
       </argument>
       <argument type="collection">
         <argument>App\Form\BookType</argument>
+        <argument>App\Form\NonPaidUserType</argument>
+        <argument>App\Form\UserType</argument>
         <argument>Symfony\Component\Form\Extension\Core\Type\FormType</argument>
         <argument>Symfony\Component\Form\Extension\Core\Type\ChoiceType</argument>
         <argument>Symfony\Component\Form\Extension\Core\Type\FileType</argument>
@@ -1689,7 +1734,7 @@
     </service>
     <service id="argument_resolver.not_tagged_controller" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver">
       <tag name="controller.argument_value_resolver" priority="-200"/>
-      <argument type="service" id=".service_locator.4msqW43"/>
+      <argument type="service" id=".service_locator.cu8r3mF"/>
     </service>
     <service id="routing.resolver" class="Symfony\Component\Config\Loader\LoaderResolver">
       <call method="addLoader">
@@ -2043,7 +2088,7 @@
       <argument type="service" id="form.registry"/>
     </service>
     <service id="form.extension" class="Symfony\Component\Form\Extension\DependencyInjection\DependencyInjectionExtension">
-      <argument type="service" id=".service_locator.MrV8CBg"/>
+      <argument type="service" id=".service_locator.2zeNoEP"/>
       <argument type="collection">
         <argument key="Symfony\Component\Form\Extension\Core\Type\FormType" type="iterator">
           <argument type="service" id="form.type_extension.form.transformation_failure_handling"/>
@@ -2135,6 +2180,8 @@
       <argument>%form.type_extension.csrf.field_attr%</argument>
       <argument type="collection">
         <argument key="App\Form\BookType">submit</argument>
+        <argument key="App\Form\NonPaidUserType">submit</argument>
+        <argument key="App\Form\UserType">submit</argument>
       </argument>
     </service>
     <service id="validator" class="Symfony\Component\Validator\Validator\ValidatorInterface">
@@ -4076,7 +4123,7 @@
     <service id="doctrine.orm.configuration" class="Doctrine\ORM\Configuration" abstract="true"/>
     <service id="doctrine.orm.entity_manager.abstract" class="Doctrine\ORM\EntityManager" lazy="true" abstract="true"/>
     <service id="doctrine.orm.container_repository_factory" class="Doctrine\Bundle\DoctrineBundle\Repository\ContainerRepositoryFactory">
-      <argument type="service" id=".service_locator.QKcwNd3"/>
+      <argument type="service" id=".service_locator.gaZBSoh"/>
     </service>
     <service id="doctrine.orm.manager_configurator.abstract" class="Doctrine\Bundle\DoctrineBundle\ManagerConfigurator" abstract="true">
       <argument type="collection"/>
@@ -4572,6 +4619,10 @@
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\HomeController" class="App\Controller\HomeController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\HomeController" class="App\Controller\HomeController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\HomeController" class="App\Controller\HomeController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\NonPaidUserController" class="App\Controller\NonPaidUserController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\NonPaidUserController" class="App\Controller\NonPaidUserController" autowire="true" abstract="true"/>
+    <service id=".instanceof.App\Controller\NonPaidUserController.0.App\Controller\NonPaidUserController" class="App\Controller\NonPaidUserController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\NonPaidUserController" class="App\Controller\NonPaidUserController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\ProfileController" class="App\Controller\ProfileController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\ProfileController" class="App\Controller\ProfileController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\ProfileController" class="App\Controller\ProfileController" autowire="true" autoconfigure="true" abstract="true"/>
@@ -4582,16 +4633,35 @@
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\SecurityController" class="App\Controller\SecurityController" autowire="true" abstract="true"/>
     <service id=".instanceof.App\Controller\SecurityController.0.App\Controller\SecurityController" class="App\Controller\SecurityController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\SecurityController" class="App\Controller\SecurityController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\UserController" class="App\Controller\UserController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\UserController" class="App\Controller\UserController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\UserController" class="App\Controller\UserController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\UserController1" class="App\Controller\UserController1" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\UserController1" class="App\Controller\UserController1" autowire="true" abstract="true"/>
+    <service id=".instanceof.App\Controller\UserController1.0.App\Controller\UserController1" class="App\Controller\UserController1" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\UserController1" class="App\Controller\UserController1" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.App\Entity\Book.0.App\Entity\Book" class="App\Entity\Book" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Entity\Book" class="App\Entity\Book" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.App\Entity\BookBorrow.0.App\Entity\BookBorrow" class="App\Entity\BookBorrow" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Entity\BookBorrow" class="App\Entity\BookBorrow" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.App\Entity\NonPaidUser.0.App\Entity\NonPaidUser" class="App\Entity\NonPaidUser" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Entity\NonPaidUser" class="App\Entity\NonPaidUser" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.App\Entity\User.0.App\Entity\User" class="App\Entity\User" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Entity\User" class="App\Entity\User" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\BookType" class="App\Form\BookType" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\BookType" class="App\Form\BookType" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\NonPaidUserType" class="App\Form\NonPaidUserType" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Form\NonPaidUserType" class="App\Form\NonPaidUserType" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\UserType" class="App\Form\UserType" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Form\UserType" class="App\Form\UserType" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\BookBorrowRepository" class="App\Repository\BookBorrowRepository" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Repository\BookBorrowRepository" class="App\Repository\BookBorrowRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\BookRepository" class="App\Repository\BookRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\BookRepository" class="App\Repository\BookRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\NonPaidUserRepository" class="App\Repository\NonPaidUserRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\NonPaidUserRepository" class="App\Repository\NonPaidUserRepository" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\UserRepository" class="App\Repository\UserRepository" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Repository\UserRepository" class="App\Repository\UserRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".service_locator.pRu6x_4" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
@@ -5227,6 +5297,69 @@
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.ErcxNfJ" method="withContext"/>
     </service>
+    <service id=".service_locator.lN0jXOy" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="book" type="service_closure" id=".errored..service_locator.lN0jXOy.App\Entity\Book"/>
+        <argument key="userRepository" type="service_closure" id="App\Repository\UserRepository"/>
+        <argument key="em" type="service_closure" id="doctrine.orm.default_entity_manager"/>
+      </argument>
+    </service>
+    <service id=".service_locator.lN0jXOy.App\Controller\BorrowController::borrow()" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\BorrowController::borrow()"/>
+      <argument>App\Controller\BorrowController::borrow()</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.lN0jXOy" method="withContext"/>
+    </service>
+    <service id=".service_locator.acMEzFW" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="nonPaidUserRepository" type="service_closure" id="App\Repository\NonPaidUserRepository"/>
+      </argument>
+    </service>
+    <service id=".service_locator.acMEzFW.App\Controller\NonPaidUserController::index()" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\NonPaidUserController::index()"/>
+      <argument>App\Controller\NonPaidUserController::index()</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.acMEzFW" method="withContext"/>
+    </service>
+    <service id=".service_locator.egipcEH.App\Controller\NonPaidUserController::new()" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\NonPaidUserController::new()"/>
+      <argument>App\Controller\NonPaidUserController::new()</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.egipcEH" method="withContext"/>
+    </service>
+    <service id=".service_locator.YrSr42h" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="nonPaidUser" type="service_closure" id=".errored..service_locator.YrSr42h.App\Entity\NonPaidUser"/>
+      </argument>
+    </service>
+    <service id=".service_locator.YrSr42h.App\Controller\NonPaidUserController::show()" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\NonPaidUserController::show()"/>
+      <argument>App\Controller\NonPaidUserController::show()</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.YrSr42h" method="withContext"/>
+    </service>
+    <service id=".service_locator.cWNy2ov" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="nonPaidUser" type="service_closure" id=".errored..service_locator.cWNy2ov.App\Entity\NonPaidUser"/>
+        <argument key="entityManager" type="service_closure" id="doctrine.orm.default_entity_manager"/>
+      </argument>
+    </service>
+    <service id=".service_locator.cWNy2ov.App\Controller\NonPaidUserController::edit()" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\NonPaidUserController::edit()"/>
+      <argument>App\Controller\NonPaidUserController::edit()</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.cWNy2ov" method="withContext"/>
+    </service>
+    <service id=".service_locator.cWNy2ov.App\Controller\NonPaidUserController::delete()" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\NonPaidUserController::delete()"/>
+      <argument>App\Controller\NonPaidUserController::delete()</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.cWNy2ov" method="withContext"/>
+    </service>
     <service id=".service_locator.Kq27LHM" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
@@ -5238,6 +5371,21 @@
       <argument>App\Controller\ProfileController::index()</argument>
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.Kq27LHM" method="withContext"/>
+    </service>
+    <service id=".service_locator.UCbXxc7" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="bookRepository" type="service_closure" id="App\Repository\BookRepository"/>
+        <argument key="userRepository" type="service_closure" id="App\Repository\UserRepository"/>
+        <argument key="borrowRepo" type="service_closure" id="App\Repository\BookBorrowRepository"/>
+        <argument key="em" type="service_closure" id="doctrine.orm.default_entity_manager"/>
+      </argument>
+    </service>
+    <service id=".service_locator.UCbXxc7.App\Controller\ReturnController::return()" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\ReturnController::return()"/>
+      <argument>App\Controller\ReturnController::return()</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.UCbXxc7" method="withContext"/>
     </service>
     <service id=".service_locator.3QECKYg" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
@@ -5251,7 +5399,75 @@
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.3QECKYg" method="withContext"/>
     </service>
-    <service id=".service_locator.4msqW43" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.OzEre6h" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="userRepository" type="service_closure" id="App\Repository\UserRepository"/>
+      </argument>
+    </service>
+    <service id=".service_locator.OzEre6h.App\Controller\UserController::search()" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\UserController::search()"/>
+      <argument>App\Controller\UserController::search()</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.OzEre6h" method="withContext"/>
+    </service>
+    <service id=".service_locator.HnzgoC9" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="borrowRepo" type="service_closure" id="App\Repository\BookBorrowRepository"/>
+        <argument key="userRepository" type="service_closure" id="App\Repository\UserRepository"/>
+      </argument>
+    </service>
+    <service id=".service_locator.HnzgoC9.App\Controller\UserController::borrowed()" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\UserController::borrowed()"/>
+      <argument>App\Controller\UserController::borrowed()</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.HnzgoC9" method="withContext"/>
+    </service>
+    <service id=".service_locator.OzEre6h.App\Controller\UserController1::index()" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\UserController1::index()"/>
+      <argument>App\Controller\UserController1::index()</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.OzEre6h" method="withContext"/>
+    </service>
+    <service id=".service_locator.egipcEH.App\Controller\UserController1::new()" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\UserController1::new()"/>
+      <argument>App\Controller\UserController1::new()</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.egipcEH" method="withContext"/>
+    </service>
+    <service id=".service_locator.EWAQaZu" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="user" type="service_closure" id=".errored..service_locator.EWAQaZu.App\Entity\User"/>
+      </argument>
+    </service>
+    <service id=".service_locator.EWAQaZu.App\Controller\UserController1::show()" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\UserController1::show()"/>
+      <argument>App\Controller\UserController1::show()</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.EWAQaZu" method="withContext"/>
+    </service>
+    <service id=".service_locator.WkfvUVe" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="user" type="service_closure" id=".errored..service_locator.WkfvUVe.App\Entity\User"/>
+        <argument key="entityManager" type="service_closure" id="doctrine.orm.default_entity_manager"/>
+      </argument>
+    </service>
+    <service id=".service_locator.WkfvUVe.App\Controller\UserController1::edit()" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\UserController1::edit()"/>
+      <argument>App\Controller\UserController1::edit()</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.WkfvUVe" method="withContext"/>
+    </service>
+    <service id=".service_locator.WkfvUVe.App\Controller\UserController1::delete()" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\UserController1::delete()"/>
+      <argument>App\Controller\UserController1::delete()</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.WkfvUVe" method="withContext"/>
+    </service>
+    <service id=".service_locator.cu8r3mF" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="kernel::registerContainerConfiguration" type="service_closure" id=".service_locator.zHyJIs5.kernel::registerContainerConfiguration()"/>
@@ -5264,8 +5480,22 @@
         <argument key="App\Controller\AddBookController::edit" type="service_closure" id=".service_locator.52LSSp5.App\Controller\AddBookController::edit()"/>
         <argument key="App\Controller\AddBookController::delete" type="service_closure" id=".service_locator.52LSSp5.App\Controller\AddBookController::delete()"/>
         <argument key="App\Controller\BookController::index" type="service_closure" id=".service_locator.ErcxNfJ.App\Controller\BookController::index()"/>
+        <argument key="App\Controller\BorrowController::borrow" type="service_closure" id=".service_locator.lN0jXOy.App\Controller\BorrowController::borrow()"/>
+        <argument key="App\Controller\NonPaidUserController::index" type="service_closure" id=".service_locator.acMEzFW.App\Controller\NonPaidUserController::index()"/>
+        <argument key="App\Controller\NonPaidUserController::new" type="service_closure" id=".service_locator.egipcEH.App\Controller\NonPaidUserController::new()"/>
+        <argument key="App\Controller\NonPaidUserController::show" type="service_closure" id=".service_locator.YrSr42h.App\Controller\NonPaidUserController::show()"/>
+        <argument key="App\Controller\NonPaidUserController::edit" type="service_closure" id=".service_locator.cWNy2ov.App\Controller\NonPaidUserController::edit()"/>
+        <argument key="App\Controller\NonPaidUserController::delete" type="service_closure" id=".service_locator.cWNy2ov.App\Controller\NonPaidUserController::delete()"/>
         <argument key="App\Controller\ProfileController::index" type="service_closure" id=".service_locator.Kq27LHM.App\Controller\ProfileController::index()"/>
+        <argument key="App\Controller\ReturnController::return" type="service_closure" id=".service_locator.UCbXxc7.App\Controller\ReturnController::return()"/>
         <argument key="App\Controller\SecurityController::login" type="service_closure" id=".service_locator.3QECKYg.App\Controller\SecurityController::login()"/>
+        <argument key="App\Controller\UserController::search" type="service_closure" id=".service_locator.OzEre6h.App\Controller\UserController::search()"/>
+        <argument key="App\Controller\UserController::borrowed" type="service_closure" id=".service_locator.HnzgoC9.App\Controller\UserController::borrowed()"/>
+        <argument key="App\Controller\UserController1::index" type="service_closure" id=".service_locator.OzEre6h.App\Controller\UserController1::index()"/>
+        <argument key="App\Controller\UserController1::new" type="service_closure" id=".service_locator.egipcEH.App\Controller\UserController1::new()"/>
+        <argument key="App\Controller\UserController1::show" type="service_closure" id=".service_locator.EWAQaZu.App\Controller\UserController1::show()"/>
+        <argument key="App\Controller\UserController1::edit" type="service_closure" id=".service_locator.WkfvUVe.App\Controller\UserController1::edit()"/>
+        <argument key="App\Controller\UserController1::delete" type="service_closure" id=".service_locator.WkfvUVe.App\Controller\UserController1::delete()"/>
         <argument key="kernel:registerContainerConfiguration" type="service_closure" id=".service_locator.zHyJIs5.kernel::registerContainerConfiguration()"/>
         <argument key="kernel:loadRoutes" type="service_closure" id=".service_locator.zHyJIs5.kernel::loadRoutes()"/>
         <argument key="App\Controller\AddBookController:index" type="service_closure" id=".service_locator.ErcxNfJ.App\Controller\AddBookController::index()"/>
@@ -5274,8 +5504,22 @@
         <argument key="App\Controller\AddBookController:edit" type="service_closure" id=".service_locator.52LSSp5.App\Controller\AddBookController::edit()"/>
         <argument key="App\Controller\AddBookController:delete" type="service_closure" id=".service_locator.52LSSp5.App\Controller\AddBookController::delete()"/>
         <argument key="App\Controller\BookController:index" type="service_closure" id=".service_locator.ErcxNfJ.App\Controller\BookController::index()"/>
+        <argument key="App\Controller\BorrowController:borrow" type="service_closure" id=".service_locator.lN0jXOy.App\Controller\BorrowController::borrow()"/>
+        <argument key="App\Controller\NonPaidUserController:index" type="service_closure" id=".service_locator.acMEzFW.App\Controller\NonPaidUserController::index()"/>
+        <argument key="App\Controller\NonPaidUserController:new" type="service_closure" id=".service_locator.egipcEH.App\Controller\NonPaidUserController::new()"/>
+        <argument key="App\Controller\NonPaidUserController:show" type="service_closure" id=".service_locator.YrSr42h.App\Controller\NonPaidUserController::show()"/>
+        <argument key="App\Controller\NonPaidUserController:edit" type="service_closure" id=".service_locator.cWNy2ov.App\Controller\NonPaidUserController::edit()"/>
+        <argument key="App\Controller\NonPaidUserController:delete" type="service_closure" id=".service_locator.cWNy2ov.App\Controller\NonPaidUserController::delete()"/>
         <argument key="App\Controller\ProfileController:index" type="service_closure" id=".service_locator.Kq27LHM.App\Controller\ProfileController::index()"/>
+        <argument key="App\Controller\ReturnController:return" type="service_closure" id=".service_locator.UCbXxc7.App\Controller\ReturnController::return()"/>
         <argument key="App\Controller\SecurityController:login" type="service_closure" id=".service_locator.3QECKYg.App\Controller\SecurityController::login()"/>
+        <argument key="App\Controller\UserController:search" type="service_closure" id=".service_locator.OzEre6h.App\Controller\UserController::search()"/>
+        <argument key="App\Controller\UserController:borrowed" type="service_closure" id=".service_locator.HnzgoC9.App\Controller\UserController::borrowed()"/>
+        <argument key="App\Controller\UserController1:index" type="service_closure" id=".service_locator.OzEre6h.App\Controller\UserController1::index()"/>
+        <argument key="App\Controller\UserController1:new" type="service_closure" id=".service_locator.egipcEH.App\Controller\UserController1::new()"/>
+        <argument key="App\Controller\UserController1:show" type="service_closure" id=".service_locator.EWAQaZu.App\Controller\UserController1::show()"/>
+        <argument key="App\Controller\UserController1:edit" type="service_closure" id=".service_locator.WkfvUVe.App\Controller\UserController1::edit()"/>
+        <argument key="App\Controller\UserController1:delete" type="service_closure" id=".service_locator.WkfvUVe.App\Controller\UserController1::delete()"/>
       </argument>
     </service>
     <service id=".service_locator.a_CCYfN" class="Symfony\Component\DependencyInjection\ServiceLocator">
@@ -5356,10 +5600,12 @@
       <argument type="service" id="argument_resolver.query_parameter_value_resolver"/>
       <argument type="service" id="debug.stopwatch"/>
     </service>
-    <service id=".service_locator.MrV8CBg" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.2zeNoEP" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Form\BookType" type="service_closure" id="App\Form\BookType"/>
+        <argument key="App\Form\NonPaidUserType" type="service_closure" id="App\Form\NonPaidUserType"/>
+        <argument key="App\Form\UserType" type="service_closure" id="App\Form\UserType"/>
         <argument key="Symfony\Component\Form\Extension\Core\Type\FormType" type="service_closure" id="form.type.form"/>
         <argument key="Symfony\Component\Form\Extension\Core\Type\ChoiceType" type="service_closure" id="form.type.choice"/>
         <argument key="Symfony\Component\Form\Extension\Core\Type\FileType" type="service_closure" id="form.type.file"/>
@@ -5406,11 +5652,13 @@
         <argument key="doctrine.orm.default_listeners.attach_entity_listeners" type="service_closure" id="doctrine.orm.default_listeners.attach_entity_listeners"/>
       </argument>
     </service>
-    <service id=".service_locator.QKcwNd3" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.gaZBSoh" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
+        <argument key="App\Repository\BookBorrowRepository" type="service_closure" id="App\Repository\BookBorrowRepository"/>
         <argument key="App\Repository\BookRepository" type="service_closure" id="App\Repository\BookRepository"/>
         <argument key="App\Repository\NonPaidUserRepository" type="service_closure" id="App\Repository\NonPaidUserRepository"/>
+        <argument key="App\Repository\UserRepository" type="service_closure" id="App\Repository\UserRepository"/>
       </argument>
     </service>
     <service id=".service_locator.BxSdgVt" class="Symfony\Component\DependencyInjection\ServiceLocator">
@@ -5491,6 +5739,12 @@
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.ZyP9f7K" method="withContext"/>
     </service>
+    <service id=".service_locator.ZyP9f7K.App\Controller\NonPaidUserController" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\NonPaidUserController"/>
+      <argument>App\Controller\NonPaidUserController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.ZyP9f7K" method="withContext"/>
+    </service>
     <service id=".service_locator.ZyP9f7K.App\Controller\ProfileController" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator_context" id="App\Controller\ProfileController"/>
       <argument>App\Controller\ProfileController</argument>
@@ -5506,6 +5760,18 @@
     <service id=".service_locator.ZyP9f7K.App\Controller\SecurityController" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator_context" id="App\Controller\SecurityController"/>
       <argument>App\Controller\SecurityController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.ZyP9f7K" method="withContext"/>
+    </service>
+    <service id=".service_locator.ZyP9f7K.App\Controller\UserController" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\UserController"/>
+      <argument>App\Controller\UserController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.ZyP9f7K" method="withContext"/>
+    </service>
+    <service id=".service_locator.ZyP9f7K.App\Controller\UserController1" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\UserController1"/>
+      <argument>App\Controller\UserController1</argument>
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.ZyP9f7K" method="withContext"/>
     </service>
@@ -5654,9 +5920,12 @@
           <argument>App\Controller\BookController</argument>
           <argument>App\Controller\BorrowController</argument>
           <argument>App\Controller\HomeController</argument>
+          <argument>App\Controller\NonPaidUserController</argument>
           <argument>App\Controller\ProfileController</argument>
           <argument>App\Controller\ReturnController</argument>
           <argument>App\Controller\SecurityController</argument>
+          <argument>App\Controller\UserController</argument>
+          <argument>App\Controller\UserController1</argument>
           <argument>Doctrine\Bundle\DoctrineBundle\Controller\ProfilerController</argument>
         </argument>
       </call>
@@ -5714,6 +5983,21 @@
     </service>
     <service id=".errored..service_locator.52LSSp5.App\Entity\Book" class="App\Entity\Book">
       <tag name="container.error" message="Cannot autowire service &quot;.service_locator.52LSSp5&quot;: it needs an instance of &quot;App\Entity\Book&quot; but this type has been excluded because it's a Doctrine entity."/>
+    </service>
+    <service id=".errored..service_locator.lN0jXOy.App\Entity\Book" class="App\Entity\Book">
+      <tag name="container.error" message="Cannot autowire service &quot;.service_locator.lN0jXOy&quot;: it needs an instance of &quot;App\Entity\Book&quot; but this type has been excluded because it's a Doctrine entity."/>
+    </service>
+    <service id=".errored..service_locator.YrSr42h.App\Entity\NonPaidUser" class="App\Entity\NonPaidUser">
+      <tag name="container.error" message="Cannot autowire service &quot;.service_locator.YrSr42h&quot;: it needs an instance of &quot;App\Entity\NonPaidUser&quot; but this type has been excluded because it's a Doctrine entity."/>
+    </service>
+    <service id=".errored..service_locator.cWNy2ov.App\Entity\NonPaidUser" class="App\Entity\NonPaidUser">
+      <tag name="container.error" message="Cannot autowire service &quot;.service_locator.cWNy2ov&quot;: it needs an instance of &quot;App\Entity\NonPaidUser&quot; but this type has been excluded because it's a Doctrine entity."/>
+    </service>
+    <service id=".errored..service_locator.EWAQaZu.App\Entity\User" class="App\Entity\User">
+      <tag name="container.error" message="Cannot autowire service &quot;.service_locator.EWAQaZu&quot;: it needs an instance of &quot;App\Entity\User&quot; but this type has been excluded because it's a Doctrine entity."/>
+    </service>
+    <service id=".errored..service_locator.WkfvUVe.App\Entity\User" class="App\Entity\User">
+      <tag name="container.error" message="Cannot autowire service &quot;.service_locator.WkfvUVe&quot;: it needs an instance of &quot;App\Entity\User&quot; but this type has been excluded because it's a Doctrine entity."/>
     </service>
     <service id=".console.command.about.lazy" class="Symfony\Component\Console\Command\LazyCommand">
       <argument>about</argument>
@@ -6542,7 +6826,7 @@
     <service id="doctrine.migrations.metadata_storage" alias="doctrine.migrations.storage.table_storage"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.pRu6x_4" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.4msqW43"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.cu8r3mF"/>
     <service id="twig.loader" alias="twig.loader.native_filesystem"/>
     <service id="doctrine.id_generator_locator" alias=".service_locator.BxSdgVt"/>
     <service id="Psr\Log\LoggerInterface" alias="logger"/>
@@ -6561,8 +6845,17 @@
     <service id=".service_locator.5Vd5JYV" alias=".service_locator.egipcEH"/>
     <service id=".service_locator.zHSsHjv" alias=".service_locator.b3R8WOF"/>
     <service id=".service_locator.8lsyZIE" alias=".service_locator.52LSSp5"/>
+    <service id=".service_locator.fEpbuSf" alias=".service_locator.lN0jXOy"/>
+    <service id=".service_locator.VIy6fVP" alias=".service_locator.acMEzFW"/>
+    <service id=".service_locator.exHfKEg" alias=".service_locator.YrSr42h"/>
+    <service id=".service_locator.TxyVAup" alias=".service_locator.cWNy2ov"/>
     <service id=".service_locator.HQZddX8" alias=".service_locator.Kq27LHM"/>
+    <service id=".service_locator.c9EsTDh" alias=".service_locator.UCbXxc7"/>
     <service id=".service_locator.Nrz07Zz" alias=".service_locator.3QECKYg"/>
+    <service id=".service_locator.hNMhKaf" alias=".service_locator.OzEre6h"/>
+    <service id=".service_locator.d9h1LDT" alias=".service_locator.HnzgoC9"/>
+    <service id=".service_locator.gG4yR94" alias=".service_locator.EWAQaZu"/>
+    <service id=".service_locator.uXwZemd" alias=".service_locator.WkfvUVe"/>
     <service id=".service_locator.YoE4GGP" alias=".service_locator.ZyP9f7K"/>
   </services>
 </container>

@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New NonPaidUser{% endblock %}
+
+{% block body %}
+    <h1>Create new NonPaidUser</h1>
+
+    {{ include('non_paid_user/_form.html.twig') }}
+
+    <a href="{{ path('app_non_paid_user_index') }}">back to list</a>
+{% endblock %}

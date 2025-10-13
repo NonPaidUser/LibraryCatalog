@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\BookRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: BookRepository::class)]
@@ -27,6 +29,20 @@ class Book
 
     #[ORM\Column(length: 100, nullable: true)]
     private ?string $category = null;
+
+    #[ORM\Column(type: 'integer')]
+    private ?int $availableCount = 0;
+
+    #[ORM\Column(type: 'integer', nullable: true)]
+    private ?int $totalCount = null;
+
+    #[ORM\OneToMany(mappedBy: 'book', targetEntity: BookBorrow::class, cascade: ['remove'])]
+    private Collection $borrowRecords;
+
+    public function __construct()
+    {
+        $this->borrowRecords = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -85,6 +101,57 @@ class Book
     public function setCategory(?string $category): static
     {
         $this->category = $category;
+        return $this;
+    }
+
+    public function getAvailableCount(): ?int
+    {
+        return $this->availableCount;
+    }
+
+    public function setAvailableCount(int $availableCount): static
+    {
+        $this->availableCount = $availableCount;
+        return $this;
+    }
+
+    public function getTotalCount(): ?int
+    {
+        return $this->totalCount;
+    }
+
+    public function setTotalCount(?int $totalCount): static
+    {
+        $this->totalCount = $totalCount;
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, BookBorrow>
+     */
+    public function getBorrowRecords(): Collection
+    {
+        return $this->borrowRecords;
+    }
+
+    public function addBorrowRecord(BookBorrow $record): static
+    {
+        if (!$this->borrowRecords->contains($record)) {
+            $this->borrowRecords->add($record);
+            $record->setBook($this);
+        }
+
+        return $this;
+    }
+
+    public function removeBorrowRecord(BookBorrow $record): static
+    {
+        if ($this->borrowRecords->removeElement($record)) {
+            if ($record->getBook() === $this) {
+                $record->setBook(null);
+            }
+        }
+
         return $this;
     }
 }

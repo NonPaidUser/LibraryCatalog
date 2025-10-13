@@ -89,10 +89,12 @@ class __TwigTemplate_8b4aafe2ae0bacb8e3b65def3d5ac9c5 extends Template
         yield Twig\Extension\CoreExtension::include($this->env, $context, "add_book/_form.html.twig");
         yield "
 
-    <a href=\"";
-        // line 10
+    <div style=\"margin-top: 15px;\">
+        <a href=\"";
+        // line 11
         yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_add_book_index");
         yield "\">back to list</a>
+    </div>
 ";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
@@ -121,7 +123,7 @@ class __TwigTemplate_8b4aafe2ae0bacb8e3b65def3d5ac9c5 extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  94 => 10,  89 => 8,  85 => 6,  75 => 5,  58 => 3,  41 => 1,);
+        return array (  95 => 11,  89 => 8,  85 => 6,  75 => 5,  58 => 3,  41 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -135,7 +137,9 @@ class __TwigTemplate_8b4aafe2ae0bacb8e3b65def3d5ac9c5 extends Template
 
     {{ include('add_book/_form.html.twig') }}
 
-    <a href=\"{{ path('app_add_book_index') }}\">back to list</a>
+    <div style=\"margin-top: 15px;\">
+        <a href=\"{{ path('app_add_book_index') }}\">back to list</a>
+    </div>
 {% endblock %}
 ", "add_book/new.html.twig", "C:\\Jovan Components\\JOVAN PROJECTS\\Symfony_Projects\\Library_Catalog_Borrowing_System\\templates\\add_book\\new.html.twig");
     }

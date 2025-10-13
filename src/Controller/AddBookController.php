@@ -15,10 +15,30 @@ use Symfony\Component\Routing\Attribute\Route;
 final class AddBookController extends AbstractController
 {
     #[Route(name: 'app_add_book_index', methods: ['GET'])]
-    public function index(BookRepository $bookRepository): Response
+    // public function index(BookRepository $bookRepository): Response
+    // {
+    //     return $this->render('add_book/index.html.twig', [
+    //         'books' => $bookRepository->findAll(),
+    //     ]);
+    // }
+        public function index(Request $request, BookRepository $bookRepository): Response
     {
+        $category = $request->query->get('category');
+
+        if ($category) {
+            $books = $bookRepository->createQueryBuilder('b')
+                ->where('b.category LIKE :category')
+                ->setParameter('category', '%' . $category . '%')
+                ->getQuery()
+                ->getResult();
+        } else {
+            $books = $bookRepository->findAll();
+        }
+
         return $this->render('add_book/index.html.twig', [
-            'books' => $bookRepository->findAll(),
+            'page_title' => 'Library Catalog',
+            'books' => $books,
+            'selected_category' => $category,
         ]);
     }
 

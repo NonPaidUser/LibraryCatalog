@@ -54,62 +54,111 @@ class __TwigTemplate_58bd0abf5f510f72c026785b55d9a322 extends Template
         yield "</title>
         <style>
             body {
-                font-family: Arial, sans-serif;
+                font-family: Harrington, cursive;
                 text-align: center;
                 margin: 0;
                 padding: 40px;
-                background-color: #f8f9fa;
-                color: #333;
+                min-height: 100vh;
+                background: url('";
+        // line 13
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("images/Star_moving.gif"), "html", null, true);
+        yield "') no-repeat center fixed;
+                background-size: cover;
+                color: #fefafaff;
             }
+
             h1 {
                 margin-bottom: 20px;
-                color: #222;
+                color: #fefafaff;
             }
+
             table {
                 margin: 20px auto;
                 border-collapse: collapse;
                 width: 80%;
-                background: white;
+                background: rgba(255, 255, 255, 0.9);
                 border-radius: 12px;
                 overflow: hidden;
-                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
             }
+
             th {
-                background-color: #007bff;
+                background-color: #c904afff;
                 color: white;
                 padding: 12px;
                 font-size: 16px;
             }
+
             td {
                 padding: 12px;
                 border-bottom: 1px solid #ddd;
+                color: #121111ff;
             }
+
             tr:hover {
                 background-color: #f1f1f1;
             }
+
             a {
                 display: inline-block;
                 padding: 8px 16px;
                 border-radius: 6px;
                 text-decoration: none;
-                background-color: #007bff;
+                background-color: #ff00f7ff;
                 color: white;
                 font-weight: bold;
                 transition: background 0.3s;
             }
+
             a:hover {
-                background-color: #0056b3;
+                background-color: #a806a8ff;
             }
+
             p {
                 font-size: 18px;
+                color: #090909ff;
+            }
+
+            .logo {
+                display: block;
+                margin: 0 auto 20px auto;
+                width: 150px;
+                height: auto;
+                border-radius: 50%;
+                box-shadow: 0 0 10px rgba(0,0,0,0.3);
+            }
+
+            .content-box {
+                background-color: rgba(255, 255, 255, 0.8);
+                padding: 30px;
+                border-radius: 12px;
+                display: inline-block;
+                box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            }
+
+            button {
+                display: inline-block;
+                ";
+        // line 90
+        yield "                border-radius: 6px;
+                text-decoration: none;
+                background-color: #ff00f7ff;
+                color: white;
+                font-weight: bold;
+                transition: background 0.3s;
+            }
+
+            .return_borrow1 {
+                color: white;
+                font-weight: bold;
             }
         </style>
     </head>
     <body>
         ";
-        // line 60
+        // line 105
         yield from $this->unwrap()->yieldBlock('body', $context, $blocks);
-        // line 61
+        // line 106
         yield "    </body>
 </html>
 ";
@@ -136,7 +185,7 @@ class __TwigTemplate_58bd0abf5f510f72c026785b55d9a322 extends Template
         yield from [];
     }
 
-    // line 60
+    // line 105
     /**
      * @return iterable<null|scalar|\Stringable>
      */
@@ -163,9 +212,17 @@ class __TwigTemplate_58bd0abf5f510f72c026785b55d9a322 extends Template
     /**
      * @codeCoverageIgnore
      */
+    public function isTraitable(): bool
+    {
+        return false;
+    }
+
+    /**
+     * @codeCoverageIgnore
+     */
     public function getDebugInfo(): array
     {
-        return array (  140 => 60,  123 => 5,  113 => 61,  111 => 60,  53 => 5,  47 => 1,);
+        return array (  189 => 105,  172 => 5,  162 => 106,  160 => 105,  143 => 90,  64 => 13,  53 => 5,  47 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -177,54 +234,99 @@ class __TwigTemplate_58bd0abf5f510f72c026785b55d9a322 extends Template
         <title>{% block title %}Library System{% endblock %}</title>
         <style>
             body {
-                font-family: Arial, sans-serif;
+                font-family: Harrington, cursive;
                 text-align: center;
                 margin: 0;
                 padding: 40px;
-                background-color: #f8f9fa;
-                color: #333;
+                min-height: 100vh;
+                background: url('{{ asset(\"images/Star_moving.gif\") }}') no-repeat center fixed;
+                background-size: cover;
+                color: #fefafaff;
             }
+
             h1 {
                 margin-bottom: 20px;
-                color: #222;
+                color: #fefafaff;
             }
+
             table {
                 margin: 20px auto;
                 border-collapse: collapse;
                 width: 80%;
-                background: white;
+                background: rgba(255, 255, 255, 0.9);
                 border-radius: 12px;
                 overflow: hidden;
-                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
             }
+
             th {
-                background-color: #007bff;
+                background-color: #c904afff;
                 color: white;
                 padding: 12px;
                 font-size: 16px;
             }
+
             td {
                 padding: 12px;
                 border-bottom: 1px solid #ddd;
+                color: #121111ff;
             }
+
             tr:hover {
                 background-color: #f1f1f1;
             }
+
             a {
                 display: inline-block;
                 padding: 8px 16px;
                 border-radius: 6px;
                 text-decoration: none;
-                background-color: #007bff;
+                background-color: #ff00f7ff;
                 color: white;
                 font-weight: bold;
                 transition: background 0.3s;
             }
+
             a:hover {
-                background-color: #0056b3;
+                background-color: #a806a8ff;
             }
+
             p {
                 font-size: 18px;
+                color: #090909ff;
+            }
+
+            .logo {
+                display: block;
+                margin: 0 auto 20px auto;
+                width: 150px;
+                height: auto;
+                border-radius: 50%;
+                box-shadow: 0 0 10px rgba(0,0,0,0.3);
+            }
+
+            .content-box {
+                background-color: rgba(255, 255, 255, 0.8);
+                padding: 30px;
+                border-radius: 12px;
+                display: inline-block;
+                box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            }
+
+            button {
+                display: inline-block;
+                {# padding: 8px 16px; #}
+                border-radius: 6px;
+                text-decoration: none;
+                background-color: #ff00f7ff;
+                color: white;
+                font-weight: bold;
+                transition: background 0.3s;
+            }
+
+            .return_borrow1 {
+                color: white;
+                font-weight: bold;
             }
         </style>
     </head>

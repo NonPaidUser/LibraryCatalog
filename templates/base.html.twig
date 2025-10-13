@@ -5,54 +5,99 @@
         <title>{% block title %}Library System{% endblock %}</title>
         <style>
             body {
-                font-family: Arial, sans-serif;
+                font-family: Harrington, cursive;
                 text-align: center;
                 margin: 0;
                 padding: 40px;
-                background-color: #f8f9fa;
-                color: #333;
+                min-height: 100vh;
+                background: url('{{ asset("images/Star_moving.gif") }}') no-repeat center fixed;
+                background-size: cover;
+                color: #fefafaff;
             }
+
             h1 {
                 margin-bottom: 20px;
-                color: #222;
+                color: #fefafaff;
             }
+
             table {
                 margin: 20px auto;
                 border-collapse: collapse;
                 width: 80%;
-                background: white;
+                background: rgba(255, 255, 255, 0.9);
                 border-radius: 12px;
                 overflow: hidden;
-                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
             }
+
             th {
-                background-color: #007bff;
+                background-color: #c904afff;
                 color: white;
                 padding: 12px;
                 font-size: 16px;
             }
+
             td {
                 padding: 12px;
                 border-bottom: 1px solid #ddd;
+                color: #121111ff;
             }
+
             tr:hover {
                 background-color: #f1f1f1;
             }
+
             a {
                 display: inline-block;
                 padding: 8px 16px;
                 border-radius: 6px;
                 text-decoration: none;
-                background-color: #007bff;
+                background-color: #ff00f7ff;
                 color: white;
                 font-weight: bold;
                 transition: background 0.3s;
             }
+
             a:hover {
-                background-color: #0056b3;
+                background-color: #a806a8ff;
             }
+
             p {
                 font-size: 18px;
+                color: #090909ff;
+            }
+
+            .logo {
+                display: block;
+                margin: 0 auto 20px auto;
+                width: 150px;
+                height: auto;
+                border-radius: 50%;
+                box-shadow: 0 0 10px rgba(0,0,0,0.3);
+            }
+
+            .content-box {
+                background-color: rgba(255, 255, 255, 0.8);
+                padding: 30px;
+                border-radius: 12px;
+                display: inline-block;
+                box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            }
+
+            button {
+                display: inline-block;
+                {# padding: 8px 16px; #}
+                border-radius: 6px;
+                text-decoration: none;
+                background-color: #ff00f7ff;
+                color: white;
+                font-weight: bold;
+                transition: background 0.3s;
+            }
+
+            .return_borrow1 {
+                color: white;
+                font-weight: bold;
             }
         </style>
     </head>

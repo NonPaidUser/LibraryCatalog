@@ -1,4 +1,4 @@
-{% extends 'base.html.twig' %}
+{# {% extends 'base.html.twig' %}
 
 {% block title %}{{ page_title }}{% endblock %}
 
@@ -56,4 +56,69 @@
         {% endfor %}
         </tbody>
     </table>
+{% endblock %} #}
+
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ page_title }}{% endblock %}
+
+{% block body %}
+    <a href="{{ path('app_home') }}">🏠 Go to Home Page</a>
+
+    <h1>{{ page_title }}</h1>
+
+    <div style="margin-bottom: 15px;">
+        <a href="{{ path('app_add_book_new') }}">➕ Add New Book</a>
+        <a href="{{ path('app_add_book_index') }}">📚 Manage Books</a>
+        <a href="{{ path('app_user_search') }}">🔎 Find User (For Experiment)</a>
+        <a href="{{ path('app_user_index') }}">➕ Create a User (For Experiment)</a>
+    </div>
+
+    <form method="get" action="{{ path('app_books') }}" style="margin-bottom: 20px;">
+        <label for="category">Filter by Category:</label>
+        <select name="category" id="category" onchange="this.form.submit()">
+            <option value="">-- All --</option>
+            {% for genre in [
+                'Fiction', 'Non-Fiction', 'Science Fiction', 'Fantasy', 'Mystery',
+                'Romance', 'Horror', 'Biography', 'History', 'Poetry'
+            ] %}
+                <option value="{{ genre }}" {% if genre == selected_category %}selected{% endif %}>{{ genre }}</option>
+            {% endfor %}
+        </select>
+    </form>
+
+    <table border="1" cellspacing="0" cellpadding="8">
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Author</th>
+                <th>Published</th>
+                <th>Description</th>
+                <th>Category</th>
+                <th>Available</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for book in books %}
+            <tr>
+                <td>{{ book.title }}</td>
+                <td>{{ book.author }}</td>
+                <td>{{ book.publishedAt ? book.publishedAt|date('Y') : '-' }}</td>
+                <td>{{ book.description ?: '-' }}</td>
+                <td>{{ book.category ?: '-' }}</td>
+                <td>{{ book.availableCount is not null ? book.availableCount : 'N/A' }}</td>
+                <td>
+                    <a href="{{ path('app_borrow', { id: book.id }) }}">Borrow</a> |
+                    <a href="{{ path('app_return', { id: book.id }) }}">Return</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="7">No books found.</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
 {% endblock %}
+

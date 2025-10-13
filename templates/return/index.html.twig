@@ -3,9 +3,23 @@
 {% block title %}{{ page_title }}{% endblock %}
 
 {% block body %}
+    <a href="{{ path('app_home') }}">🏠 Go to Home Page</a>
+
     <h1>{{ page_title }}</h1>
 
-    <p>You have successfully returned: <strong>{{ book_title }}</strong></p>
+    <p>You are returning: <strong>{{ book.title }}</strong></p>
+
+    {% for label, messages in app.flashes %}
+        {% for msg in messages %}
+            <div class="flash {{ label }}">{{ msg }}</div>
+        {% endfor %}
+    {% endfor %}
+
+    <form method="post" action="{{ path('app_return', {id: book.id}) }}">
+        <label for="username">Borrower Name</label><br>
+        <input id="username" name="username" placeholder="Type exact user name" required>
+        <button type="submit">Return</button>
+    </form>
 
     <a href="{{ path('app_books') }}">⬅ Back to catalog</a>
 {% endblock %}

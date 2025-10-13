@@ -89,13 +89,15 @@ class __TwigTemplate_9ddc837e8319861ca8bfd67653b37eaa extends Template
         yield Twig\Extension\CoreExtension::include($this->env, $context, "add_book/_form.html.twig", ["button_label" => "Update"]);
         yield "
 
-    <a href=\"";
-        // line 10
+    <div style=\"margin-top: 15px; margin-bottom: 15px;\">
+        <a href=\"";
+        // line 11
         yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_add_book_index");
         yield "\">back to list</a>
+    </div>
 
     ";
-        // line 12
+        // line 14
         yield Twig\Extension\CoreExtension::include($this->env, $context, "add_book/_delete_form.html.twig");
         yield "
 ";
@@ -126,7 +128,7 @@ class __TwigTemplate_9ddc837e8319861ca8bfd67653b37eaa extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  99 => 12,  94 => 10,  89 => 8,  85 => 6,  75 => 5,  58 => 3,  41 => 1,);
+        return array (  101 => 14,  95 => 11,  89 => 8,  85 => 6,  75 => 5,  58 => 3,  41 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -140,7 +142,9 @@ class __TwigTemplate_9ddc837e8319861ca8bfd67653b37eaa extends Template
 
     {{ include('add_book/_form.html.twig', {'button_label': 'Update'}) }}
 
-    <a href=\"{{ path('app_add_book_index') }}\">back to list</a>
+    <div style=\"margin-top: 15px; margin-bottom: 15px;\">
+        <a href=\"{{ path('app_add_book_index') }}\">back to list</a>
+    </div>
 
     {{ include('add_book/_delete_form.html.twig') }}
 {% endblock %}

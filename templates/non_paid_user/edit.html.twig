@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit NonPaidUser{% endblock %}
+
+{% block body %}
+    <h1>Edit NonPaidUser</h1>
+
+    {{ include('non_paid_user/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('app_non_paid_user_index') }}">back to list</a>
+
+    {{ include('non_paid_user/_delete_form.html.twig') }}
+{% endblock %}
