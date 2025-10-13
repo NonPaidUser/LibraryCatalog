@@ -126,6 +126,16 @@ class __TwigTemplate_58bd0abf5f510f72c026785b55d9a322 extends Template
                 height: auto;
                 border-radius: 50%;
                 box-shadow: 0 0 10px rgba(0,0,0,0.3);
+                transition: ease 0.2s;
+            }
+
+            .logo:hover {
+                content: url('";
+        // line 81
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("images/Jovan_Eye_of_Ender_Black_Original.png"), "html", null, true);
+        yield "');
+                background-color: #f0f0f0;
+                transform: scale(1.30);
             }
 
             .content-box {
@@ -139,7 +149,7 @@ class __TwigTemplate_58bd0abf5f510f72c026785b55d9a322 extends Template
             button {
                 display: inline-block;
                 ";
-        // line 90
+        // line 97
         yield "                border-radius: 6px;
                 text-decoration: none;
                 background-color: #ff00f7ff;
@@ -156,9 +166,9 @@ class __TwigTemplate_58bd0abf5f510f72c026785b55d9a322 extends Template
     </head>
     <body>
         ";
-        // line 105
+        // line 112
         yield from $this->unwrap()->yieldBlock('body', $context, $blocks);
-        // line 106
+        // line 113
         yield "    </body>
 </html>
 ";
@@ -185,7 +195,7 @@ class __TwigTemplate_58bd0abf5f510f72c026785b55d9a322 extends Template
         yield from [];
     }
 
-    // line 105
+    // line 112
     /**
      * @return iterable<null|scalar|\Stringable>
      */
@@ -222,7 +232,7 @@ class __TwigTemplate_58bd0abf5f510f72c026785b55d9a322 extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  189 => 105,  172 => 5,  162 => 106,  160 => 105,  143 => 90,  64 => 13,  53 => 5,  47 => 1,);
+        return array (  199 => 112,  182 => 5,  172 => 113,  170 => 112,  153 => 97,  135 => 81,  64 => 13,  53 => 5,  47 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -303,6 +313,13 @@ class __TwigTemplate_58bd0abf5f510f72c026785b55d9a322 extends Template
                 height: auto;
                 border-radius: 50%;
                 box-shadow: 0 0 10px rgba(0,0,0,0.3);
+                transition: ease 0.2s;
+            }
+
+            .logo:hover {
+                content: url('{{ asset(\"images/Jovan_Eye_of_Ender_Black_Original.png\") }}');
+                background-color: #f0f0f0;
+                transform: scale(1.30);
             }
 
             .content-box {
