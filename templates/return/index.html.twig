@@ -10,8 +10,8 @@
 
     <div class="main-choices">
 
-
         <h1>Main Processes:</h1>
+        <a>Dashboard (In Development)</a>
         <a href="{{ path('app_add_book_index') }}"
         class="{{ app.request.attributes.get('_route') == 'app_add_book_index' ? 'active-link' : '' }}">
                 Manage Books
@@ -53,7 +53,7 @@
         {% endfor %}
     {% endfor %}
 
-    <form method="post" action="{{ path('app_return', {id: book.id}) }}">
+    <form class="form-container" method="post" action="{{ path('app_return', {id: book.id}) }}">
         <label for="username">Borrower Name</label><br>
         <input id="username" name="username" placeholder="Type exact user name" required>
         <button type="submit">Return</button>

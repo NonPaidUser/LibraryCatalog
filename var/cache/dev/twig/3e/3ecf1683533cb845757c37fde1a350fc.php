@@ -68,35 +68,103 @@ class __TwigTemplate_58bd0abf5f510f72c026785b55d9a322 extends Template
         yield "
             ";
         // line 71
-        yield "            ";
-        // line 72
+        yield "            .form-container {
+                background-color: rgba(255, 255, 255, 0.95);
+                color: #121111ff;
+                max-width: 500px;
+                margin: 30px auto;
+                padding: 25px 30px;
+                border-radius: 12px;
+                box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+                text-align: left;
+            }
+
+            /* Labels */
+            .form-container label {
+                display: block;
+                margin-bottom: 5px;
+                font-weight: bold;
+                color: #1a1a1a;
+            }
+
+            /* Inputs, selects, textareas */
+            .form-container input[type=\"text\"],
+            .form-container input[type=\"number\"],
+            .form-container input[type=\"date\"],
+            .form-container select,
+            .form-container textarea {
+                width: 100%;
+                padding: 10px 12px;
+                border: 1.5px solid #ccc;
+                border-radius: 8px;
+                font-size: 15px;
+                margin-bottom: 15px;
+                transition: all 0.2s ease;
+                box-sizing: border-box;
+            }
+
+            /* Focus effect */
+            .form-container input:focus,
+            .form-container select:focus,
+            .form-container textarea:focus {
+                outline: none;
+                border-color: #ff00f7ff;
+                box-shadow: 0 0 5px rgba(255, 0, 247, 0.4);
+            }
+
+            /* Button */
+            .form-container .btn {
+                display: inline-block;
+                background-color: #ff00f7ff;
+                color: white;
+                border: none;
+                padding: 10px 20px;
+                border-radius: 8px;
+                font-size: 16px;
+                cursor: pointer;
+                transition: background 0.3s ease;
+            }
+
+            .form-container .btn:hover {
+                background-color: #a806a8ff;
+            }
+
+            /* Optional: Section title */
+            .form-container h2 {
+                text-align: center;
+                margin-bottom: 20px;
+                color: #333;
+            }
+
+            ";
+        // line 140
         yield "
             .success-attribute {
                 color: #ff00f7ff;
             }
             ";
-        // line 84
+        // line 152
         yield "            .table-tables{
                 border: 1px solid;
                 width: 95%;
             }
             .main-bar-tables{
                 ";
-        // line 91
+        // line 159
         yield "                ";
-        // line 92
+        // line 160
         yield "                width: 86%;
                 margin-left: 14%;
                 ";
-        // line 95
+        // line 163
         yield "            }
             ";
-        // line 99
+        // line 167
         yield "            .main-home {
                 ";
-        // line 101
+        // line 169
         yield "                ";
-        // line 102
+        // line 170
         yield "                position: fixed;              /* stays still when scrolling */
                 text-align: center;
                 display: flex;
@@ -109,7 +177,7 @@ class __TwigTemplate_58bd0abf5f510f72c026785b55d9a322 extends Template
             }
             .main-choices {
                 ";
-        // line 114
+        // line 182
         yield "                position: fixed;              /* stays still when scrolling */
                 text-align: center;
                 display: flex;
@@ -119,7 +187,7 @@ class __TwigTemplate_58bd0abf5f510f72c026785b55d9a322 extends Template
                 gap: 10px;
                 margin-left: 1%;
                 ";
-        // line 125
+        // line 193
         yield "            }
             body {
                 position: relative;
@@ -128,12 +196,11 @@ class __TwigTemplate_58bd0abf5f510f72c026785b55d9a322 extends Template
                 margin: 0;
                 padding: 0;
                 width: 100vw;
-                ";
-        // line 134
-        yield "                overflow-y: auto;
+                height: auto;
+                overflow-y: auto;
                 overflow-x: hidden;
                 ";
-        // line 138
+        // line 206
         yield "                background-color: #0d375cff;
                 color: #fefafaff;
             }
@@ -144,17 +211,18 @@ class __TwigTemplate_58bd0abf5f510f72c026785b55d9a322 extends Template
             }
 
             table {
-                margin: 20px auto;
                 border-collapse: collapse;
+                margin: 20px auto;
                 width: 80%;
                 background: rgba(255, 255, 255, 0.9);
-                border-radius: 12px;
+                border-radius: 6px;
                 overflow: hidden;
                 box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
             }
 
             th {
                 background-color: #c904afff;
+                border: 1px solid #0e0d0dff;
                 color: white;
                 padding: 12px;
                 font-size: 16px;
@@ -162,7 +230,7 @@ class __TwigTemplate_58bd0abf5f510f72c026785b55d9a322 extends Template
 
             td {
                 padding: 12px;
-                border-bottom: 1px solid #ddd;
+                border: 1px solid #0e0d0dff;
                 color: #121111ff;
             }
 
@@ -202,12 +270,12 @@ class __TwigTemplate_58bd0abf5f510f72c026785b55d9a322 extends Template
 
             .logo:hover {
                 content: url('";
-        // line 205
+        // line 274
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("images/Jovan_Eye_of_Ender_Black_Original.png"), "html", null, true);
         yield "');
                 background-color: #f0f0f0;
                 ";
-        // line 208
+        // line 277
         yield "            }
 
             .content-box {
@@ -222,7 +290,7 @@ class __TwigTemplate_58bd0abf5f510f72c026785b55d9a322 extends Template
             button {
                 display: inline-block;
                 ";
-        // line 222
+        // line 291
         yield "                border-radius: 6px;
                 text-decoration: none;
                 background-color: #ff00f7ff;
@@ -237,23 +305,15 @@ class __TwigTemplate_58bd0abf5f510f72c026785b55d9a322 extends Template
             }
         </style>
         <script>
-            function toggleDropdown(id) {
-                const content = document.getElementById(id);
-                const allDropdowns = document.querySelectorAll('.dropdown-content');
-
-                allDropdowns.forEach(d => {
-                    if (d !== content) d.style.display = 'none'; // close others
-                });
-
-                content.style.display = content.style.display === 'block' ? 'none' : 'block';
-            }
-        </script>
+            ";
+        // line 315
+        yield "        </script>
     </head>
     <body>
         ";
-        // line 249
+        // line 318
         yield from $this->unwrap()->yieldBlock('body', $context, $blocks);
-        // line 250
+        // line 319
         yield "    </body>
 </html>
 ";
@@ -280,7 +340,7 @@ class __TwigTemplate_58bd0abf5f510f72c026785b55d9a322 extends Template
         yield from [];
     }
 
-    // line 249
+    // line 318
     /**
      * @return iterable<null|scalar|\Stringable>
      */
@@ -317,7 +377,7 @@ class __TwigTemplate_58bd0abf5f510f72c026785b55d9a322 extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  284 => 249,  267 => 5,  257 => 250,  255 => 249,  226 => 222,  211 => 208,  206 => 205,  137 => 138,  133 => 134,  123 => 125,  113 => 114,  100 => 102,  98 => 101,  95 => 99,  92 => 95,  88 => 92,  86 => 91,  79 => 84,  73 => 72,  71 => 71,  68 => 69,  60 => 62,  58 => 8,  53 => 5,  47 => 1,);
+        return array (  344 => 318,  327 => 5,  317 => 319,  315 => 318,  310 => 315,  294 => 291,  279 => 277,  274 => 274,  204 => 206,  191 => 193,  181 => 182,  168 => 170,  166 => 169,  163 => 167,  160 => 163,  156 => 160,  154 => 159,  147 => 152,  141 => 140,  71 => 71,  68 => 69,  60 => 62,  58 => 8,  53 => 5,  47 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -392,6 +452,74 @@ class __TwigTemplate_58bd0abf5f510f72c026785b55d9a322 extends Template
             {# Dropdown Style Sidebar #}
 
             {# FORM STYLE EDITORS #}
+            .form-container {
+                background-color: rgba(255, 255, 255, 0.95);
+                color: #121111ff;
+                max-width: 500px;
+                margin: 30px auto;
+                padding: 25px 30px;
+                border-radius: 12px;
+                box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+                text-align: left;
+            }
+
+            /* Labels */
+            .form-container label {
+                display: block;
+                margin-bottom: 5px;
+                font-weight: bold;
+                color: #1a1a1a;
+            }
+
+            /* Inputs, selects, textareas */
+            .form-container input[type=\"text\"],
+            .form-container input[type=\"number\"],
+            .form-container input[type=\"date\"],
+            .form-container select,
+            .form-container textarea {
+                width: 100%;
+                padding: 10px 12px;
+                border: 1.5px solid #ccc;
+                border-radius: 8px;
+                font-size: 15px;
+                margin-bottom: 15px;
+                transition: all 0.2s ease;
+                box-sizing: border-box;
+            }
+
+            /* Focus effect */
+            .form-container input:focus,
+            .form-container select:focus,
+            .form-container textarea:focus {
+                outline: none;
+                border-color: #ff00f7ff;
+                box-shadow: 0 0 5px rgba(255, 0, 247, 0.4);
+            }
+
+            /* Button */
+            .form-container .btn {
+                display: inline-block;
+                background-color: #ff00f7ff;
+                color: white;
+                border: none;
+                padding: 10px 20px;
+                border-radius: 8px;
+                font-size: 16px;
+                cursor: pointer;
+                transition: background 0.3s ease;
+            }
+
+            .form-container .btn:hover {
+                background-color: #a806a8ff;
+            }
+
+            /* Optional: Section title */
+            .form-container h2 {
+                text-align: center;
+                margin-bottom: 20px;
+                color: #333;
+            }
+
             {# FORM STYLE EDITORS #}
 
             .success-attribute {
@@ -454,7 +582,7 @@ class __TwigTemplate_58bd0abf5f510f72c026785b55d9a322 extends Template
                 margin: 0;
                 padding: 0;
                 width: 100vw;
-                {# height: 100vh; #}
+                height: auto;
                 overflow-y: auto;
                 overflow-x: hidden;
                 {# background: url('{{ asset(\"images/Star_moving.gif\") }}') no-repeat center fixed;
@@ -469,17 +597,18 @@ class __TwigTemplate_58bd0abf5f510f72c026785b55d9a322 extends Template
             }
 
             table {
-                margin: 20px auto;
                 border-collapse: collapse;
+                margin: 20px auto;
                 width: 80%;
                 background: rgba(255, 255, 255, 0.9);
-                border-radius: 12px;
+                border-radius: 6px;
                 overflow: hidden;
                 box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
             }
 
             th {
                 background-color: #c904afff;
+                border: 1px solid #0e0d0dff;
                 color: white;
                 padding: 12px;
                 font-size: 16px;
@@ -487,7 +616,7 @@ class __TwigTemplate_58bd0abf5f510f72c026785b55d9a322 extends Template
 
             td {
                 padding: 12px;
-                border-bottom: 1px solid #ddd;
+                border: 1px solid #0e0d0dff;
                 color: #121111ff;
             }
 
@@ -557,7 +686,7 @@ class __TwigTemplate_58bd0abf5f510f72c026785b55d9a322 extends Template
             }
         </style>
         <script>
-            function toggleDropdown(id) {
+            {# function toggleDropdown(id) {
                 const content = document.getElementById(id);
                 const allDropdowns = document.querySelectorAll('.dropdown-content');
 
@@ -566,7 +695,7 @@ class __TwigTemplate_58bd0abf5f510f72c026785b55d9a322 extends Template
                 });
 
                 content.style.display = content.style.display === 'block' ? 'none' : 'block';
-            }
+            } #}
         </script>
     </head>
     <body>

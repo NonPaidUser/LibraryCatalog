@@ -38,7 +38,7 @@ class BookType extends AbstractType
             ])
             ->add('category', ChoiceType::class, [
                 'label' => 'Genre / Category',
-                'required' => false,
+                'required' => true,
                 'choices' => [
                     'Fiction' => 'Fiction',
                     'Non-Fiction' => 'Non-Fiction',

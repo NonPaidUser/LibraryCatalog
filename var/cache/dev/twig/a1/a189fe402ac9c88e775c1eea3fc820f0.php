@@ -95,8 +95,8 @@ class __TwigTemplate_7aa848361309b884ba7b490b8e61f3a5 extends Template
 
     <div class=\"main-choices\">
 
-
         <h1>Main Processes:</h1>
+        <a>Dashboard (In Development)</a>
         <a href=\"";
         // line 15
         yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_add_book_index");
@@ -315,8 +315,8 @@ class __TwigTemplate_7aa848361309b884ba7b490b8e61f3a5 extends Template
 
     <div class=\"main-choices\">
 
-
         <h1>Main Processes:</h1>
+        <a>Dashboard (In Development)</a>
         <a href=\"{{ path('app_add_book_index') }}\"
         class=\"{{ app.request.attributes.get('_route') == 'app_add_book_index' ? 'active-link' : '' }}\">
                 Manage Books
