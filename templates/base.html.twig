@@ -4,14 +4,66 @@
         <meta charset="UTF-8">
         <title>{% block title %}Library System{% endblock %}</title>
         <style>
+            .success-attribute {
+                color: #080808ff;
+            }
+            {# .scroll-box {
+                width: 200px;
+                height: 300px;
+                border: 2px solid #333;
+                overflow-y: auto; /* ✅ Allow internal scroll */
+                padding: 10px;
+                background-color: #f9f9f9;
+            } #}
+            .table-tables{
+                border: 1px solid #030303ff;
+                width: 95%;
+            }
+            .main-bar-tables{
+                border-left: 1px solid white;
+                border-top: none;
+                {# box-sizing: border-box; #}
+                width: 86%;
+                margin-left: 14%;
+                {# background-color: rgba(53, 8, 116, 0.1); #}
+            }
+            .back-to-catalog{
+                margin-top: 10px;
+            }
+            .main-home {
+                {# border: 1px solid #ddd; #}
+                {# box-sizing: border-box; #}
+                position: fixed;              /* stays still when scrolling */
+                text-align: center;
+                display: flex;
+                flex-direction: column;
+                width: 12%;
+                margin-left: 1%;
+            }
+            .main-choices {
+                {# box-sizing: border-box; #}
+                position: fixed;              /* stays still when scrolling */
+                text-align: center;
+                display: flex;
+                flex-direction: column;
+                width: 12%;
+                margin-top: 400px;
+                gap: 10px;
+                margin-left: 1%;
+            }
             body {
-                font-family: Harrington, cursive;
+                position: relative;
+                font-family: 'Arial', sans-serif;
                 text-align: center;
                 margin: 0;
-                padding: 40px;
-                min-height: 100vh;
-                background: url('{{ asset("images/Star_moving.gif") }}') no-repeat center fixed;
-                background-size: cover;
+                padding: 0;
+                width: 100vw;
+                {# height: 100vh; #}
+                overflow-y: auto;
+                overflow-x: hidden;
+                {# background: url('{{ asset("images/Star_moving.gif") }}') no-repeat center fixed;
+                background-size: cover; #}
+                background-color: #124a7bff;
                 color: #fefafaff;
             }
 
@@ -68,11 +120,11 @@
             }
 
             .logo {
-                display: block;
                 margin: 0 auto 20px auto;
                 width: 150px;
                 height: auto;
                 border-radius: 50%;
+                background-color: white;
                 box-shadow: 0 0 10px rgba(0,0,0,0.3);
                 transition: ease 0.2s;
             }

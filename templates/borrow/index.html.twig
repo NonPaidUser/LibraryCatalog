@@ -3,8 +3,16 @@
 {% block title %}{{ page_title }}{% endblock %}
 
 {% block body %}
-    <a href="{{ path('app_home') }}">🏠 Go to Home Page</a>
+    <div class="main-home">
+        <img src="{{ asset('images/Jovan_Eye_of_Ender_for_Books.png') }}" alt="Library Logo" class="logo">
+        <a href="{{ path('app_home') }}">Go to Home Page</a>
+    </div>
 
+    <div class="main-choices">
+        <a class="back-to-catalog" href="{{ path('app_books') }}">Back to catalog</a>
+    </div>
+
+<div class="main-bar-tables">
     <h1>{{ page_title }}</h1>
 
     <p style="color:white">You are borrowing: <strong>{{ book.title }}</strong> (Available: {{ book.availableCount ?: 0 }})</p>
@@ -20,6 +28,29 @@
         <input id="username" name="username" placeholder="Type exact user name" required>
         <button type="submit">Borrow</button>
     </form>
+</div>
 
-    <a href="{{ path('app_books') }}">⬅ Back to catalog</a>
+{# <div class="scroll-box">
+  <div class="content">
+    <p>Div 1 content...</p>
+    <p>Scroll inside this box.</p>
+    <p>Scroll inside this one too!</p>
+    <p>Scroll inside this one too!</p>
+    <p>Scroll inside this one too!</p>
+    <p>Scroll inside this one too!</p>
+    <p>Scroll inside this one too!</p>
+    <p>Scroll inside this one too!</p>
+    <p>Scroll inside this one too!</p>
+    <p>Scroll inside this one too!</p>
+    <p>Scroll inside this one too!</p>
+    <p>Scroll inside this one too!</p>
+    <p>Scroll inside this one too!</p>
+    <p>Scroll inside this one too!</p>
+    <p>Scroll inside this one too!</p>
+    <p>Scroll inside this one too!</p>
+    <p>Scroll inside this one too!</p>
+    <p>Scroll inside this one too!</p>
+  </div>
+</div> #}
+
 {% endblock %}

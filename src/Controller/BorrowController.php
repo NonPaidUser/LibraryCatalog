@@ -35,7 +35,7 @@ class BorrowController extends AbstractController
 
             if ($book->getAvailableCount() === null || $book->getAvailableCount() <= 0) {
                 $this->addFlash('error', 'This book is currently not available to borrow.');
-                return $this->redirectToRoute('app_books');
+                return $this->redirectToRoute('app_borrow');
             }
 
             // Create borrow record

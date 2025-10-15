@@ -82,31 +82,46 @@ class __TwigTemplate_4149901cffbf46c33f99d61442184b30 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
         // line 6
-        yield "    <a href=\"";
-        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_home");
-        yield "\">🏠 Go to Home Page</a>
-
-    <h1>";
+        yield "    <div class=\"main-home\">
+        <img src=\"";
+        // line 7
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("images/Jovan_Eye_of_Ender_for_Books.png"), "html", null, true);
+        yield "\" alt=\"Library Logo\" class=\"logo\">
+        <a href=\"";
         // line 8
-        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape((isset($context["page_title"]) || array_key_exists("page_title", $context) ? $context["page_title"] : (function () { throw new RuntimeError('Variable "page_title" does not exist.', 8, $this->source); })()), "html", null, true);
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_home");
+        yield "\">Go to Home Page</a>
+    </div>
+
+    <div class=\"main-choices\">
+        <a class=\"back-to-catalog\" href=\"";
+        // line 12
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_books");
+        yield "\">Back to catalog</a>
+    </div>
+
+<div class=\"main-bar-tables\">
+    <h1>";
+        // line 16
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape((isset($context["page_title"]) || array_key_exists("page_title", $context) ? $context["page_title"] : (function () { throw new RuntimeError('Variable "page_title" does not exist.', 16, $this->source); })()), "html", null, true);
         yield "</h1>
 
-    <p>You are returning: <strong>";
-        // line 10
-        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, (isset($context["book"]) || array_key_exists("book", $context) ? $context["book"] : (function () { throw new RuntimeError('Variable "book" does not exist.', 10, $this->source); })()), "title", [], "any", false, false, false, 10), "html", null, true);
+    <p style=\"color: white\">You are returning: <strong>";
+        // line 18
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, (isset($context["book"]) || array_key_exists("book", $context) ? $context["book"] : (function () { throw new RuntimeError('Variable "book" does not exist.', 18, $this->source); })()), "title", [], "any", false, false, false, 18), "html", null, true);
         yield "</strong></p>
 
     ";
-        // line 12
+        // line 20
         $context['_parent'] = $context;
-        $context['_seq'] = CoreExtension::ensureTraversable(CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 12, $this->source); })()), "flashes", [], "any", false, false, false, 12));
+        $context['_seq'] = CoreExtension::ensureTraversable(CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 20, $this->source); })()), "flashes", [], "any", false, false, false, 20));
         foreach ($context['_seq'] as $context["label"] => $context["messages"]) {
-            // line 13
+            // line 21
             yield "        ";
             $context['_parent'] = $context;
             $context['_seq'] = CoreExtension::ensureTraversable($context["messages"]);
             foreach ($context['_seq'] as $context["_key"] => $context["msg"]) {
-                // line 14
+                // line 22
                 yield "            <div class=\"flash ";
                 yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($context["label"], "html", null, true);
                 yield "\">";
@@ -117,27 +132,24 @@ class __TwigTemplate_4149901cffbf46c33f99d61442184b30 extends Template
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_key'], $context['msg'], $context['_parent']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 16
+            // line 24
             yield "    ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['label'], $context['messages'], $context['_parent']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 17
+        // line 25
         yield "
     <form method=\"post\" action=\"";
-        // line 18
-        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_return", ["id" => CoreExtension::getAttribute($this->env, $this->source, (isset($context["book"]) || array_key_exists("book", $context) ? $context["book"] : (function () { throw new RuntimeError('Variable "book" does not exist.', 18, $this->source); })()), "id", [], "any", false, false, false, 18)]), "html", null, true);
+        // line 26
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_return", ["id" => CoreExtension::getAttribute($this->env, $this->source, (isset($context["book"]) || array_key_exists("book", $context) ? $context["book"] : (function () { throw new RuntimeError('Variable "book" does not exist.', 26, $this->source); })()), "id", [], "any", false, false, false, 26)]), "html", null, true);
         yield "\">
         <label for=\"username\">Borrower Name</label><br>
         <input id=\"username\" name=\"username\" placeholder=\"Type exact user name\" required>
         <button type=\"submit\">Return</button>
     </form>
+</div>
 
-    <a href=\"";
-        // line 24
-        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_books");
-        yield "\">⬅ Back to catalog</a>
 ";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
@@ -166,7 +178,7 @@ class __TwigTemplate_4149901cffbf46c33f99d61442184b30 extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  139 => 24,  130 => 18,  127 => 17,  121 => 16,  110 => 14,  105 => 13,  101 => 12,  96 => 10,  91 => 8,  85 => 6,  75 => 5,  58 => 3,  41 => 1,);
+        return array (  145 => 26,  142 => 25,  136 => 24,  125 => 22,  120 => 21,  116 => 20,  111 => 18,  106 => 16,  99 => 12,  92 => 8,  88 => 7,  85 => 6,  75 => 5,  58 => 3,  41 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -176,11 +188,19 @@ class __TwigTemplate_4149901cffbf46c33f99d61442184b30 extends Template
 {% block title %}{{ page_title }}{% endblock %}
 
 {% block body %}
-    <a href=\"{{ path('app_home') }}\">🏠 Go to Home Page</a>
+    <div class=\"main-home\">
+        <img src=\"{{ asset('images/Jovan_Eye_of_Ender_for_Books.png') }}\" alt=\"Library Logo\" class=\"logo\">
+        <a href=\"{{ path('app_home') }}\">Go to Home Page</a>
+    </div>
 
+    <div class=\"main-choices\">
+        <a class=\"back-to-catalog\" href=\"{{ path('app_books') }}\">Back to catalog</a>
+    </div>
+
+<div class=\"main-bar-tables\">
     <h1>{{ page_title }}</h1>
 
-    <p>You are returning: <strong>{{ book.title }}</strong></p>
+    <p style=\"color: white\">You are returning: <strong>{{ book.title }}</strong></p>
 
     {% for label, messages in app.flashes %}
         {% for msg in messages %}
@@ -193,8 +213,8 @@ class __TwigTemplate_4149901cffbf46c33f99d61442184b30 extends Template
         <input id=\"username\" name=\"username\" placeholder=\"Type exact user name\" required>
         <button type=\"submit\">Return</button>
     </form>
+</div>
 
-    <a href=\"{{ path('app_books') }}\">⬅ Back to catalog</a>
 {% endblock %}
 ", "return/index.html.twig", "C:\\Jovan Components\\JOVAN PROJECTS\\Symfony_Projects\\Library_Catalog_Borrowing_System\\templates\\return\\index.html.twig");
     }

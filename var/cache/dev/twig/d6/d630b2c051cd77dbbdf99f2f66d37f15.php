@@ -82,18 +82,37 @@ class __TwigTemplate_6763a4e7ec064943456190e58e20596c extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
         // line 6
-        yield "    <a href=\"";
-        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_home");
-        yield "\">🏠 Go to Home Page</a>
-
-    <h1>";
+        yield "    <div class=\"main-home\">
+        <img src=\"";
+        // line 7
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("images/Jovan_Eye_of_Ender_for_Books.png"), "html", null, true);
+        yield "\" alt=\"Library Logo\" class=\"logo\">
+        <a href=\"";
         // line 8
-        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 8, $this->source); })()), "name", [], "any", false, false, false, 8), "html", null, true);
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_home");
+        yield "\">Go to Home Page</a>
+    </div>
+
+    <div class=\"main-choices\">
+        <a href=\"";
+        // line 12
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_user_search");
+        yield "\">Search another user</a>
+        <a class=\"back-to-catalog\" href=\"";
+        // line 13
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_books");
+        yield "\">Back to catalog</a>
+    </div>
+
+<div class=\"main-bar-tables\">
+    <h1>";
+        // line 17
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 17, $this->source); })()), "name", [], "any", false, false, false, 17), "html", null, true);
         yield " — Borrowed Books</h1>
 
     <p style=\"color:white\">Borrowed count: ";
-        // line 10
-        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 10, $this->source); })()), "borrowedCount", [], "any", false, false, false, 10), "html", null, true);
+        // line 19
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 19, $this->source); })()), "borrowedCount", [], "any", false, false, false, 19), "html", null, true);
         yield "</p>
 
     <table border=\"1\" cellpadding=\"8\" cellspacing=\"0\">
@@ -106,53 +125,42 @@ class __TwigTemplate_6763a4e7ec064943456190e58e20596c extends Template
         </thead>
         <tbody>
         ";
-        // line 21
+        // line 30
         $context['_parent'] = $context;
-        $context['_seq'] = CoreExtension::ensureTraversable((isset($context["borrowedRecords"]) || array_key_exists("borrowedRecords", $context) ? $context["borrowedRecords"] : (function () { throw new RuntimeError('Variable "borrowedRecords" does not exist.', 21, $this->source); })()));
+        $context['_seq'] = CoreExtension::ensureTraversable((isset($context["borrowedRecords"]) || array_key_exists("borrowedRecords", $context) ? $context["borrowedRecords"] : (function () { throw new RuntimeError('Variable "borrowedRecords" does not exist.', 30, $this->source); })()));
         $context['_iterated'] = false;
         foreach ($context['_seq'] as $context["_key"] => $context["rec"]) {
-            // line 22
+            // line 31
             yield "            <tr>
                 <td>";
-            // line 23
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, $context["rec"], "book", [], "any", false, false, false, 23), "title", [], "any", false, false, false, 23), "html", null, true);
+            // line 32
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, $context["rec"], "book", [], "any", false, false, false, 32), "title", [], "any", false, false, false, 32), "html", null, true);
             yield "</td>
                 <td>";
-            // line 24
-            yield (((($tmp = CoreExtension::getAttribute($this->env, $this->source, $context["rec"], "borrowedAt", [], "any", false, false, false, 24)) && $tmp instanceof Markup ? (string) $tmp : $tmp)) ? ($this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Twig\Extension\CoreExtension']->formatDate(CoreExtension::getAttribute($this->env, $this->source, $context["rec"], "borrowedAt", [], "any", false, false, false, 24), "Y-m-d H:i"), "html", null, true)) : ("-"));
+            // line 33
+            yield (((($tmp = CoreExtension::getAttribute($this->env, $this->source, $context["rec"], "borrowedAt", [], "any", false, false, false, 33)) && $tmp instanceof Markup ? (string) $tmp : $tmp)) ? ($this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Twig\Extension\CoreExtension']->formatDate(CoreExtension::getAttribute($this->env, $this->source, $context["rec"], "borrowedAt", [], "any", false, false, false, 33), "Y-m-d H:i"), "html", null, true)) : ("-"));
             yield "</td>
                 <td>";
-            // line 25
-            yield (((($tmp = CoreExtension::getAttribute($this->env, $this->source, $context["rec"], "returnedAt", [], "any", false, false, false, 25)) && $tmp instanceof Markup ? (string) $tmp : $tmp)) ? ($this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Twig\Extension\CoreExtension']->formatDate(CoreExtension::getAttribute($this->env, $this->source, $context["rec"], "returnedAt", [], "any", false, false, false, 25), "Y-m-d H:i"), "html", null, true)) : ("Not returned"));
+            // line 34
+            yield (((($tmp = CoreExtension::getAttribute($this->env, $this->source, $context["rec"], "returnedAt", [], "any", false, false, false, 34)) && $tmp instanceof Markup ? (string) $tmp : $tmp)) ? ($this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Twig\Extension\CoreExtension']->formatDate(CoreExtension::getAttribute($this->env, $this->source, $context["rec"], "returnedAt", [], "any", false, false, false, 34), "Y-m-d H:i"), "html", null, true)) : ("Not returned"));
             yield "</td>
             </tr>
         ";
             $context['_iterated'] = true;
         }
-        // line 27
+        // line 36
         if (!$context['_iterated']) {
-            // line 28
+            // line 37
             yield "            <tr><td colspan=\"3\">No borrowed books found for this user.</td></tr>
         ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_key'], $context['rec'], $context['_parent'], $context['_iterated']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 30
+        // line 39
         yield "        </tbody>
     </table>
-
-    <div style=\"margin-top: 15px;\">
-        <a href=\"";
-        // line 34
-        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_books");
-        yield "\">⬅ Back to catalog</a>
-        <a href=\"";
-        // line 35
-        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_user_search");
-        yield "\">Search another user</a>
-    </div>
-
+</div>
 ";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
@@ -181,7 +189,7 @@ class __TwigTemplate_6763a4e7ec064943456190e58e20596c extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  152 => 35,  148 => 34,  142 => 30,  135 => 28,  133 => 27,  126 => 25,  122 => 24,  118 => 23,  115 => 22,  110 => 21,  96 => 10,  91 => 8,  85 => 6,  75 => 5,  58 => 3,  41 => 1,);
+        return array (  161 => 39,  154 => 37,  152 => 36,  145 => 34,  141 => 33,  137 => 32,  134 => 31,  129 => 30,  115 => 19,  110 => 17,  103 => 13,  99 => 12,  92 => 8,  88 => 7,  85 => 6,  75 => 5,  58 => 3,  41 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -191,8 +199,17 @@ class __TwigTemplate_6763a4e7ec064943456190e58e20596c extends Template
 {% block title %}{{ page_title }}{% endblock %}
 
 {% block body %}
-    <a href=\"{{ path('app_home') }}\">🏠 Go to Home Page</a>
+    <div class=\"main-home\">
+        <img src=\"{{ asset('images/Jovan_Eye_of_Ender_for_Books.png') }}\" alt=\"Library Logo\" class=\"logo\">
+        <a href=\"{{ path('app_home') }}\">Go to Home Page</a>
+    </div>
 
+    <div class=\"main-choices\">
+        <a href=\"{{ path('app_user_search') }}\">Search another user</a>
+        <a class=\"back-to-catalog\" href=\"{{ path('app_books') }}\">Back to catalog</a>
+    </div>
+
+<div class=\"main-bar-tables\">
     <h1>{{ user.name }} — Borrowed Books</h1>
 
     <p style=\"color:white\">Borrowed count: {{ user.borrowedCount }}</p>
@@ -217,12 +234,7 @@ class __TwigTemplate_6763a4e7ec064943456190e58e20596c extends Template
         {% endfor %}
         </tbody>
     </table>
-
-    <div style=\"margin-top: 15px;\">
-        <a href=\"{{ path('app_books') }}\">⬅ Back to catalog</a>
-        <a href=\"{{ path('app_user_search') }}\">Search another user</a>
-    </div>
-
+</div>
 {% endblock %}
 ", "user/borrowed.html.twig", "C:\\Jovan Components\\JOVAN PROJECTS\\Symfony_Projects\\Library_Catalog_Borrowing_System\\templates\\user\\borrowed.html.twig");
     }

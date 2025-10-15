@@ -82,17 +82,38 @@ class __TwigTemplate_0608ea57c9891ec008e6389ecf09b3b8 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
         // line 6
-        yield "    <h1>Create new User</h1>
+        yield "
+    <div class=\"main-home\">
+        <img src=\"";
+        // line 8
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("images/Jovan_Eye_of_Ender_for_Books.png"), "html", null, true);
+        yield "\" alt=\"Library Logo\" class=\"logo\">
+        <a href=\"";
+        // line 9
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_home");
+        yield "\">Go to Home Page</a>
+    </div>
+
+    <div class=\"main-choices\">
+        <a href=\"";
+        // line 13
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_user_search");
+        yield "\">Back to search user</a>
+        <a href=\"";
+        // line 14
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_user_index");
+        yield "\">Back to list</a>    
+    </div>
+
+<div class=\"main-bar-tables\">
+    <h1>Create new User</h1>
 
     ";
-        // line 8
+        // line 20
         yield Twig\Extension\CoreExtension::include($this->env, $context, "user/_form.html.twig");
         yield "
 
-    <a href=\"";
-        // line 10
-        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_user_index");
-        yield "\">back to list</a>
+</div>
 ";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
@@ -121,7 +142,7 @@ class __TwigTemplate_0608ea57c9891ec008e6389ecf09b3b8 extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  94 => 10,  89 => 8,  85 => 6,  75 => 5,  58 => 3,  41 => 1,);
+        return array (  113 => 20,  104 => 14,  100 => 13,  93 => 9,  89 => 8,  85 => 6,  75 => 5,  58 => 3,  41 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -131,11 +152,23 @@ class __TwigTemplate_0608ea57c9891ec008e6389ecf09b3b8 extends Template
 {% block title %}New User{% endblock %}
 
 {% block body %}
+
+    <div class=\"main-home\">
+        <img src=\"{{ asset('images/Jovan_Eye_of_Ender_for_Books.png') }}\" alt=\"Library Logo\" class=\"logo\">
+        <a href=\"{{ path('app_home') }}\">Go to Home Page</a>
+    </div>
+
+    <div class=\"main-choices\">
+        <a href=\"{{ path('app_user_search') }}\">Back to search user</a>
+        <a href=\"{{ path('app_user_index') }}\">Back to list</a>    
+    </div>
+
+<div class=\"main-bar-tables\">
     <h1>Create new User</h1>
 
     {{ include('user/_form.html.twig') }}
 
-    <a href=\"{{ path('app_user_index') }}\">back to list</a>
+</div>
 {% endblock %}
 ", "user/new.html.twig", "C:\\Jovan Components\\JOVAN PROJECTS\\Symfony_Projects\\Library_Catalog_Borrowing_System\\templates\\user\\new.html.twig");
     }

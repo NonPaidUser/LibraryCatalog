@@ -88,11 +88,11 @@ class __TwigTemplate_63c39a0e9e2511c8dd5801bfa5ecc637 extends Template
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("images/Jovan_Eye_of_Ender_for_Books.png"), "html", null, true);
         yield "\" alt=\"Library Logo\" class=\"logo\">
 
-        <h1>";
+        <h1 style=\"color: black\">";
         // line 9
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape((isset($context["page_title"]) || array_key_exists("page_title", $context) ? $context["page_title"] : (function () { throw new RuntimeError('Variable "page_title" does not exist.', 9, $this->source); })()), "html", null, true);
         yield "</h1>
-        <p>This is the homepage of the Library Catalog & Borrowing System.</p>
+        <p style=\"color: black\">This is the homepage of the Library Catalog & Borrowing System.</p>
 
         <a href=\"";
         // line 12
@@ -142,8 +142,8 @@ class __TwigTemplate_63c39a0e9e2511c8dd5801bfa5ecc637 extends Template
     <div class=\"content-box\">
         <img src=\"{{ asset('images/Jovan_Eye_of_Ender_for_Books.png') }}\" alt=\"Library Logo\" class=\"logo\">
 
-        <h1>{{ page_title }}</h1>
-        <p>This is the homepage of the Library Catalog & Borrowing System.</p>
+        <h1 style=\"color: black\">{{ page_title }}</h1>
+        <p style=\"color: black\">This is the homepage of the Library Catalog & Borrowing System.</p>
 
         <a href=\"{{ path('app_books') }}\">Go to Borrowing Page (Admin Side)</a>
         {# <a href=\"{{ path('app_login') }}\">🏠 Login (BETA)</a>

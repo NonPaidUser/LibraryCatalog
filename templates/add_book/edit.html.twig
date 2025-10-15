@@ -3,13 +3,27 @@
 {% block title %}Edit Book{% endblock %}
 
 {% block body %}
-    <h1>Edit Book</h1>
-
-    {{ include('add_book/_form.html.twig', {'button_label': 'Update'}) }}
-
-    <div style="margin-top: 15px; margin-bottom: 15px;">
-        <a href="{{ path('app_add_book_index') }}">back to list</a>
+    <div class="main-home">
+        <img src="{{ asset('images/Jovan_Eye_of_Ender_for_Books.png') }}" alt="Library Logo" class="logo">
+        <a href="{{ path('app_home') }}">Go to Home Page</a>
     </div>
 
-    {{ include('add_book/_delete_form.html.twig') }}
+    <div class="main-choices">
+        <h1>Main Processes:</h1>
+        <a href="{{ path('app_add_book_new') }}">Add New Book</a>
+        <a href="{{ path('app_add_book_index') }}">Manage Books</a>
+        <a href="{{ path('app_user_search') }}">Find User (For Experiment)</a>
+        <a href="{{ path('app_user_index') }}">Create a User (For Experiment)</a>
+        <h1>Processes:</h1>
+        <a href="{{ path('app_add_book_index') }}">Back to list</a>
+    </div>
+
+    <div class="main-bar-tables">
+        <h1>Edit Book</h1>
+
+        {{ include('add_book/_form.html.twig', {'button_label': 'Update'}) }}
+
+        {{ include('add_book/_delete_form.html.twig') }}
+    </div>
+
 {% endblock %}

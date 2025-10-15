@@ -82,22 +82,43 @@ class __TwigTemplate_b89bb6307cfa44927ac3638677002f93 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
         // line 6
-        yield "    <h1>Edit User</h1>
-
-    ";
+        yield "
+    <div class=\"main-home\">
+        <img src=\"";
         // line 8
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("images/Jovan_Eye_of_Ender_for_Books.png"), "html", null, true);
+        yield "\" alt=\"Library Logo\" class=\"logo\">
+        <a href=\"";
+        // line 9
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_home");
+        yield "\">Go to Home Page</a>
+    </div>
+
+    <div class=\"main-choices\">
+        <a href=\"";
+        // line 13
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_user_search");
+        yield "\">Back to search user</a>
+        <a href=\"";
+        // line 14
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_user_index");
+        yield "\">Back to list</a>    
+    </div>
+
+<div class=\"main-bar-tables\">
+    <h1>Edit User</h1>
+
+    <div>
+        ";
+        // line 21
         yield Twig\Extension\CoreExtension::include($this->env, $context, "user/_form.html.twig", ["button_label" => "Update"]);
         yield "
-
-    <a href=\"";
-        // line 10
-        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_user_index");
-        yield "\">back to list</a>
-
-    ";
-        // line 12
+        ";
+        // line 22
         yield Twig\Extension\CoreExtension::include($this->env, $context, "user/_delete_form.html.twig");
         yield "
+    </div> 
+</div>
 ";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
@@ -126,7 +147,7 @@ class __TwigTemplate_b89bb6307cfa44927ac3638677002f93 extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  99 => 12,  94 => 10,  89 => 8,  85 => 6,  75 => 5,  58 => 3,  41 => 1,);
+        return array (  118 => 22,  114 => 21,  104 => 14,  100 => 13,  93 => 9,  89 => 8,  85 => 6,  75 => 5,  58 => 3,  41 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -136,13 +157,25 @@ class __TwigTemplate_b89bb6307cfa44927ac3638677002f93 extends Template
 {% block title %}Edit User{% endblock %}
 
 {% block body %}
+
+    <div class=\"main-home\">
+        <img src=\"{{ asset('images/Jovan_Eye_of_Ender_for_Books.png') }}\" alt=\"Library Logo\" class=\"logo\">
+        <a href=\"{{ path('app_home') }}\">Go to Home Page</a>
+    </div>
+
+    <div class=\"main-choices\">
+        <a href=\"{{ path('app_user_search') }}\">Back to search user</a>
+        <a href=\"{{ path('app_user_index') }}\">Back to list</a>    
+    </div>
+
+<div class=\"main-bar-tables\">
     <h1>Edit User</h1>
 
-    {{ include('user/_form.html.twig', {'button_label': 'Update'}) }}
-
-    <a href=\"{{ path('app_user_index') }}\">back to list</a>
-
-    {{ include('user/_delete_form.html.twig') }}
+    <div>
+        {{ include('user/_form.html.twig', {'button_label': 'Update'}) }}
+        {{ include('user/_delete_form.html.twig') }}
+    </div> 
+</div>
 {% endblock %}
 ", "user/edit.html.twig", "C:\\Jovan Components\\JOVAN PROJECTS\\Symfony_Projects\\Library_Catalog_Borrowing_System\\templates\\user\\edit.html.twig");
     }

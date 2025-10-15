@@ -53,17 +53,66 @@ class __TwigTemplate_58bd0abf5f510f72c026785b55d9a322 extends Template
         yield from $this->unwrap()->yieldBlock('title', $context, $blocks);
         yield "</title>
         <style>
+            .success-attribute {
+                color: #080808ff;
+            }
+            ";
+        // line 18
+        yield "            .table-tables{
+                border: 1px solid #030303ff;
+                width: 95%;
+            }
+            .main-bar-tables{
+                border-left: 1px solid white;
+                border-top: none;
+                ";
+        // line 26
+        yield "                width: 86%;
+                margin-left: 14%;
+                ";
+        // line 29
+        yield "            }
+            .back-to-catalog{
+                margin-top: 10px;
+            }
+            .main-home {
+                ";
+        // line 35
+        yield "                ";
+        // line 36
+        yield "                position: fixed;              /* stays still when scrolling */
+                text-align: center;
+                display: flex;
+                flex-direction: column;
+                width: 12%;
+                margin-left: 1%;
+            }
+            .main-choices {
+                ";
+        // line 45
+        yield "                position: fixed;              /* stays still when scrolling */
+                text-align: center;
+                display: flex;
+                flex-direction: column;
+                width: 12%;
+                margin-top: 400px;
+                gap: 10px;
+                margin-left: 1%;
+            }
             body {
-                font-family: Harrington, cursive;
+                position: relative;
+                font-family: 'Arial', sans-serif;
                 text-align: center;
                 margin: 0;
-                padding: 40px;
-                min-height: 100vh;
-                background: url('";
-        // line 13
-        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("images/Star_moving.gif"), "html", null, true);
-        yield "') no-repeat center fixed;
-                background-size: cover;
+                padding: 0;
+                width: 100vw;
+                ";
+        // line 62
+        yield "                overflow-y: auto;
+                overflow-x: hidden;
+                ";
+        // line 66
+        yield "                background-color: #124a7bff;
                 color: #fefafaff;
             }
 
@@ -120,18 +169,18 @@ class __TwigTemplate_58bd0abf5f510f72c026785b55d9a322 extends Template
             }
 
             .logo {
-                display: block;
                 margin: 0 auto 20px auto;
                 width: 150px;
                 height: auto;
                 border-radius: 50%;
+                background-color: white;
                 box-shadow: 0 0 10px rgba(0,0,0,0.3);
                 transition: ease 0.2s;
             }
 
             .logo:hover {
                 content: url('";
-        // line 81
+        // line 133
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("images/Jovan_Eye_of_Ender_Black_Original.png"), "html", null, true);
         yield "');
                 background-color: #f0f0f0;
@@ -149,7 +198,7 @@ class __TwigTemplate_58bd0abf5f510f72c026785b55d9a322 extends Template
             button {
                 display: inline-block;
                 ";
-        // line 97
+        // line 149
         yield "                border-radius: 6px;
                 text-decoration: none;
                 background-color: #ff00f7ff;
@@ -166,9 +215,9 @@ class __TwigTemplate_58bd0abf5f510f72c026785b55d9a322 extends Template
     </head>
     <body>
         ";
-        // line 112
+        // line 164
         yield from $this->unwrap()->yieldBlock('body', $context, $blocks);
-        // line 113
+        // line 165
         yield "    </body>
 </html>
 ";
@@ -195,7 +244,7 @@ class __TwigTemplate_58bd0abf5f510f72c026785b55d9a322 extends Template
         yield from [];
     }
 
-    // line 112
+    // line 164
     /**
      * @return iterable<null|scalar|\Stringable>
      */
@@ -232,7 +281,7 @@ class __TwigTemplate_58bd0abf5f510f72c026785b55d9a322 extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  199 => 112,  182 => 5,  172 => 113,  170 => 112,  153 => 97,  135 => 81,  64 => 13,  53 => 5,  47 => 1,);
+        return array (  248 => 164,  231 => 5,  221 => 165,  219 => 164,  202 => 149,  184 => 133,  115 => 66,  111 => 62,  93 => 45,  83 => 36,  81 => 35,  74 => 29,  70 => 26,  61 => 18,  53 => 5,  47 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -243,14 +292,66 @@ class __TwigTemplate_58bd0abf5f510f72c026785b55d9a322 extends Template
         <meta charset=\"UTF-8\">
         <title>{% block title %}Library System{% endblock %}</title>
         <style>
+            .success-attribute {
+                color: #080808ff;
+            }
+            {# .scroll-box {
+                width: 200px;
+                height: 300px;
+                border: 2px solid #333;
+                overflow-y: auto; /* ✅ Allow internal scroll */
+                padding: 10px;
+                background-color: #f9f9f9;
+            } #}
+            .table-tables{
+                border: 1px solid #030303ff;
+                width: 95%;
+            }
+            .main-bar-tables{
+                border-left: 1px solid white;
+                border-top: none;
+                {# box-sizing: border-box; #}
+                width: 86%;
+                margin-left: 14%;
+                {# background-color: rgba(53, 8, 116, 0.1); #}
+            }
+            .back-to-catalog{
+                margin-top: 10px;
+            }
+            .main-home {
+                {# border: 1px solid #ddd; #}
+                {# box-sizing: border-box; #}
+                position: fixed;              /* stays still when scrolling */
+                text-align: center;
+                display: flex;
+                flex-direction: column;
+                width: 12%;
+                margin-left: 1%;
+            }
+            .main-choices {
+                {# box-sizing: border-box; #}
+                position: fixed;              /* stays still when scrolling */
+                text-align: center;
+                display: flex;
+                flex-direction: column;
+                width: 12%;
+                margin-top: 400px;
+                gap: 10px;
+                margin-left: 1%;
+            }
             body {
-                font-family: Harrington, cursive;
+                position: relative;
+                font-family: 'Arial', sans-serif;
                 text-align: center;
                 margin: 0;
-                padding: 40px;
-                min-height: 100vh;
-                background: url('{{ asset(\"images/Star_moving.gif\") }}') no-repeat center fixed;
-                background-size: cover;
+                padding: 0;
+                width: 100vw;
+                {# height: 100vh; #}
+                overflow-y: auto;
+                overflow-x: hidden;
+                {# background: url('{{ asset(\"images/Star_moving.gif\") }}') no-repeat center fixed;
+                background-size: cover; #}
+                background-color: #124a7bff;
                 color: #fefafaff;
             }
 
@@ -307,11 +408,11 @@ class __TwigTemplate_58bd0abf5f510f72c026785b55d9a322 extends Template
             }
 
             .logo {
-                display: block;
                 margin: 0 auto 20px auto;
                 width: 150px;
                 height: auto;
                 border-radius: 50%;
+                background-color: white;
                 box-shadow: 0 0 10px rgba(0,0,0,0.3);
                 transition: ease 0.2s;
             }

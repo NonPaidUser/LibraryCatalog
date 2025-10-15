@@ -63,31 +63,35 @@
 {% block title %}{{ page_title }}{% endblock %}
 
 {% block body %}
-    <a href="{{ path('app_home') }}">🏠 Go to Home Page</a>
-
-    <h1>{{ page_title }}</h1>
-
-    <div style="margin-bottom: 15px;">
-        <a href="{{ path('app_add_book_new') }}">➕ Add New Book</a>
-        <a href="{{ path('app_add_book_index') }}">📚 Manage Books</a>
-        <a href="{{ path('app_user_search') }}">🔎 Find User (For Experiment)</a>
-        <a href="{{ path('app_user_index') }}">➕ Create a User (For Experiment)</a>
+    <div class="main-home">
+        <img src="{{ asset('images/Jovan_Eye_of_Ender_for_Books.png') }}" alt="Library Logo" class="logo">
+        <a href="{{ path('app_home') }}">Go to Home Page</a>
     </div>
 
-    <form method="get" action="{{ path('app_books') }}" style="margin-bottom: 20px;">
-        <label for="category">Filter by Category:</label>
-        <select name="category" id="category" onchange="this.form.submit()">
-            <option value="">-- All --</option>
-            {% for genre in [
-                'Fiction', 'Non-Fiction', 'Science Fiction', 'Fantasy', 'Mystery',
-                'Romance', 'Horror', 'Biography', 'History', 'Poetry'
-            ] %}
-                <option value="{{ genre }}" {% if genre == selected_category %}selected{% endif %}>{{ genre }}</option>
-            {% endfor %}
-        </select>
-    </form>
+    <div class="main-choices">
+        <a href="{{ path('app_add_book_new') }}">Add New Book</a>
+        <a href="{{ path('app_add_book_index') }}">Manage Books</a>
+        <a href="{{ path('app_user_search') }}">Find User (For Experiment)</a>
+        <a href="{{ path('app_user_index') }}">Create a User (For Experiment)</a>
 
-    <table border="1" cellspacing="0" cellpadding="8">
+        <form method="get" action="{{ path('app_books') }}" style="margin-bottom: 20px;">
+            <label for="category">Filter by Category:</label>
+            <select name="category" id="category" onchange="this.form.submit()">
+                <option value="">-- All --</option>
+                {% for genre in [
+                    'Fiction', 'Non-Fiction', 'Science Fiction', 'Fantasy', 'Mystery',
+                    'Romance', 'Horror', 'Biography', 'History', 'Poetry'
+                ] %}
+                    <option value="{{ genre }}" {% if genre == selected_category %}selected{% endif %}>{{ genre }}</option>
+                {% endfor %}
+            </select>
+        </form>
+    </div>
+
+<div class="main-bar-tables">
+    <h1>{{ page_title }}</h1>
+
+    <table class="table-tables">
         <thead>
             <tr>
                 <th>Title</th>
@@ -120,5 +124,6 @@
         {% endfor %}
         </tbody>
     </table>
+</div>
 {% endblock %}
 

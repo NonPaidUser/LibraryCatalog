@@ -3,11 +3,29 @@
 {% block title %}New Book{% endblock %}
 
 {% block body %}
+
+<div class="main-home">
+    <img src="{{ asset('images/Jovan_Eye_of_Ender_for_Books.png') }}" alt="Library Logo" class="logo">
+    <a href="{{ path('app_home') }}">Go to Home Page</a>
+</div>
+
+<div class="main-choices">
+    <h1>Main Processes:</h1>
+    <a href="{{ path('app_add_book_new') }}">Add New Book</a>
+    <a href="{{ path('app_add_book_index') }}">Manage Books</a>
+    <a href="{{ path('app_user_search') }}">Find User (For Experiment)</a>
+    <a href="{{ path('app_user_index') }}">Create a User (For Experiment)</a>
+    <h1>Processes:</h1>
+    <a href="{{ path('app_books') }}">Go to Borrowing Page</a>
+    <a href="{{ path('app_add_book_index') }}">Back to list</a>
+</div>
+
+<div class="main-bar-tables">
     <h1>Create new Book</h1>
 
+    <div style="text-align: center;">
     {{ include('add_book/_form.html.twig') }}
-
-    <div style="margin-top: 15px;">
-        <a href="{{ path('app_add_book_index') }}">back to list</a>
     </div>
+</div>
+
 {% endblock %}

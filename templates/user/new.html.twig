@@ -3,9 +3,21 @@
 {% block title %}New User{% endblock %}
 
 {% block body %}
+
+    <div class="main-home">
+        <img src="{{ asset('images/Jovan_Eye_of_Ender_for_Books.png') }}" alt="Library Logo" class="logo">
+        <a href="{{ path('app_home') }}">Go to Home Page</a>
+    </div>
+
+    <div class="main-choices">
+        <a href="{{ path('app_user_search') }}">Back to search user</a>
+        <a href="{{ path('app_user_index') }}">Back to list</a>    
+    </div>
+
+<div class="main-bar-tables">
     <h1>Create new User</h1>
 
     {{ include('user/_form.html.twig') }}
 
-    <a href="{{ path('app_user_index') }}">back to list</a>
+</div>
 {% endblock %}

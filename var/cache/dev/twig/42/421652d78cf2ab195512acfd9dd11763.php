@@ -82,72 +82,76 @@ class __TwigTemplate_32a11dc40efe23a1bb9e93fe18be73bc extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
         // line 6
-        yield "    <a href=\"";
-        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_home");
-        yield "\">🏠 Go to Home Page</a>
+        yield "
+<div class=\"main-home\">
+    <img src=\"";
+        // line 8
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("images/Jovan_Eye_of_Ender_for_Books.png"), "html", null, true);
+        yield "\" alt=\"Library Logo\" class=\"logo\">
     <a href=\"";
-        // line 7
+        // line 9
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_home");
+        yield "\">Go to Home Page</a>
+</div>
+
+<div class=\"main-choices\">
+    <a href=\"";
+        // line 13
         yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_add_book_index");
         yield "\">Back to list</a>
-    <a href=\"";
-        // line 8
-        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_add_book_edit", ["id" => CoreExtension::getAttribute($this->env, $this->source, (isset($context["book"]) || array_key_exists("book", $context) ? $context["book"] : (function () { throw new RuntimeError('Variable "book" does not exist.', 8, $this->source); })()), "id", [], "any", false, false, false, 8)]), "html", null, true);
-        yield "\">Edit</a>
+</div>
 
+<div class=\"main-bar-tables\">
     <h1>Book</h1>
 
-    <table class=\"table\">
+    <table class=\"table-tables\">
         <tbody>
             <tr>
                 <th>Id</th>
                 <td>";
-        // line 16
-        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, (isset($context["book"]) || array_key_exists("book", $context) ? $context["book"] : (function () { throw new RuntimeError('Variable "book" does not exist.', 16, $this->source); })()), "id", [], "any", false, false, false, 16), "html", null, true);
+        // line 23
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, (isset($context["book"]) || array_key_exists("book", $context) ? $context["book"] : (function () { throw new RuntimeError('Variable "book" does not exist.', 23, $this->source); })()), "id", [], "any", false, false, false, 23), "html", null, true);
         yield "</td>
             </tr>
             <tr>
                 <th>Title</th>
                 <td>";
-        // line 20
-        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, (isset($context["book"]) || array_key_exists("book", $context) ? $context["book"] : (function () { throw new RuntimeError('Variable "book" does not exist.', 20, $this->source); })()), "title", [], "any", false, false, false, 20), "html", null, true);
+        // line 27
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, (isset($context["book"]) || array_key_exists("book", $context) ? $context["book"] : (function () { throw new RuntimeError('Variable "book" does not exist.', 27, $this->source); })()), "title", [], "any", false, false, false, 27), "html", null, true);
         yield "</td>
             </tr>
             <tr>
                 <th>Author</th>
                 <td>";
-        // line 24
-        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, (isset($context["book"]) || array_key_exists("book", $context) ? $context["book"] : (function () { throw new RuntimeError('Variable "book" does not exist.', 24, $this->source); })()), "author", [], "any", false, false, false, 24), "html", null, true);
+        // line 31
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, (isset($context["book"]) || array_key_exists("book", $context) ? $context["book"] : (function () { throw new RuntimeError('Variable "book" does not exist.', 31, $this->source); })()), "author", [], "any", false, false, false, 31), "html", null, true);
         yield "</td>
             </tr>
             <tr>
                 <th>PublishedAt</th>
                 <td>";
-        // line 28
-        yield (((($tmp = CoreExtension::getAttribute($this->env, $this->source, (isset($context["book"]) || array_key_exists("book", $context) ? $context["book"] : (function () { throw new RuntimeError('Variable "book" does not exist.', 28, $this->source); })()), "publishedAt", [], "any", false, false, false, 28)) && $tmp instanceof Markup ? (string) $tmp : $tmp)) ? ($this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Twig\Extension\CoreExtension']->formatDate(CoreExtension::getAttribute($this->env, $this->source, (isset($context["book"]) || array_key_exists("book", $context) ? $context["book"] : (function () { throw new RuntimeError('Variable "book" does not exist.', 28, $this->source); })()), "publishedAt", [], "any", false, false, false, 28), "Y-m-d H:i:s"), "html", null, true)) : (""));
+        // line 35
+        yield (((($tmp = CoreExtension::getAttribute($this->env, $this->source, (isset($context["book"]) || array_key_exists("book", $context) ? $context["book"] : (function () { throw new RuntimeError('Variable "book" does not exist.', 35, $this->source); })()), "publishedAt", [], "any", false, false, false, 35)) && $tmp instanceof Markup ? (string) $tmp : $tmp)) ? ($this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Twig\Extension\CoreExtension']->formatDate(CoreExtension::getAttribute($this->env, $this->source, (isset($context["book"]) || array_key_exists("book", $context) ? $context["book"] : (function () { throw new RuntimeError('Variable "book" does not exist.', 35, $this->source); })()), "publishedAt", [], "any", false, false, false, 35), "Y-m-d H:i:s"), "html", null, true)) : (""));
         yield "</td>
             </tr>
             <tr>
                 <th>Description</th>
                 <td>";
-        // line 32
-        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, (isset($context["book"]) || array_key_exists("book", $context) ? $context["book"] : (function () { throw new RuntimeError('Variable "book" does not exist.', 32, $this->source); })()), "description", [], "any", false, false, false, 32), "html", null, true);
+        // line 39
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, (isset($context["book"]) || array_key_exists("book", $context) ? $context["book"] : (function () { throw new RuntimeError('Variable "book" does not exist.', 39, $this->source); })()), "description", [], "any", false, false, false, 39), "html", null, true);
         yield "</td>
             </tr>
             <tr>
                 <th>Available</th>
                 <td>";
-        // line 36
-        yield (((($tmp =  !(null === CoreExtension::getAttribute($this->env, $this->source, (isset($context["book"]) || array_key_exists("book", $context) ? $context["book"] : (function () { throw new RuntimeError('Variable "book" does not exist.', 36, $this->source); })()), "availableCount", [], "any", false, false, false, 36))) && $tmp instanceof Markup ? (string) $tmp : $tmp)) ? ($this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, (isset($context["book"]) || array_key_exists("book", $context) ? $context["book"] : (function () { throw new RuntimeError('Variable "book" does not exist.', 36, $this->source); })()), "availableCount", [], "any", false, false, false, 36), "html", null, true)) : ("N/A"));
+        // line 43
+        yield (((($tmp =  !(null === CoreExtension::getAttribute($this->env, $this->source, (isset($context["book"]) || array_key_exists("book", $context) ? $context["book"] : (function () { throw new RuntimeError('Variable "book" does not exist.', 43, $this->source); })()), "availableCount", [], "any", false, false, false, 43))) && $tmp instanceof Markup ? (string) $tmp : $tmp)) ? ($this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, (isset($context["book"]) || array_key_exists("book", $context) ? $context["book"] : (function () { throw new RuntimeError('Variable "book" does not exist.', 43, $this->source); })()), "availableCount", [], "any", false, false, false, 43), "html", null, true)) : ("N/A"));
         yield "</td>
             </tr>
         </tbody>
     </table>
-
+</div>
     ";
-        // line 41
-        yield Twig\Extension\CoreExtension::include($this->env, $context, "add_book/_delete_form.html.twig");
-        yield "
-";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
 
@@ -175,7 +179,7 @@ class __TwigTemplate_32a11dc40efe23a1bb9e93fe18be73bc extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  148 => 41,  140 => 36,  133 => 32,  126 => 28,  119 => 24,  112 => 20,  105 => 16,  94 => 8,  90 => 7,  85 => 6,  75 => 5,  58 => 3,  41 => 1,);
+        return array (  148 => 43,  141 => 39,  134 => 35,  127 => 31,  120 => 27,  113 => 23,  100 => 13,  93 => 9,  89 => 8,  85 => 6,  75 => 5,  58 => 3,  41 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -185,13 +189,20 @@ class __TwigTemplate_32a11dc40efe23a1bb9e93fe18be73bc extends Template
 {% block title %}Book{% endblock %}
 
 {% block body %}
-    <a href=\"{{ path('app_home') }}\">🏠 Go to Home Page</a>
-    <a href=\"{{ path('app_add_book_index') }}\">Back to list</a>
-    <a href=\"{{ path('app_add_book_edit', {'id': book.id}) }}\">Edit</a>
 
+<div class=\"main-home\">
+    <img src=\"{{ asset('images/Jovan_Eye_of_Ender_for_Books.png') }}\" alt=\"Library Logo\" class=\"logo\">
+    <a href=\"{{ path('app_home') }}\">Go to Home Page</a>
+</div>
+
+<div class=\"main-choices\">
+    <a href=\"{{ path('app_add_book_index') }}\">Back to list</a>
+</div>
+
+<div class=\"main-bar-tables\">
     <h1>Book</h1>
 
-    <table class=\"table\">
+    <table class=\"table-tables\">
         <tbody>
             <tr>
                 <th>Id</th>
@@ -219,8 +230,8 @@ class __TwigTemplate_32a11dc40efe23a1bb9e93fe18be73bc extends Template
             </tr>
         </tbody>
     </table>
-
-    {{ include('add_book/_delete_form.html.twig') }}
+</div>
+    {# {{ include('add_book/_delete_form.html.twig') }} #}
 {% endblock %}
 ", "add_book/show.html.twig", "C:\\Jovan Components\\JOVAN PROJECTS\\Symfony_Projects\\Library_Catalog_Borrowing_System\\templates\\add_book\\show.html.twig");
     }

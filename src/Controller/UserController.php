@@ -12,6 +12,17 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class UserController extends AbstractController
 {
+
+    // #[Route('/user/search', name: 'app_user_search', methods: ['GET'])]
+    // public function searchAll(Request $request, UserRepository $userRepository)
+    // {
+    //     $user = $userRepository->findAll();
+
+    //     return $this->render('user/search.html.twig', [
+    //         'user' => $user,
+    //     ]);
+    // }
+
     #[Route('/user/search', name: 'app_user_search', methods: ['GET','POST'])]
     public function search(Request $request, UserRepository $userRepository)
     {
@@ -32,7 +43,10 @@ class UserController extends AbstractController
             return $this->redirectToRoute('app_user_borrowed', ['id' => $user->getId()]);
         }
 
+        $user1 = $userRepository->findAll();
+
         return $this->render('user/search.html.twig', [
+            'user1' => $user1,
             'user' => $user,
             'page_title' => 'Find User',
         ]);

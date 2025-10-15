@@ -3,11 +3,25 @@
 {% block title %}{{ page_title }}{% endblock %}
 
 {% block body %}
-    <a href="{{ path('app_home') }}">🏠 Go to Home Page</a>
+    <div class="main-home">
+        <img src="{{ asset('images/Jovan_Eye_of_Ender_for_Books.png') }}" alt="Library Logo" class="logo">
+        <a href="{{ path('app_home') }}">Go to Home Page</a>
+    </div>
 
+    <div class="main-choices">
+        <h1>Main Processes:</h1>
+        <a href="{{ path('app_add_book_new') }}">Add New Book</a>
+        <a href="{{ path('app_add_book_index') }}">Manage Books</a>
+        <a href="{{ path('app_user_search') }}">Find User (For Experiment)</a>
+        <a href="{{ path('app_user_index') }}">Create a User (For Experiment)</a>
+        <h1>Processes:</h1>
+        <a class="back-to-catalog" href="{{ path('app_books') }}">Back to catalog</a>
+    </div>
+
+<div class="main-bar-tables">
     <h1>{{ page_title }}</h1>
 
-    <p class="return_borrow1">You have successfully returned: <strong>{{ book_title }}</strong> by <strong>{{ user_name }}</strong></p>
+    <p class="return_borrow1">You have successfully returned: <strong class="success-attribute">{{ book_title }}</strong> by <strong class="success-attribute">{{ user_name }}</strong></p>
+</div>
 
-    <a href="{{ path('app_books') }}">⬅ Back to catalog</a>
 {% endblock %}

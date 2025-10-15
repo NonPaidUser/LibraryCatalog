@@ -82,24 +82,39 @@ class __TwigTemplate_9ddc837e8319861ca8bfd67653b37eaa extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
         // line 6
-        yield "    <h1>Edit Book</h1>
-
-    ";
+        yield "    <div class=\"main-home\">
+        <img src=\"";
+        // line 7
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("images/Jovan_Eye_of_Ender_for_Books.png"), "html", null, true);
+        yield "\" alt=\"Library Logo\" class=\"logo\">
+        <a href=\"";
         // line 8
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_home");
+        yield "\">Go to Home Page</a>
+    </div>
+
+    <div class=\"main-choices\">
+        <h1>Processes:</h1>
+        <a href=\"";
+        // line 13
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_add_book_index");
+        yield "\">Back to list</a>
+    </div>
+
+    <div class=\"main-bar-tables\">
+        <h1>Edit Book</h1>
+
+        ";
+        // line 19
         yield Twig\Extension\CoreExtension::include($this->env, $context, "add_book/_form.html.twig", ["button_label" => "Update"]);
         yield "
 
-    <div style=\"margin-top: 15px; margin-bottom: 15px;\">
-        <a href=\"";
-        // line 11
-        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_add_book_index");
-        yield "\">back to list</a>
-    </div>
-
-    ";
-        // line 14
+        ";
+        // line 21
         yield Twig\Extension\CoreExtension::include($this->env, $context, "add_book/_delete_form.html.twig");
         yield "
+    </div>
+
 ";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
@@ -128,7 +143,7 @@ class __TwigTemplate_9ddc837e8319861ca8bfd67653b37eaa extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  101 => 14,  95 => 11,  89 => 8,  85 => 6,  75 => 5,  58 => 3,  41 => 1,);
+        return array (  114 => 21,  109 => 19,  100 => 13,  92 => 8,  88 => 7,  85 => 6,  75 => 5,  58 => 3,  41 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -138,15 +153,24 @@ class __TwigTemplate_9ddc837e8319861ca8bfd67653b37eaa extends Template
 {% block title %}Edit Book{% endblock %}
 
 {% block body %}
-    <h1>Edit Book</h1>
-
-    {{ include('add_book/_form.html.twig', {'button_label': 'Update'}) }}
-
-    <div style=\"margin-top: 15px; margin-bottom: 15px;\">
-        <a href=\"{{ path('app_add_book_index') }}\">back to list</a>
+    <div class=\"main-home\">
+        <img src=\"{{ asset('images/Jovan_Eye_of_Ender_for_Books.png') }}\" alt=\"Library Logo\" class=\"logo\">
+        <a href=\"{{ path('app_home') }}\">Go to Home Page</a>
     </div>
 
-    {{ include('add_book/_delete_form.html.twig') }}
+    <div class=\"main-choices\">
+        <h1>Processes:</h1>
+        <a href=\"{{ path('app_add_book_index') }}\">Back to list</a>
+    </div>
+
+    <div class=\"main-bar-tables\">
+        <h1>Edit Book</h1>
+
+        {{ include('add_book/_form.html.twig', {'button_label': 'Update'}) }}
+
+        {{ include('add_book/_delete_form.html.twig') }}
+    </div>
+
 {% endblock %}
 ", "add_book/edit.html.twig", "C:\\Jovan Components\\JOVAN PROJECTS\\Symfony_Projects\\Library_Catalog_Borrowing_System\\templates\\add_book\\edit.html.twig");
     }

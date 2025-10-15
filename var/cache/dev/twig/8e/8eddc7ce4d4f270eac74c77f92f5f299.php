@@ -82,26 +82,38 @@ class __TwigTemplate_6bd9cde027e976fa4992debfb85a6997 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
         // line 6
-        yield "    <a href=\"";
-        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_home");
-        yield "\">🏠 Go to Home Page</a>
-
-    <h1>";
+        yield "    <div class=\"main-home\">
+        <img src=\"";
+        // line 7
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("images/Jovan_Eye_of_Ender_for_Books.png"), "html", null, true);
+        yield "\" alt=\"Library Logo\" class=\"logo\">
+        <a href=\"";
         // line 8
-        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape((isset($context["page_title"]) || array_key_exists("page_title", $context) ? $context["page_title"] : (function () { throw new RuntimeError('Variable "page_title" does not exist.', 8, $this->source); })()), "html", null, true);
-        yield "</h1>
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_home");
+        yield "\">Go to Home Page</a>
+    </div>
 
-    <p class=\"return_borrow1\">You have successfully returned: <strong>";
-        // line 10
-        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape((isset($context["book_title"]) || array_key_exists("book_title", $context) ? $context["book_title"] : (function () { throw new RuntimeError('Variable "book_title" does not exist.', 10, $this->source); })()), "html", null, true);
-        yield "</strong> by <strong>";
-        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape((isset($context["user_name"]) || array_key_exists("user_name", $context) ? $context["user_name"] : (function () { throw new RuntimeError('Variable "user_name" does not exist.', 10, $this->source); })()), "html", null, true);
-        yield "</strong></p>
-
-    <a href=\"";
+    <div class=\"main-choices\">
+        <a class=\"back-to-catalog\" href=\"";
         // line 12
         yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_books");
-        yield "\">⬅ Back to catalog</a>
+        yield "\">Back to catalog</a>
+    </div>
+
+<div class=\"main-bar-tables\">
+    <h1>";
+        // line 16
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape((isset($context["page_title"]) || array_key_exists("page_title", $context) ? $context["page_title"] : (function () { throw new RuntimeError('Variable "page_title" does not exist.', 16, $this->source); })()), "html", null, true);
+        yield "</h1>
+
+    <p class=\"return_borrow1\">You have successfully returned: <strong class=\"success-attribute\">";
+        // line 18
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape((isset($context["book_title"]) || array_key_exists("book_title", $context) ? $context["book_title"] : (function () { throw new RuntimeError('Variable "book_title" does not exist.', 18, $this->source); })()), "html", null, true);
+        yield "</strong> by <strong class=\"success-attribute\">";
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape((isset($context["user_name"]) || array_key_exists("user_name", $context) ? $context["user_name"] : (function () { throw new RuntimeError('Variable "user_name" does not exist.', 18, $this->source); })()), "html", null, true);
+        yield "</strong></p>
+</div>
+
 ";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
@@ -130,7 +142,7 @@ class __TwigTemplate_6bd9cde027e976fa4992debfb85a6997 extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  103 => 12,  96 => 10,  91 => 8,  85 => 6,  75 => 5,  58 => 3,  41 => 1,);
+        return array (  111 => 18,  106 => 16,  99 => 12,  92 => 8,  88 => 7,  85 => 6,  75 => 5,  58 => 3,  41 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -140,13 +152,21 @@ class __TwigTemplate_6bd9cde027e976fa4992debfb85a6997 extends Template
 {% block title %}{{ page_title }}{% endblock %}
 
 {% block body %}
-    <a href=\"{{ path('app_home') }}\">🏠 Go to Home Page</a>
+    <div class=\"main-home\">
+        <img src=\"{{ asset('images/Jovan_Eye_of_Ender_for_Books.png') }}\" alt=\"Library Logo\" class=\"logo\">
+        <a href=\"{{ path('app_home') }}\">Go to Home Page</a>
+    </div>
 
+    <div class=\"main-choices\">
+        <a class=\"back-to-catalog\" href=\"{{ path('app_books') }}\">Back to catalog</a>
+    </div>
+
+<div class=\"main-bar-tables\">
     <h1>{{ page_title }}</h1>
 
-    <p class=\"return_borrow1\">You have successfully returned: <strong>{{ book_title }}</strong> by <strong>{{ user_name }}</strong></p>
+    <p class=\"return_borrow1\">You have successfully returned: <strong class=\"success-attribute\">{{ book_title }}</strong> by <strong class=\"success-attribute\">{{ user_name }}</strong></p>
+</div>
 
-    <a href=\"{{ path('app_books') }}\">⬅ Back to catalog</a>
 {% endblock %}
 ", "return/success.html.twig", "C:\\Jovan Components\\JOVAN PROJECTS\\Symfony_Projects\\Library_Catalog_Borrowing_System\\templates\\return\\success.html.twig");
     }

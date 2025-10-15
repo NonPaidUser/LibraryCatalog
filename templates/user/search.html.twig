@@ -3,8 +3,17 @@
 {% block title %}{{ page_title }}{% endblock %}
 
 {% block body %}
-    <a href="{{ path('app_home') }}">🏠 Go to Home Page</a>
+    <div class="main-home">
+        <img src="{{ asset('images/Jovan_Eye_of_Ender_for_Books.png') }}" alt="Library Logo" class="logo">
+        <a href="{{ path('app_home') }}">Go to Home Page</a>
+    </div>
 
+    <div class="main-choices">
+        <a class="back-to-catalog" href="{{ path('app_books') }}">Back to catalog</a>
+        <a href="{{ path('app_user_new') }}">Create new</a>
+    </div>
+
+<div class="main-bar-tables">
     <h1>{{ page_title }}</h1>
 
     {% for label, messages in app.flashes %}
@@ -19,7 +28,35 @@
         <button type="submit">Find</button>
     </form>
 
-    <div style="margin-top: 15px;">
-        <a href="{{ path('app_books') }}">⬅ Back to catalog</a>
-    </div>
+    <table class="table-tables">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                {# <th>Email</th> #}
+                <th>BorrowedCount</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for user in user1 %}
+            <tr>
+                <td>{{ user.id }}</td>
+                <td>{{ user.name }}</td>
+                {# <td>{{ user.email }}</td> #}
+                <td>{{ user.borrowedCount }}</td>
+                <td>
+                    <a href="{{ path('app_user_show', {'id': user.id}) }}">show</a> |
+                    <a href="{{ path('app_user_edit', {'id': user.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+</div>
 {% endblock %}

@@ -82,50 +82,66 @@ class __TwigTemplate_88261d6a9a49e173137e00ba8f56e353 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
         // line 6
-        yield "    <h1>User</h1>
+        yield "
+    <div class=\"main-home\">
+        <img src=\"";
+        // line 8
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("images/Jovan_Eye_of_Ender_for_Books.png"), "html", null, true);
+        yield "\" alt=\"Library Logo\" class=\"logo\">
+        <a href=\"";
+        // line 9
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_home");
+        yield "\">Go to Home Page</a>
+    </div>
+
+    <div class=\"main-choices\">
+        <a href=\"";
+        // line 13
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_user_search");
+        yield "\">Back to search user</a>
+        <a href=\"";
+        // line 14
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_user_index");
+        yield "\">Back to list</a>    
+    </div>
+
+<div class=\"main-bar-tables\">
+    <h1>User</h1>
 
     <table class=\"table\">
         <tbody>
             <tr>
                 <th>Id</th>
                 <td>";
-        // line 12
-        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 12, $this->source); })()), "id", [], "any", false, false, false, 12), "html", null, true);
+        // line 24
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 24, $this->source); })()), "id", [], "any", false, false, false, 24), "html", null, true);
         yield "</td>
             </tr>
             <tr>
                 <th>Name</th>
                 <td>";
-        // line 16
-        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 16, $this->source); })()), "name", [], "any", false, false, false, 16), "html", null, true);
+        // line 28
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 28, $this->source); })()), "name", [], "any", false, false, false, 28), "html", null, true);
         yield "</td>
             </tr>
             ";
-        // line 22
+        // line 34
         yield "            <tr>
                 <th>BorrowedCount</th>
                 <td>";
-        // line 24
-        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 24, $this->source); })()), "borrowedCount", [], "any", false, false, false, 24), "html", null, true);
+        // line 36
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 36, $this->source); })()), "borrowedCount", [], "any", false, false, false, 36), "html", null, true);
         yield "</td>
             </tr>
         </tbody>
     </table>
 
-    <a href=\"";
-        // line 29
-        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_user_index");
-        yield "\">back to list</a>
-
-    <a href=\"";
-        // line 31
-        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_user_edit", ["id" => CoreExtension::getAttribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 31, $this->source); })()), "id", [], "any", false, false, false, 31)]), "html", null, true);
-        yield "\">edit</a>
-
     ";
-        // line 33
-        yield Twig\Extension\CoreExtension::include($this->env, $context, "user/_delete_form.html.twig");
+        // line 42
         yield "
+    ";
+        // line 44
+        yield "</div>
 ";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
@@ -154,7 +170,7 @@ class __TwigTemplate_88261d6a9a49e173137e00ba8f56e353 extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  127 => 33,  122 => 31,  117 => 29,  109 => 24,  105 => 22,  100 => 16,  93 => 12,  85 => 6,  75 => 5,  58 => 3,  41 => 1,);
+        return array (  144 => 44,  141 => 42,  133 => 36,  129 => 34,  124 => 28,  117 => 24,  104 => 14,  100 => 13,  93 => 9,  89 => 8,  85 => 6,  75 => 5,  58 => 3,  41 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -164,6 +180,18 @@ class __TwigTemplate_88261d6a9a49e173137e00ba8f56e353 extends Template
 {% block title %}User{% endblock %}
 
 {% block body %}
+
+    <div class=\"main-home\">
+        <img src=\"{{ asset('images/Jovan_Eye_of_Ender_for_Books.png') }}\" alt=\"Library Logo\" class=\"logo\">
+        <a href=\"{{ path('app_home') }}\">Go to Home Page</a>
+    </div>
+
+    <div class=\"main-choices\">
+        <a href=\"{{ path('app_user_search') }}\">Back to search user</a>
+        <a href=\"{{ path('app_user_index') }}\">Back to list</a>    
+    </div>
+
+<div class=\"main-bar-tables\">
     <h1>User</h1>
 
     <table class=\"table\">
@@ -187,11 +215,10 @@ class __TwigTemplate_88261d6a9a49e173137e00ba8f56e353 extends Template
         </tbody>
     </table>
 
-    <a href=\"{{ path('app_user_index') }}\">back to list</a>
+    {# <a href=\"{{ path('app_user_edit', {'id': user.id}) }}\">edit</a> #}
 
-    <a href=\"{{ path('app_user_edit', {'id': user.id}) }}\">edit</a>
-
-    {{ include('user/_delete_form.html.twig') }}
+    {# {{ include('user/_delete_form.html.twig') }} #}
+</div>
 {% endblock %}
 ", "user/show.html.twig", "C:\\Jovan Components\\JOVAN PROJECTS\\Symfony_Projects\\Library_Catalog_Borrowing_System\\templates\\user\\show.html.twig");
     }
