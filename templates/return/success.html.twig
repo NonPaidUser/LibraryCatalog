@@ -14,6 +14,7 @@
         <a href="{{ path('app_add_book_index') }}">Manage Books</a>
         <a href="{{ path('app_user_search') }}">Find User (For Experiment)</a>
         <a href="{{ path('app_user_index') }}">Create a User (For Experiment)</a>
+        <a href="{{ path('app_books') }}">Borrowing Page</a>
         <h1>Processes:</h1>
         <a class="back-to-catalog" href="{{ path('app_books') }}">Back to catalog</a>
     </div>
@@ -21,7 +22,7 @@
 <div class="main-bar-tables">
     <h1>{{ page_title }}</h1>
 
-    <p class="return_borrow1">You have successfully returned: <strong class="success-attribute">{{ book_title }}</strong> by <strong class="success-attribute">{{ user_name }}</strong></p>
+    <p class="return_borrow1"><strong class="success-attribute">{{ user_name }}</strong> have successfully returned: <strong class="success-attribute">{{ book_title }}</strong></p>
 </div>
 
 {% endblock %}

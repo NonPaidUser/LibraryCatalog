@@ -9,7 +9,15 @@
     </div>
 
     <div class="main-choices">
+        <h1>Main Processes:</h1>
+        <a href="{{ path('app_add_book_new') }}">Add New Book</a>
+        <a href="{{ path('app_add_book_index') }}">Manage Books</a>
+        <a href="{{ path('app_user_search') }}">Find User (For Experiment)</a>
+        <a href="{{ path('app_user_index') }}">Create a User (For Experiment)</a>
+        <a href="{{ path('app_books') }}">Borrowing Page</a>
+        <h1>Processes:</h1>
         <a class="back-to-catalog" href="{{ path('app_books') }}">Back to catalog</a>
+        <a href="{{ path('app_user_index') }}">Back to user list</a>   
         <a href="{{ path('app_user_new') }}">Create new</a>
     </div>
 
@@ -23,7 +31,7 @@
     {% endfor %}
 
     <form method="post" action="{{ path('app_user_search') }}">
-        <label for="username">Search user by name</label><br>
+        <label for="username">Search user by full complete name to view their borrowed books</label><br>
         <input id="username" name="username" placeholder="Exact user name" required>
         <button type="submit">Find</button>
     </form>

@@ -95,12 +95,30 @@ class __TwigTemplate_0608ea57c9891ec008e6389ecf09b3b8 extends Template
     </div>
 
     <div class=\"main-choices\">
+        <h1>Main Processes:</h1>
         <a href=\"";
-        // line 13
+        // line 14
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_add_book_new");
+        yield "\">Add New Book</a>
+        <a href=\"";
+        // line 15
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_add_book_index");
+        yield "\">Manage Books</a>
+        <a href=\"";
+        // line 16
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_user_search");
+        yield "\">Find User (For Experiment)</a>
+        <a href=\"";
+        // line 17
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_user_index");
+        yield "\">Create a User (For Experiment)</a>
+        <h1>Processes:</h1>
+        <a href=\"";
+        // line 19
         yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_user_search");
         yield "\">Back to search user</a>
         <a href=\"";
-        // line 14
+        // line 20
         yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_user_index");
         yield "\">Back to list</a>    
     </div>
@@ -109,7 +127,7 @@ class __TwigTemplate_0608ea57c9891ec008e6389ecf09b3b8 extends Template
     <h1>Create new User</h1>
 
     ";
-        // line 20
+        // line 26
         yield Twig\Extension\CoreExtension::include($this->env, $context, "user/_form.html.twig");
         yield "
 
@@ -142,7 +160,7 @@ class __TwigTemplate_0608ea57c9891ec008e6389ecf09b3b8 extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  113 => 20,  104 => 14,  100 => 13,  93 => 9,  89 => 8,  85 => 6,  75 => 5,  58 => 3,  41 => 1,);
+        return array (  131 => 26,  122 => 20,  118 => 19,  113 => 17,  109 => 16,  105 => 15,  101 => 14,  93 => 9,  89 => 8,  85 => 6,  75 => 5,  58 => 3,  41 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -159,6 +177,12 @@ class __TwigTemplate_0608ea57c9891ec008e6389ecf09b3b8 extends Template
     </div>
 
     <div class=\"main-choices\">
+        <h1>Main Processes:</h1>
+        <a href=\"{{ path('app_add_book_new') }}\">Add New Book</a>
+        <a href=\"{{ path('app_add_book_index') }}\">Manage Books</a>
+        <a href=\"{{ path('app_user_search') }}\">Find User (For Experiment)</a>
+        <a href=\"{{ path('app_user_index') }}\">Create a User (For Experiment)</a>
+        <h1>Processes:</h1>
         <a href=\"{{ path('app_user_search') }}\">Back to search user</a>
         <a href=\"{{ path('app_user_index') }}\">Back to list</a>    
     </div>

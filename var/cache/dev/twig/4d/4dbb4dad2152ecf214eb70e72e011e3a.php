@@ -94,23 +94,41 @@ class __TwigTemplate_33b5b43806e1fb56426b5dc24e39e22d extends Template
     </div>
 
     <div class=\"main-choices\">
+        <h1>Main Processes:</h1>
+        <a href=\"";
+        // line 13
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_add_book_new");
+        yield "\">Add New Book</a>
+        <a href=\"";
+        // line 14
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_add_book_index");
+        yield "\">Manage Books</a>
+        <a href=\"";
+        // line 15
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_user_search");
+        yield "\">Find User (For Experiment)</a>
+        <a href=\"";
+        // line 16
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_user_index");
+        yield "\">Create a User (For Experiment)</a>
+        <h1>Processes:</h1>
         <a class=\"back-to-catalog\" href=\"";
-        // line 12
+        // line 18
         yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_books");
         yield "\">Back to catalog</a>
     </div>
 
 <div class=\"main-bar-tables\">
     <h1>";
-        // line 16
-        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape((isset($context["page_title"]) || array_key_exists("page_title", $context) ? $context["page_title"] : (function () { throw new RuntimeError('Variable "page_title" does not exist.', 16, $this->source); })()), "html", null, true);
+        // line 22
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape((isset($context["page_title"]) || array_key_exists("page_title", $context) ? $context["page_title"] : (function () { throw new RuntimeError('Variable "page_title" does not exist.', 22, $this->source); })()), "html", null, true);
         yield "</h1>
 
-    <p class=\"return_borrow1\">You have successfully borrowed: <strong class=\"success-attribute\">";
-        // line 18
-        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape((isset($context["book_title"]) || array_key_exists("book_title", $context) ? $context["book_title"] : (function () { throw new RuntimeError('Variable "book_title" does not exist.', 18, $this->source); })()), "html", null, true);
-        yield "</strong> by <strong class=\"success-attribute\">";
-        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape((isset($context["user_name"]) || array_key_exists("user_name", $context) ? $context["user_name"] : (function () { throw new RuntimeError('Variable "user_name" does not exist.', 18, $this->source); })()), "html", null, true);
+    <p class=\"return_borrow1\"><strong class=\"success-attribute\">";
+        // line 24
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape((isset($context["user_name"]) || array_key_exists("user_name", $context) ? $context["user_name"] : (function () { throw new RuntimeError('Variable "user_name" does not exist.', 24, $this->source); })()), "html", null, true);
+        yield "</strong> have successfully borrowed: <strong class=\"success-attribute\">";
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape((isset($context["book_title"]) || array_key_exists("book_title", $context) ? $context["book_title"] : (function () { throw new RuntimeError('Variable "book_title" does not exist.', 24, $this->source); })()), "html", null, true);
         yield "</strong></p>
 </div>
 
@@ -142,7 +160,7 @@ class __TwigTemplate_33b5b43806e1fb56426b5dc24e39e22d extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  111 => 18,  106 => 16,  99 => 12,  92 => 8,  88 => 7,  85 => 6,  75 => 5,  58 => 3,  41 => 1,);
+        return array (  129 => 24,  124 => 22,  117 => 18,  112 => 16,  108 => 15,  104 => 14,  100 => 13,  92 => 8,  88 => 7,  85 => 6,  75 => 5,  58 => 3,  41 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -158,13 +176,19 @@ class __TwigTemplate_33b5b43806e1fb56426b5dc24e39e22d extends Template
     </div>
 
     <div class=\"main-choices\">
+        <h1>Main Processes:</h1>
+        <a href=\"{{ path('app_add_book_new') }}\">Add New Book</a>
+        <a href=\"{{ path('app_add_book_index') }}\">Manage Books</a>
+        <a href=\"{{ path('app_user_search') }}\">Find User (For Experiment)</a>
+        <a href=\"{{ path('app_user_index') }}\">Create a User (For Experiment)</a>
+        <h1>Processes:</h1>
         <a class=\"back-to-catalog\" href=\"{{ path('app_books') }}\">Back to catalog</a>
     </div>
 
 <div class=\"main-bar-tables\">
     <h1>{{ page_title }}</h1>
 
-    <p class=\"return_borrow1\">You have successfully borrowed: <strong class=\"success-attribute\">{{ book_title }}</strong> by <strong class=\"success-attribute\">{{ user_name }}</strong></p>
+    <p class=\"return_borrow1\"><strong class=\"success-attribute\">{{ user_name }}</strong> have successfully borrowed: <strong class=\"success-attribute\">{{ book_title }}</strong></p>
 </div>
 
 {% endblock %}

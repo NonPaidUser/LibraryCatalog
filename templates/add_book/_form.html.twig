@@ -1,4 +1,83 @@
-{{ form_start(form) }}
+{# {{ form_start(form) }}
     {{ form_widget(form) }}
     <button class="btn">{{ button_label|default('Save') }}</button>
-{{ form_end(form) }}
+{{ form_end(form) }} #}
+
+<style>
+            .form-container {
+                background-color: rgba(255, 255, 255, 0.95);
+                color: #121111ff;
+                max-width: 500px;
+                margin: 30px auto;
+                padding: 25px 30px;
+                border-radius: 12px;
+                box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+                text-align: left;
+            }
+
+            /* Labels */
+            .form-container label {
+                display: block;
+                margin-bottom: 5px;
+                font-weight: bold;
+                color: #1a1a1a;
+            }
+
+            /* Inputs, selects, textareas */
+            .form-container input[type="text"],
+            .form-container input[type="number"],
+            .form-container input[type="date"],
+            .form-container select,
+            .form-container textarea {
+                width: 100%;
+                padding: 10px 12px;
+                border: 1.5px solid #ccc;
+                border-radius: 8px;
+                font-size: 15px;
+                margin-bottom: 15px;
+                transition: all 0.2s ease;
+                box-sizing: border-box;
+            }
+
+            /* Focus effect */
+            .form-container input:focus,
+            .form-container select:focus,
+            .form-container textarea:focus {
+                outline: none;
+                border-color: #ff00f7ff;
+                box-shadow: 0 0 5px rgba(255, 0, 247, 0.4);
+            }
+
+            /* Button */
+            .form-container .btn {
+                display: inline-block;
+                background-color: #ff00f7ff;
+                color: white;
+                border: none;
+                padding: 10px 20px;
+                border-radius: 8px;
+                font-size: 16px;
+                cursor: pointer;
+                transition: background 0.3s ease;
+            }
+
+            .form-container .btn:hover {
+                background-color: #a806a8ff;
+            }
+
+            /* Optional: Section title */
+            .form-container h2 {
+                text-align: center;
+                margin-bottom: 20px;
+                color: #333;
+            }
+</style>
+
+<div class="form-container">
+    <h2>{{ button_label|default('Save Book') }}</h2>
+
+    {{ form_start(form) }}
+        {{ form_widget(form) }}
+        <button class="btn">{{ button_label|default('Save') }}</button>
+    {{ form_end(form) }}
+</div>

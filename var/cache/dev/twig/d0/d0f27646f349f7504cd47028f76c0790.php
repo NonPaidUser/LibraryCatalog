@@ -112,13 +112,17 @@ class __TwigTemplate_8b4aafe2ae0bacb8e3b65def3d5ac9c5 extends Template
         // line 17
         yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_user_index");
         yield "\">Create a User (For Experiment)</a>
+    <a href=\"";
+        // line 18
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_books");
+        yield "\">Borrowing Page</a>
     <h1>Processes:</h1>
     <a href=\"";
-        // line 19
+        // line 20
         yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_books");
         yield "\">Go to Borrowing Page</a>
     <a href=\"";
-        // line 20
+        // line 21
         yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_add_book_index");
         yield "\">Back to list</a>
 </div>
@@ -128,7 +132,7 @@ class __TwigTemplate_8b4aafe2ae0bacb8e3b65def3d5ac9c5 extends Template
 
     <div style=\"text-align: center;\">
     ";
-        // line 27
+        // line 28
         yield Twig\Extension\CoreExtension::include($this->env, $context, "add_book/_form.html.twig");
         yield "
     </div>
@@ -162,7 +166,7 @@ class __TwigTemplate_8b4aafe2ae0bacb8e3b65def3d5ac9c5 extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  132 => 27,  122 => 20,  118 => 19,  113 => 17,  109 => 16,  105 => 15,  101 => 14,  93 => 9,  89 => 8,  85 => 6,  75 => 5,  58 => 3,  41 => 1,);
+        return array (  136 => 28,  126 => 21,  122 => 20,  117 => 18,  113 => 17,  109 => 16,  105 => 15,  101 => 14,  93 => 9,  89 => 8,  85 => 6,  75 => 5,  58 => 3,  41 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -184,6 +188,7 @@ class __TwigTemplate_8b4aafe2ae0bacb8e3b65def3d5ac9c5 extends Template
     <a href=\"{{ path('app_add_book_index') }}\">Manage Books</a>
     <a href=\"{{ path('app_user_search') }}\">Find User (For Experiment)</a>
     <a href=\"{{ path('app_user_index') }}\">Create a User (For Experiment)</a>
+    <a href=\"{{ path('app_books') }}\">Borrowing Page</a>
     <h1>Processes:</h1>
     <a href=\"{{ path('app_books') }}\">Go to Borrowing Page</a>
     <a href=\"{{ path('app_add_book_index') }}\">Back to list</a>
