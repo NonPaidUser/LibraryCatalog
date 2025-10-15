@@ -94,54 +94,111 @@ class __TwigTemplate_06a34ece1aec635207f53fa9e5ad64eb extends Template
     </div>
 
     <div class=\"main-choices\">
+
+
         <h1>Main Processes:</h1>
         <a href=\"";
-        // line 13
+        // line 15
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_add_book_index");
+        yield "\"
+        class=\"";
+        // line 16
+        yield (((CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 16, $this->source); })()), "request", [], "any", false, false, false, 16), "attributes", [], "any", false, false, false, 16), "get", ["_route"], "method", false, false, false, 16) == "app_add_book_index")) ? ("active-link") : (""));
+        yield "\">
+                Manage Books
+        </a>
+        <a href=\"";
+        // line 19
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_add_book_new");
+        yield "\"
+        class=\"";
+        // line 20
+        yield (((CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 20, $this->source); })()), "request", [], "any", false, false, false, 20), "attributes", [], "any", false, false, false, 20), "get", ["_route"], "method", false, false, false, 20) == "app_add_book_new")) ? ("active-link") : (""));
+        yield "\">
+                Add Book
+        </a>
+        <a href=\"";
+        // line 23
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_books");
+        yield "\"
+        class=\"";
+        // line 24
+        yield (((CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 24, $this->source); })()), "request", [], "any", false, false, false, 24), "attributes", [], "any", false, false, false, 24), "get", ["_route"], "method", false, false, false, 24) == "app_books")) ? ("active-link") : (""));
+        yield "\">
+                Borrowing Pages
+        </a>
+        <a href=\"";
+        // line 27
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_user_index");
+        yield "\"
+        class=\"";
+        // line 28
+        yield (((CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 28, $this->source); })()), "request", [], "any", false, false, false, 28), "attributes", [], "any", false, false, false, 28), "get", ["_route"], "method", false, false, false, 28) == "app_user_index")) ? ("active-link") : (""));
+        yield "\">
+            Create User
+        </a>
+        <a href=\"";
+        // line 31
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_user_search");
+        yield "\"
+        class=\"";
+        // line 32
+        yield (((CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 32, $this->source); })()), "request", [], "any", false, false, false, 32), "attributes", [], "any", false, false, false, 32), "get", ["_route"], "method", false, false, false, 32) == "app_user_search")) ? ("active-link") : (""));
+        yield "\">
+            Find User
+        </a>
+
+        <a href=\"";
+        // line 36
         yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_add_book_new");
         yield "\">Add New Book</a>
         <a href=\"";
-        // line 14
+        // line 37
         yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_add_book_index");
         yield "\">Manage Books</a>
         <a href=\"";
-        // line 15
+        // line 38
         yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_user_search");
         yield "\">Find User (For Experiment)</a>
         <a href=\"";
-        // line 16
+        // line 39
         yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_user_index");
         yield "\">Create a User (For Experiment)</a>
+        <a href=\"";
+        // line 40
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_books");
+        yield "\">Borrowing Page</a>
         <h1>Processes:</h1>
         <a class=\"back-to-catalog\" href=\"";
-        // line 18
+        // line 42
         yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_books");
         yield "\">Back to catalog</a>
     </div>
 
 <div class=\"main-bar-tables\">
     <h1>";
-        // line 22
-        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape((isset($context["page_title"]) || array_key_exists("page_title", $context) ? $context["page_title"] : (function () { throw new RuntimeError('Variable "page_title" does not exist.', 22, $this->source); })()), "html", null, true);
+        // line 46
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape((isset($context["page_title"]) || array_key_exists("page_title", $context) ? $context["page_title"] : (function () { throw new RuntimeError('Variable "page_title" does not exist.', 46, $this->source); })()), "html", null, true);
         yield "</h1>
 
     <p style=\"color:white\">You are borrowing: <strong>";
-        // line 24
-        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, (isset($context["book"]) || array_key_exists("book", $context) ? $context["book"] : (function () { throw new RuntimeError('Variable "book" does not exist.', 24, $this->source); })()), "title", [], "any", false, false, false, 24), "html", null, true);
+        // line 48
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, (isset($context["book"]) || array_key_exists("book", $context) ? $context["book"] : (function () { throw new RuntimeError('Variable "book" does not exist.', 48, $this->source); })()), "title", [], "any", false, false, false, 48), "html", null, true);
         yield "</strong> (Available: ";
-        yield ((CoreExtension::getAttribute($this->env, $this->source, (isset($context["book"]) || array_key_exists("book", $context) ? $context["book"] : (function () { throw new RuntimeError('Variable "book" does not exist.', 24, $this->source); })()), "availableCount", [], "any", false, false, false, 24)) ? ($this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, (isset($context["book"]) || array_key_exists("book", $context) ? $context["book"] : (function () { throw new RuntimeError('Variable "book" does not exist.', 24, $this->source); })()), "availableCount", [], "any", false, false, false, 24), "html", null, true)) : (0));
+        yield ((CoreExtension::getAttribute($this->env, $this->source, (isset($context["book"]) || array_key_exists("book", $context) ? $context["book"] : (function () { throw new RuntimeError('Variable "book" does not exist.', 48, $this->source); })()), "availableCount", [], "any", false, false, false, 48)) ? ($this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, (isset($context["book"]) || array_key_exists("book", $context) ? $context["book"] : (function () { throw new RuntimeError('Variable "book" does not exist.', 48, $this->source); })()), "availableCount", [], "any", false, false, false, 48), "html", null, true)) : (0));
         yield ")</p>
 
     ";
-        // line 26
+        // line 50
         $context['_parent'] = $context;
-        $context['_seq'] = CoreExtension::ensureTraversable(CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 26, $this->source); })()), "flashes", [], "any", false, false, false, 26));
+        $context['_seq'] = CoreExtension::ensureTraversable(CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 50, $this->source); })()), "flashes", [], "any", false, false, false, 50));
         foreach ($context['_seq'] as $context["label"] => $context["messages"]) {
-            // line 27
+            // line 51
             yield "        ";
             $context['_parent'] = $context;
             $context['_seq'] = CoreExtension::ensureTraversable($context["messages"]);
             foreach ($context['_seq'] as $context["_key"] => $context["msg"]) {
-                // line 28
+                // line 52
                 yield "            <div class=\"flash ";
                 yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($context["label"], "html", null, true);
                 yield "\">";
@@ -152,17 +209,17 @@ class __TwigTemplate_06a34ece1aec635207f53fa9e5ad64eb extends Template
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_key'], $context['msg'], $context['_parent']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 30
+            // line 54
             yield "    ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['label'], $context['messages'], $context['_parent']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 31
+        // line 55
         yield "
     <form method=\"post\" action=\"";
-        // line 32
-        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_borrow", ["id" => CoreExtension::getAttribute($this->env, $this->source, (isset($context["book"]) || array_key_exists("book", $context) ? $context["book"] : (function () { throw new RuntimeError('Variable "book" does not exist.', 32, $this->source); })()), "id", [], "any", false, false, false, 32)]), "html", null, true);
+        // line 56
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_borrow", ["id" => CoreExtension::getAttribute($this->env, $this->source, (isset($context["book"]) || array_key_exists("book", $context) ? $context["book"] : (function () { throw new RuntimeError('Variable "book" does not exist.', 56, $this->source); })()), "id", [], "any", false, false, false, 56)]), "html", null, true);
         yield "\">
         <label for=\"username\">Borrower Name</label><br>
         <input id=\"username\" name=\"username\" placeholder=\"Type exact user name\" required>
@@ -171,7 +228,7 @@ class __TwigTemplate_06a34ece1aec635207f53fa9e5ad64eb extends Template
 </div>
 
 ";
-        // line 61
+        // line 85
         yield "
 ";
         
@@ -201,7 +258,7 @@ class __TwigTemplate_06a34ece1aec635207f53fa9e5ad64eb extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  175 => 61,  165 => 32,  162 => 31,  156 => 30,  145 => 28,  140 => 27,  136 => 26,  129 => 24,  124 => 22,  117 => 18,  112 => 16,  108 => 15,  104 => 14,  100 => 13,  92 => 8,  88 => 7,  85 => 6,  75 => 5,  58 => 3,  41 => 1,);
+        return array (  232 => 85,  222 => 56,  219 => 55,  213 => 54,  202 => 52,  197 => 51,  193 => 50,  186 => 48,  181 => 46,  174 => 42,  169 => 40,  165 => 39,  161 => 38,  157 => 37,  153 => 36,  146 => 32,  142 => 31,  136 => 28,  132 => 27,  126 => 24,  122 => 23,  116 => 20,  112 => 19,  106 => 16,  102 => 15,  92 => 8,  88 => 7,  85 => 6,  75 => 5,  58 => 3,  41 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -217,11 +274,35 @@ class __TwigTemplate_06a34ece1aec635207f53fa9e5ad64eb extends Template
     </div>
 
     <div class=\"main-choices\">
+
+
         <h1>Main Processes:</h1>
+        <a href=\"{{ path('app_add_book_index') }}\"
+        class=\"{{ app.request.attributes.get('_route') == 'app_add_book_index' ? 'active-link' : '' }}\">
+                Manage Books
+        </a>
+        <a href=\"{{ path('app_add_book_new') }}\"
+        class=\"{{ app.request.attributes.get('_route') == 'app_add_book_new' ? 'active-link' : '' }}\">
+                Add Book
+        </a>
+        <a href=\"{{ path('app_books') }}\"
+        class=\"{{ app.request.attributes.get('_route') == 'app_books' ? 'active-link' : '' }}\">
+                Borrowing Pages
+        </a>
+        <a href=\"{{ path('app_user_index') }}\"
+        class=\"{{ app.request.attributes.get('_route') == 'app_user_index' ? 'active-link' : '' }}\">
+            Create User
+        </a>
+        <a href=\"{{ path('app_user_search') }}\"
+        class=\"{{ app.request.attributes.get('_route') == 'app_user_search' ? 'active-link' : '' }}\">
+            Find User
+        </a>
+
         <a href=\"{{ path('app_add_book_new') }}\">Add New Book</a>
         <a href=\"{{ path('app_add_book_index') }}\">Manage Books</a>
         <a href=\"{{ path('app_user_search') }}\">Find User (For Experiment)</a>
         <a href=\"{{ path('app_user_index') }}\">Create a User (For Experiment)</a>
+        <a href=\"{{ path('app_books') }}\">Borrowing Page</a>
         <h1>Processes:</h1>
         <a class=\"back-to-catalog\" href=\"{{ path('app_books') }}\">Back to catalog</a>
     </div>

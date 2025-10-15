@@ -4,6 +4,69 @@
         <meta charset="UTF-8">
         <title>{% block title %}Library System{% endblock %}</title>
         <style>
+            {# Dropdown Style Sidebar #}
+            {# .sidebar {
+                display: none;
+                background: #f8f8fdff;
+                padding: 20%;
+                color: white;
+                border-radius: 12px;
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .dropdown {
+                margin-bottom: 15px;
+                margin-top: 15px;
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .dropdown-header {
+                font-size: 18px;
+                font-weight: bold;
+                cursor: pointer;
+                padding: 10px;
+                background: #2e2e40;
+                border-radius: 8px;
+                transition: background 0.3s;
+            }
+
+            .dropdown-header:hover {
+                background: #3b3b55;
+            }
+
+            .dropdown-content {
+                display: none;
+                flex-direction: column;
+                gap: 10px;
+                margin-top: 5px;
+                padding-left: 15px;
+            }
+
+            .dropdown-content a {
+                display: block;
+                color: #ccc;
+                text-decoration: none;
+                padding: 8px;
+                border-radius: 6px;
+                transition: 0.3s;
+            }
+
+            .dropdown-content a:hover {
+                background: #47476a;
+                color: white;
+            } #}
+
+            .active-link {
+                background: #5a5adc;
+                color: white !important;
+            }
+
+            {# Dropdown Style Sidebar #}
+
             {# FORM STYLE EDITORS #}
             {# FORM STYLE EDITORS #}
 
@@ -19,20 +82,20 @@
                 background-color: #f9f9f9;
             } #}
             .table-tables{
-                border: 1px solid #030303ff;
+                border: 1px solid;
                 width: 95%;
             }
             .main-bar-tables{
-                border-left: 1px solid white;
-                border-top: none;
+                {# border-left: 1px solid white;
+                border-top: none; #}
                 {# box-sizing: border-box; #}
                 width: 86%;
                 margin-left: 14%;
                 {# background-color: rgba(53, 8, 116, 0.1); #}
             }
-            .back-to-catalog{
+            {# .back-to-catalog{
                 margin-top: 10px;
-            }
+            } #}
             .main-home {
                 {# border: 1px solid #ddd; #}
                 {# box-sizing: border-box; #}
@@ -42,6 +105,9 @@
                 flex-direction: column;
                 width: 12%;
                 margin-left: 1%;
+                border-right: 4px solid #ddd;
+                height: 100%;
+                padding-right: 21px;
             }
             .main-choices {
                 {# box-sizing: border-box; #}
@@ -53,6 +119,9 @@
                 margin-top: 200px;
                 gap: 10px;
                 margin-left: 1%;
+                {# border-right: 1px solid #ddd;
+                height: 100%;
+                padding-right: 21px; #}
             }
             body {
                 position: relative;
@@ -66,7 +135,7 @@
                 overflow-x: hidden;
                 {# background: url('{{ asset("images/Star_moving.gif") }}') no-repeat center fixed;
                 background-size: cover; #}
-                background-color: #124a7bff;
+                background-color: #0d375cff;
                 color: #fefafaff;
             }
 
@@ -163,6 +232,18 @@
                 font-weight: bold;
             }
         </style>
+        <script>
+            function toggleDropdown(id) {
+                const content = document.getElementById(id);
+                const allDropdowns = document.querySelectorAll('.dropdown-content');
+
+                allDropdowns.forEach(d => {
+                    if (d !== content) d.style.display = 'none'; // close others
+                });
+
+                content.style.display = content.style.display === 'block' ? 'none' : 'block';
+            }
+        </script>
     </head>
     <body>
         {% block body %}{% endblock %}

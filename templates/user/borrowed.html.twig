@@ -9,13 +9,36 @@
     </div>
 
     <div class="main-choices">
+
+
         <h1>Main Processes:</h1>
-        <a href="{{ path('app_add_book_new') }}">Add New Book</a>
+        <a href="{{ path('app_add_book_index') }}"
+        class="{{ app.request.attributes.get('_route') == 'app_add_book_index' ? 'active-link' : '' }}">
+                Manage Books
+        </a>
+        <a href="{{ path('app_add_book_new') }}"
+        class="{{ app.request.attributes.get('_route') == 'app_add_book_new' ? 'active-link' : '' }}">
+                Add Book
+        </a>
+        <a href="{{ path('app_books') }}"
+        class="{{ app.request.attributes.get('_route') == 'app_books' ? 'active-link' : '' }}">
+                Borrowing Pages
+        </a>
+        <a href="{{ path('app_user_index') }}"
+        class="{{ app.request.attributes.get('_route') == 'app_user_index' ? 'active-link' : '' }}">
+            Create User
+        </a>
+        <a href="{{ path('app_user_search') }}"
+        class="{{ app.request.attributes.get('_route') == 'app_user_search' ? 'active-link' : '' }}">
+            Find User
+        </a>
+
+        {# <a href="{{ path('app_add_book_new') }}">Add New Book</a>
         <a href="{{ path('app_add_book_index') }}">Manage Books</a>
         <a href="{{ path('app_user_search') }}">Find User (For Experiment)</a>
         <a href="{{ path('app_user_index') }}">Create a User (For Experiment)</a>
-        <a href="{{ path('app_books') }}">Borrowing Page</a>
-        <h1>Processes:</h1>
+        <a href="{{ path('app_books') }}">Borrowing Page</a> #}
+        <h1>Sub Processes:</h1>
         <a href="{{ path('app_user_search') }}">Search another user</a>
         <a href="{{ path('app_user_index') }}">Back to user list</a>
         <a class="back-to-catalog" href="{{ path('app_books') }}">Back to catalog</a>

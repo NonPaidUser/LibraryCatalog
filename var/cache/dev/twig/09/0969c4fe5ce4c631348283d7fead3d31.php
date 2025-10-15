@@ -95,30 +95,69 @@ class __TwigTemplate_b89bb6307cfa44927ac3638677002f93 extends Template
     </div>
 
     <div class=\"main-choices\">
+
+
         <h1>Main Processes:</h1>
         <a href=\"";
-        // line 14
-        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_add_book_new");
-        yield "\">Add New Book</a>
-        <a href=\"";
-        // line 15
-        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_add_book_index");
-        yield "\">Manage Books</a>
-        <a href=\"";
         // line 16
-        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_user_search");
-        yield "\">Find User (For Experiment)</a>
-        <a href=\"";
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_add_book_index");
+        yield "\"
+        class=\"";
         // line 17
-        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_user_index");
-        yield "\">Create a User (For Experiment)</a>
-        <h1>Processes:</h1>
+        yield (((CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 17, $this->source); })()), "request", [], "any", false, false, false, 17), "attributes", [], "any", false, false, false, 17), "get", ["_route"], "method", false, false, false, 17) == "app_add_book_index")) ? ("active-link") : (""));
+        yield "\">
+                Manage Books
+        </a>
         <a href=\"";
-        // line 19
+        // line 20
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_add_book_new");
+        yield "\"
+        class=\"";
+        // line 21
+        yield (((CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 21, $this->source); })()), "request", [], "any", false, false, false, 21), "attributes", [], "any", false, false, false, 21), "get", ["_route"], "method", false, false, false, 21) == "app_add_book_new")) ? ("active-link") : (""));
+        yield "\">
+                Add Book
+        </a>
+        <a href=\"";
+        // line 24
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_books");
+        yield "\"
+        class=\"";
+        // line 25
+        yield (((CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 25, $this->source); })()), "request", [], "any", false, false, false, 25), "attributes", [], "any", false, false, false, 25), "get", ["_route"], "method", false, false, false, 25) == "app_books")) ? ("active-link") : (""));
+        yield "\">
+                Borrowing Pages
+        </a>
+        <a href=\"";
+        // line 28
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_user_index");
+        yield "\"
+        class=\"";
+        // line 29
+        yield (((CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 29, $this->source); })()), "request", [], "any", false, false, false, 29), "attributes", [], "any", false, false, false, 29), "get", ["_route"], "method", false, false, false, 29) == "app_user_index")) ? ("active-link") : (""));
+        yield "\">
+            Create User
+        </a>
+        <a href=\"";
+        // line 32
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_user_search");
+        yield "\"
+        class=\"";
+        // line 33
+        yield (((CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 33, $this->source); })()), "request", [], "any", false, false, false, 33), "attributes", [], "any", false, false, false, 33), "get", ["_route"], "method", false, false, false, 33) == "app_user_search")) ? ("active-link") : (""));
+        yield "\">
+            Find User
+        </a>
+
+        ";
+        // line 42
+        yield "        <h1>Processes:</h1>
+        <a href=\"";
+        // line 43
         yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_user_search");
         yield "\">Back to search user</a>
         <a href=\"";
-        // line 20
+        // line 44
         yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_user_index");
         yield "\">Back to user list</a>   
     </div>
@@ -128,11 +167,11 @@ class __TwigTemplate_b89bb6307cfa44927ac3638677002f93 extends Template
 
     <div>
         ";
-        // line 27
+        // line 51
         yield Twig\Extension\CoreExtension::include($this->env, $context, "user/_form.html.twig", ["button_label" => "Update"]);
         yield "
         ";
-        // line 28
+        // line 52
         yield Twig\Extension\CoreExtension::include($this->env, $context, "user/_delete_form.html.twig");
         yield "
     </div> 
@@ -165,7 +204,7 @@ class __TwigTemplate_b89bb6307cfa44927ac3638677002f93 extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  136 => 28,  132 => 27,  122 => 20,  118 => 19,  113 => 17,  109 => 16,  105 => 15,  101 => 14,  93 => 9,  89 => 8,  85 => 6,  75 => 5,  58 => 3,  41 => 1,);
+        return array (  175 => 52,  171 => 51,  161 => 44,  157 => 43,  154 => 42,  147 => 33,  143 => 32,  137 => 29,  133 => 28,  127 => 25,  123 => 24,  117 => 21,  113 => 20,  107 => 17,  103 => 16,  93 => 9,  89 => 8,  85 => 6,  75 => 5,  58 => 3,  41 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -182,11 +221,35 @@ class __TwigTemplate_b89bb6307cfa44927ac3638677002f93 extends Template
     </div>
 
     <div class=\"main-choices\">
+
+
         <h1>Main Processes:</h1>
-        <a href=\"{{ path('app_add_book_new') }}\">Add New Book</a>
+        <a href=\"{{ path('app_add_book_index') }}\"
+        class=\"{{ app.request.attributes.get('_route') == 'app_add_book_index' ? 'active-link' : '' }}\">
+                Manage Books
+        </a>
+        <a href=\"{{ path('app_add_book_new') }}\"
+        class=\"{{ app.request.attributes.get('_route') == 'app_add_book_new' ? 'active-link' : '' }}\">
+                Add Book
+        </a>
+        <a href=\"{{ path('app_books') }}\"
+        class=\"{{ app.request.attributes.get('_route') == 'app_books' ? 'active-link' : '' }}\">
+                Borrowing Pages
+        </a>
+        <a href=\"{{ path('app_user_index') }}\"
+        class=\"{{ app.request.attributes.get('_route') == 'app_user_index' ? 'active-link' : '' }}\">
+            Create User
+        </a>
+        <a href=\"{{ path('app_user_search') }}\"
+        class=\"{{ app.request.attributes.get('_route') == 'app_user_search' ? 'active-link' : '' }}\">
+            Find User
+        </a>
+
+        {# <a href=\"{{ path('app_add_book_new') }}\">Add New Book</a>
         <a href=\"{{ path('app_add_book_index') }}\">Manage Books</a>
         <a href=\"{{ path('app_user_search') }}\">Find User (For Experiment)</a>
         <a href=\"{{ path('app_user_index') }}\">Create a User (For Experiment)</a>
+        <a href=\"{{ path('app_books') }}\">Borrowing Page</a> #}
         <h1>Processes:</h1>
         <a href=\"{{ path('app_user_search') }}\">Back to search user</a>
         <a href=\"{{ path('app_user_index') }}\">Back to user list</a>   

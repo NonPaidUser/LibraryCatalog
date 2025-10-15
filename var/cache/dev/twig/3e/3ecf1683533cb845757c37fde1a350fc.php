@@ -56,45 +56,60 @@ class __TwigTemplate_58bd0abf5f510f72c026785b55d9a322 extends Template
             ";
         // line 8
         yield "            ";
-        // line 9
+        // line 62
+        yield "
+            .active-link {
+                background: #5a5adc;
+                color: white !important;
+            }
+
+            ";
+        // line 69
+        yield "
+            ";
+        // line 71
+        yield "            ";
+        // line 72
         yield "
             .success-attribute {
                 color: #ff00f7ff;
             }
             ";
-        // line 21
+        // line 84
         yield "            .table-tables{
-                border: 1px solid #030303ff;
+                border: 1px solid;
                 width: 95%;
             }
             .main-bar-tables{
-                border-left: 1px solid white;
-                border-top: none;
                 ";
-        // line 29
+        // line 91
+        yield "                ";
+        // line 92
         yield "                width: 86%;
                 margin-left: 14%;
                 ";
-        // line 32
+        // line 95
         yield "            }
-            .back-to-catalog{
-                margin-top: 10px;
-            }
-            .main-home {
+            ";
+        // line 99
+        yield "            .main-home {
                 ";
-        // line 38
+        // line 101
         yield "                ";
-        // line 39
+        // line 102
         yield "                position: fixed;              /* stays still when scrolling */
                 text-align: center;
                 display: flex;
                 flex-direction: column;
                 width: 12%;
                 margin-left: 1%;
+                border-right: 4px solid #ddd;
+                height: 100%;
+                padding-right: 21px;
             }
             .main-choices {
                 ";
-        // line 48
+        // line 114
         yield "                position: fixed;              /* stays still when scrolling */
                 text-align: center;
                 display: flex;
@@ -103,7 +118,9 @@ class __TwigTemplate_58bd0abf5f510f72c026785b55d9a322 extends Template
                 margin-top: 200px;
                 gap: 10px;
                 margin-left: 1%;
-            }
+                ";
+        // line 125
+        yield "            }
             body {
                 position: relative;
                 font-family: 'Arial', sans-serif;
@@ -112,12 +129,12 @@ class __TwigTemplate_58bd0abf5f510f72c026785b55d9a322 extends Template
                 padding: 0;
                 width: 100vw;
                 ";
-        // line 65
+        // line 134
         yield "                overflow-y: auto;
                 overflow-x: hidden;
                 ";
-        // line 69
-        yield "                background-color: #124a7bff;
+        // line 138
+        yield "                background-color: #0d375cff;
                 color: #fefafaff;
             }
 
@@ -185,12 +202,12 @@ class __TwigTemplate_58bd0abf5f510f72c026785b55d9a322 extends Template
 
             .logo:hover {
                 content: url('";
-        // line 136
+        // line 205
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("images/Jovan_Eye_of_Ender_Black_Original.png"), "html", null, true);
         yield "');
                 background-color: #f0f0f0;
                 ";
-        // line 139
+        // line 208
         yield "            }
 
             .content-box {
@@ -205,7 +222,7 @@ class __TwigTemplate_58bd0abf5f510f72c026785b55d9a322 extends Template
             button {
                 display: inline-block;
                 ";
-        // line 153
+        // line 222
         yield "                border-radius: 6px;
                 text-decoration: none;
                 background-color: #ff00f7ff;
@@ -219,12 +236,24 @@ class __TwigTemplate_58bd0abf5f510f72c026785b55d9a322 extends Template
                 font-weight: bold;
             }
         </style>
+        <script>
+            function toggleDropdown(id) {
+                const content = document.getElementById(id);
+                const allDropdowns = document.querySelectorAll('.dropdown-content');
+
+                allDropdowns.forEach(d => {
+                    if (d !== content) d.style.display = 'none'; // close others
+                });
+
+                content.style.display = content.style.display === 'block' ? 'none' : 'block';
+            }
+        </script>
     </head>
     <body>
         ";
-        // line 168
+        // line 249
         yield from $this->unwrap()->yieldBlock('body', $context, $blocks);
-        // line 169
+        // line 250
         yield "    </body>
 </html>
 ";
@@ -251,7 +280,7 @@ class __TwigTemplate_58bd0abf5f510f72c026785b55d9a322 extends Template
         yield from [];
     }
 
-    // line 168
+    // line 249
     /**
      * @return iterable<null|scalar|\Stringable>
      */
@@ -288,7 +317,7 @@ class __TwigTemplate_58bd0abf5f510f72c026785b55d9a322 extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  255 => 168,  238 => 5,  228 => 169,  226 => 168,  209 => 153,  194 => 139,  189 => 136,  120 => 69,  116 => 65,  98 => 48,  88 => 39,  86 => 38,  79 => 32,  75 => 29,  66 => 21,  60 => 9,  58 => 8,  53 => 5,  47 => 1,);
+        return array (  284 => 249,  267 => 5,  257 => 250,  255 => 249,  226 => 222,  211 => 208,  206 => 205,  137 => 138,  133 => 134,  123 => 125,  113 => 114,  100 => 102,  98 => 101,  95 => 99,  92 => 95,  88 => 92,  86 => 91,  79 => 84,  73 => 72,  71 => 71,  68 => 69,  60 => 62,  58 => 8,  53 => 5,  47 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -299,6 +328,69 @@ class __TwigTemplate_58bd0abf5f510f72c026785b55d9a322 extends Template
         <meta charset=\"UTF-8\">
         <title>{% block title %}Library System{% endblock %}</title>
         <style>
+            {# Dropdown Style Sidebar #}
+            {# .sidebar {
+                display: none;
+                background: #f8f8fdff;
+                padding: 20%;
+                color: white;
+                border-radius: 12px;
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .dropdown {
+                margin-bottom: 15px;
+                margin-top: 15px;
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .dropdown-header {
+                font-size: 18px;
+                font-weight: bold;
+                cursor: pointer;
+                padding: 10px;
+                background: #2e2e40;
+                border-radius: 8px;
+                transition: background 0.3s;
+            }
+
+            .dropdown-header:hover {
+                background: #3b3b55;
+            }
+
+            .dropdown-content {
+                display: none;
+                flex-direction: column;
+                gap: 10px;
+                margin-top: 5px;
+                padding-left: 15px;
+            }
+
+            .dropdown-content a {
+                display: block;
+                color: #ccc;
+                text-decoration: none;
+                padding: 8px;
+                border-radius: 6px;
+                transition: 0.3s;
+            }
+
+            .dropdown-content a:hover {
+                background: #47476a;
+                color: white;
+            } #}
+
+            .active-link {
+                background: #5a5adc;
+                color: white !important;
+            }
+
+            {# Dropdown Style Sidebar #}
+
             {# FORM STYLE EDITORS #}
             {# FORM STYLE EDITORS #}
 
@@ -314,20 +406,20 @@ class __TwigTemplate_58bd0abf5f510f72c026785b55d9a322 extends Template
                 background-color: #f9f9f9;
             } #}
             .table-tables{
-                border: 1px solid #030303ff;
+                border: 1px solid;
                 width: 95%;
             }
             .main-bar-tables{
-                border-left: 1px solid white;
-                border-top: none;
+                {# border-left: 1px solid white;
+                border-top: none; #}
                 {# box-sizing: border-box; #}
                 width: 86%;
                 margin-left: 14%;
                 {# background-color: rgba(53, 8, 116, 0.1); #}
             }
-            .back-to-catalog{
+            {# .back-to-catalog{
                 margin-top: 10px;
-            }
+            } #}
             .main-home {
                 {# border: 1px solid #ddd; #}
                 {# box-sizing: border-box; #}
@@ -337,6 +429,9 @@ class __TwigTemplate_58bd0abf5f510f72c026785b55d9a322 extends Template
                 flex-direction: column;
                 width: 12%;
                 margin-left: 1%;
+                border-right: 4px solid #ddd;
+                height: 100%;
+                padding-right: 21px;
             }
             .main-choices {
                 {# box-sizing: border-box; #}
@@ -348,6 +443,9 @@ class __TwigTemplate_58bd0abf5f510f72c026785b55d9a322 extends Template
                 margin-top: 200px;
                 gap: 10px;
                 margin-left: 1%;
+                {# border-right: 1px solid #ddd;
+                height: 100%;
+                padding-right: 21px; #}
             }
             body {
                 position: relative;
@@ -361,7 +459,7 @@ class __TwigTemplate_58bd0abf5f510f72c026785b55d9a322 extends Template
                 overflow-x: hidden;
                 {# background: url('{{ asset(\"images/Star_moving.gif\") }}') no-repeat center fixed;
                 background-size: cover; #}
-                background-color: #124a7bff;
+                background-color: #0d375cff;
                 color: #fefafaff;
             }
 
@@ -458,6 +556,18 @@ class __TwigTemplate_58bd0abf5f510f72c026785b55d9a322 extends Template
                 font-weight: bold;
             }
         </style>
+        <script>
+            function toggleDropdown(id) {
+                const content = document.getElementById(id);
+                const allDropdowns = document.querySelectorAll('.dropdown-content');
+
+                allDropdowns.forEach(d => {
+                    if (d !== content) d.style.display = 'none'; // close others
+                });
+
+                content.style.display = content.style.display === 'block' ? 'none' : 'block';
+            }
+        </script>
     </head>
     <body>
         {% block body %}{% endblock %}
